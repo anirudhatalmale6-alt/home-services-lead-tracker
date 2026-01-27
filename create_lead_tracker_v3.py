@@ -299,22 +299,9 @@ add_dropdown(ws1, "AK", ADV_STATUS_LIST)
 add_dropdown(ws1, "AN", PAY_STATUS_LIST)
 add_dropdown(ws1, "AO", PAY_MODE_LIST)
 
-# Date validations — use "between" operator for reliable Google Sheets calendar
-from datetime import date as date_type
-for date_col in ["Y", "AG", "AI"]:
-    dv = DataValidation(
-        type="date",
-        operator="between",
-        formula1=date_type(2020, 1, 1),
-        formula2=date_type(2035, 12, 31),
-        allow_blank=True
-    )
-    dv.showInputMessage = True
-    dv.promptTitle = "Select Date"
-    dv.prompt = "Click to open calendar picker"
-    dv.showErrorMessage = True
-    ws1.add_data_validation(dv)
-    dv.add(f"{date_col}4:{date_col}1000")
+# Date columns — apply date format only (no DataValidation which can cause errors in Google Sheets).
+# Google Sheets shows calendar picker automatically when a cell has date format.
+# The date number format (DATE_FMT) is already applied in the pre-format loop above.
 
 # ── Pre-format rows 4-100: formulas, styles ─────────────────────────────
 data_font = Font(name="Calibri", size=10)
@@ -891,27 +878,11 @@ apply_cell(ws2[f"D{r_date_input}"], font=Font(name="Calibri", bold=True, size=12
            fill=make_fill(YELLOW_BG), alignment=center_al, border=medium_blue_border,
            number_format=DATE_FMT)
 
-# Date validation on the input cells — use "between" operator with wide range
-# This more reliably triggers Google Sheets' built-in calendar picker
-from datetime import date as date_type
-for date_input_cell in [f"B{r_date_input}", f"D{r_date_input}"]:
-    dv = DataValidation(
-        type="date",
-        operator="between",
-        formula1=date_type(2020, 1, 1),
-        formula2=date_type(2035, 12, 31),
-        allow_blank=True
-    )
-    dv.showInputMessage = True
-    dv.promptTitle = "Select Date"
-    dv.prompt = "Click to open calendar picker"
-    dv.showErrorMessage = True
-    dv.errorTitle = "Invalid Date"
-    dv.error = "Please select a valid date"
-    ws2.add_data_validation(dv)
-    dv.add(date_input_cell)
+# No date validation on From/To cells — just date formatting is enough.
+# Date validation from openpyxl can cause "There was a problem" errors in Google Sheets.
+# Google Sheets auto-detects dates from the number format.
 
-ws2[f"F{r_date_input}"].value = "\u2190 Click yellow cells for calendar in Google Sheets"
+ws2[f"F{r_date_input}"].value = "\u2190 Type date like 17/01/2026 or 17-Jan-2026"
 apply_cell(ws2[f"F{r_date_input}"], font=Font(name="Calibri", italic=True, size=10, color=MEDIUM_BLUE),
            alignment=left_al)
 
