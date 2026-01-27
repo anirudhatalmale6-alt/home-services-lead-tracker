@@ -347,8 +347,8 @@ for row in range(4, 101):
     ws1[f"V{r}"] = f'=IF(COUNTA(N{r})>0,SUM(O{r},Q{r},S{r},U{r}),"")'
     # X: Discounted Total
     ws1[f"X{r}"] = f'=IF(V{r}<>"",V{r}-IF(W{r}<>"",W{r},0),"")'
-    # AL: Pending Balance (0 when payment received, otherwise Discounted Total - Advance)
-    ws1[f"AL{r}"] = f'=IF(X{r}="","",IF(AN{r}="Received",0,X{r}-IF(AJ{r}<>"",AJ{r},0)))'
+    # AL: Pending Balance (0 when payment received OR advance cleared, otherwise Discounted Total - Advance)
+    ws1[f"AL{r}"] = f'=IF(X{r}="","",IF(OR(AN{r}="Received",AK{r}="Cleared"),0,X{r}-IF(AJ{r}<>"",AJ{r},0)))'
     # AQ: Invoice Number
     ws1[f"AQ{r}"] = f'=IF(B{r}<>"","INV-"&TEXT(ROW()-3,"0000"),"")'
 
