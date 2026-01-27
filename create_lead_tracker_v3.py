@@ -865,7 +865,10 @@ r_date_input = R_DATE + 1
 ws2[f"A{r_date_input}"].value = "From Date"
 apply_cell(ws2[f"A{r_date_input}"], font=Font(name="Calibri", bold=True, size=11, color=DARK_BLUE),
            alignment=center_al, border=thin_border)
-ws2[f"B{r_date_input}"].value = None  # user enters date
+# Pre-fill From/To with actual date objects so Google Sheets recognizes the cells as dates.
+# User can clear and type new dates — the cell stays in date mode.
+from datetime import date as date_cls
+ws2[f"B{r_date_input}"].value = date_cls(2026, 1, 17)
 apply_cell(ws2[f"B{r_date_input}"], font=Font(name="Calibri", bold=True, size=12, color=DARK_BLUE),
            fill=make_fill(YELLOW_BG), alignment=center_al, border=medium_blue_border,
            number_format=DATE_FMT)
@@ -873,16 +876,15 @@ apply_cell(ws2[f"B{r_date_input}"], font=Font(name="Calibri", bold=True, size=12
 ws2[f"C{r_date_input}"].value = "To Date"
 apply_cell(ws2[f"C{r_date_input}"], font=Font(name="Calibri", bold=True, size=11, color=DARK_BLUE),
            alignment=center_al, border=thin_border)
-ws2[f"D{r_date_input}"].value = None
+ws2[f"D{r_date_input}"].value = date_cls(2026, 1, 28)
 apply_cell(ws2[f"D{r_date_input}"], font=Font(name="Calibri", bold=True, size=12, color=DARK_BLUE),
            fill=make_fill(YELLOW_BG), alignment=center_al, border=medium_blue_border,
            number_format=DATE_FMT)
 
-# No date validation on From/To cells — just date formatting is enough.
-# Date validation from openpyxl can cause "There was a problem" errors in Google Sheets.
-# Google Sheets auto-detects dates from the number format.
+# No date validation on From/To cells — pre-filled dates ensure Google Sheets
+# treats these cells as date type. User can clear and type new dates.
 
-ws2[f"F{r_date_input}"].value = "\u2190 Type date like 17/01/2026 or 17-Jan-2026"
+ws2[f"F{r_date_input}"].value = "\u2190 Clear and type your dates (e.g. 17/01/2026)"
 apply_cell(ws2[f"F{r_date_input}"], font=Font(name="Calibri", italic=True, size=10, color=MEDIUM_BLUE),
            alignment=left_al)
 
