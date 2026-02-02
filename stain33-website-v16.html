@@ -1906,9 +1906,17 @@
             .offer-price { font-size: 22px; }
             .offer-btn { padding: 8px 16px; font-size: 12px; }
 
-            /* Mobile Features/Cards - 2 columns side by side */
-            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .feature-card { padding: 16px; border-radius: 12px; }
+            /* Mobile Features/Cards - 2 columns with equal height */
+            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; align-items: stretch; }
+            .feature-card {
+                padding: 16px;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                min-height: 280px;
+            }
             .feature-card h3 { font-size: 11px; }
             .feature-card h4 { font-size: 14px; }
             .feature-card p { font-size: 11px; line-height: 1.4; }
@@ -1988,21 +1996,34 @@
             .ticker { font-size: 13px; padding: 10px 0; }
             .ticker-item { font-size: 12px; }
 
-            /* Mobile Special Offers - 2 columns side by side */
-            .special-offers-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .special-card { padding: 16px; border-radius: 12px; }
+            /* Mobile Special Offers - 2 columns with equal height */
+            .special-offers-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; align-items: stretch; }
+            .special-card {
+                padding: 16px;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                min-height: 220px;
+            }
             .special-card h3 { font-size: 18px; line-height: 1.2; }
-            .special-card p { font-size: 11px; }
+            .special-card p { font-size: 11px; flex-grow: 1; }
             .special-tag { font-size: 9px; padding: 4px 8px; }
-            .special-btn { padding: 8px 14px; font-size: 11px; }
+            .special-btn { padding: 8px 14px; font-size: 11px; margin-top: auto; align-self: flex-start; }
 
-            /* Mobile Promo Banners - 2 columns side by side */
-            .promo-banners-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .promo-banner { padding: 16px; min-height: auto; flex-direction: column; gap: 10px; text-align: left; }
+            /* Mobile Promo Banners - 2 columns with equal height */
+            .promo-banners-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; align-items: stretch; }
+            .promo-banner {
+                padding: 16px;
+                min-height: 200px;
+                flex-direction: column;
+                gap: 8px;
+                text-align: left;
+                display: flex;
+            }
             .promo-banner h3 { font-size: 14px; line-height: 1.2; }
-            .promo-banner p { font-size: 11px; }
+            .promo-banner p { font-size: 11px; flex-grow: 1; }
             .promo-icon { width: 40px; height: 40px; }
-            .promo-btn { padding: 8px 12px; font-size: 11px; }
+            .promo-btn { padding: 8px 12px; font-size: 11px; margin-top: auto; align-self: flex-start; }
 
             /* Mobile Category Ticker */
             .category-ticker { padding: 12px 0; }
