@@ -1931,29 +1931,39 @@
             .how-step h4 { font-size: 16px; }
             .how-step p { font-size: 13px; }
 
-            /* Mobile Explore Section - 2 cards visible side by side */
-            .explore-card { flex: 0 0 calc(50% - 8px); border-radius: 12px; }
-            .explore-image { height: 80px; }
-            .explore-image svg { width: 40px; height: 40px; }
-            .explore-content { padding: 12px; }
-            .explore-tag { font-size: 10px; margin-bottom: 4px; }
-            .explore-content h3 { font-size: 13px; margin-bottom: 4px; line-height: 1.2; }
-            .explore-price { margin-bottom: 8px; }
-            .explore-price span { font-size: 11px; }
-            .explore-price strong { font-size: 16px; }
-            .explore-btn { padding: 8px 12px; font-size: 11px; width: 100%; text-align: center; }
-            .explore-nav { width: 32px; height: 32px; }
-            .explore-nav svg { width: 16px; height: 16px; }
+            /* Mobile Explore Section - Wider cards */
+            .explore-card { flex: 0 0 75%; border-radius: 14px; }
+            .explore-image { height: 100px; }
+            .explore-image svg { width: 50px; height: 50px; }
+            .explore-content { padding: 16px; }
+            .explore-tag { font-size: 11px; margin-bottom: 6px; }
+            .explore-content h3 { font-size: 15px; margin-bottom: 6px; line-height: 1.3; }
+            .explore-price { margin-bottom: 10px; }
+            .explore-price span { font-size: 12px; }
+            .explore-price strong { font-size: 20px; }
+            .explore-btn { padding: 10px 16px; font-size: 13px; width: 100%; text-align: center; }
+            .explore-nav { width: 36px; height: 36px; }
+            .explore-nav svg { width: 18px; height: 18px; }
 
-            /* Mobile Services Grid - 2 columns side by side like Urban Company */
-            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .service-box { padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%); }
-            .service-box-icon { width: 44px; height: 44px; border-radius: 10px; margin-bottom: 12px; }
-            .service-box-icon svg { width: 22px; height: 22px; }
-            .service-box h3 { font-size: 14px; margin-bottom: 4px; }
-            .service-box > p { font-size: 11px; margin-bottom: 12px; display: none; }
-            .service-list li { padding: 8px 0; font-size: 12px; }
-            .service-list li svg { width: 14px; height: 14px; }
+            /* Mobile Services Grid - Full width cards with hover effect */
+            .services-grid { grid-template-columns: 1fr; gap: 16px; }
+            .service-box {
+                padding: 20px;
+                border-radius: 16px;
+                background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                transition: all 0.3s ease;
+            }
+            .service-box:active {
+                transform: scale(0.98);
+                box-shadow: 0 4px 16px rgba(124, 58, 237, 0.15);
+            }
+            .service-box-icon { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 14px; }
+            .service-box-icon svg { width: 24px; height: 24px; }
+            .service-box h3 { font-size: 17px; margin-bottom: 6px; }
+            .service-box > p { font-size: 13px; margin-bottom: 14px; display: block; color: #6B7280; }
+            .service-list li { padding: 10px 0; font-size: 14px; }
+            .service-list li svg { width: 16px; height: 16px; }
 
             /* Mobile Pest Control */
             .pest-card { flex: 0 0 120px; padding: 16px; }
