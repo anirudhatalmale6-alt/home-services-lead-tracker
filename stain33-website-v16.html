@@ -2033,11 +2033,15 @@
             width: 85%;
             max-width: 320px;
             height: 100vh;
+            height: 100dvh;
             background: var(--white);
             z-index: 2000;
             transition: left 0.3s ease;
             box-shadow: 4px 0 20px rgba(0,0,0,0.15);
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            flex-direction: column;
         }
 
         .mobile-menu.active {
@@ -2071,6 +2075,9 @@
 
         .mobile-menu-content {
             padding: 20px;
+            padding-bottom: 100px;
+            flex: 1;
+            overflow-y: auto;
         }
 
         .mobile-menu-section {
@@ -2102,7 +2109,7 @@
         }
 
         .mobile-menu-contact {
-            width: 100%;
+            width: calc(100% - 40px);
             padding: 16px;
             background: var(--primary-purple);
             color: var(--white);
@@ -2111,7 +2118,11 @@
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 16px;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            max-width: 280px;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
         }
 
         .mobile-menu-overlay {
@@ -2228,10 +2239,10 @@
                 <a href="#">Industrial Cleaning</a>
                 <a href="#">Move In/Out Cleaning</a>
             </div>
-            <button class="mobile-menu-contact" onclick="openContactPopup(); toggleMobileMenu();">
-                Contact Us
-            </button>
         </div>
+        <button class="mobile-menu-contact" onclick="openContactPopup(); toggleMobileMenu();">
+            Contact Us
+        </button>
     </div>
 
     <!-- Contact Popup Modal -->
