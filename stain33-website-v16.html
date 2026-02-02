@@ -1906,13 +1906,13 @@
             .offer-price { font-size: 22px; }
             .offer-btn { padding: 8px 16px; font-size: 12px; }
 
-            /* Mobile Features/Cards */
-            .features-grid { grid-template-columns: 1fr; gap: 16px; }
-            .feature-card { padding: 24px; border-radius: 16px; }
-            .feature-card h3 { font-size: 14px; }
-            .feature-card h4 { font-size: 18px; }
-            .feature-card p { font-size: 13px; }
-            .feature-icon { width: 80px; height: 80px; margin-bottom: 16px; }
+            /* Mobile Features/Cards - 2 columns side by side */
+            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .feature-card { padding: 16px; border-radius: 12px; }
+            .feature-card h3 { font-size: 11px; }
+            .feature-card h4 { font-size: 14px; }
+            .feature-card p { font-size: 11px; line-height: 1.4; }
+            .feature-icon { width: 60px; height: 60px; margin-bottom: 12px; }
 
             /* Mobile Why Choose Us */
             .why-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -1931,29 +1931,29 @@
             .how-step h4 { font-size: 16px; }
             .how-step p { font-size: 13px; }
 
-            /* Mobile Explore Section - Larger Cards */
-            .explore-card { flex: 0 0 280px; border-radius: 16px; }
-            .explore-image { height: 140px; }
-            .explore-image svg { width: 60px; height: 60px; }
-            .explore-content { padding: 18px; }
-            .explore-tag { font-size: 11px; margin-bottom: 6px; }
-            .explore-content h3 { font-size: 16px; margin-bottom: 8px; }
-            .explore-price { margin-bottom: 12px; }
-            .explore-price span { font-size: 13px; }
-            .explore-price strong { font-size: 22px; }
-            .explore-btn { padding: 12px 20px; font-size: 13px; width: 100%; text-align: center; }
-            .explore-nav { width: 40px; height: 40px; }
-            .explore-nav svg { width: 20px; height: 20px; }
+            /* Mobile Explore Section - 2 cards visible side by side */
+            .explore-card { flex: 0 0 calc(50% - 8px); border-radius: 12px; }
+            .explore-image { height: 80px; }
+            .explore-image svg { width: 40px; height: 40px; }
+            .explore-content { padding: 12px; }
+            .explore-tag { font-size: 10px; margin-bottom: 4px; }
+            .explore-content h3 { font-size: 13px; margin-bottom: 4px; line-height: 1.2; }
+            .explore-price { margin-bottom: 8px; }
+            .explore-price span { font-size: 11px; }
+            .explore-price strong { font-size: 16px; }
+            .explore-btn { padding: 8px 12px; font-size: 11px; width: 100%; text-align: center; }
+            .explore-nav { width: 32px; height: 32px; }
+            .explore-nav svg { width: 16px; height: 16px; }
 
-            /* Mobile Services Grid - Better Design */
-            .services-grid { gap: 16px; }
-            .service-box { padding: 24px; border-radius: 16px; background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%); }
-            .service-box-icon { width: 52px; height: 52px; border-radius: 12px; margin-bottom: 16px; }
-            .service-box-icon svg { width: 26px; height: 26px; }
-            .service-box h3 { font-size: 18px; margin-bottom: 6px; }
-            .service-box > p { font-size: 13px; margin-bottom: 16px; }
-            .service-list li { padding: 12px 0; font-size: 14px; }
-            .service-list li svg { width: 18px; height: 18px; }
+            /* Mobile Services Grid - 2 columns side by side like Urban Company */
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .service-box { padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%); }
+            .service-box-icon { width: 44px; height: 44px; border-radius: 10px; margin-bottom: 12px; }
+            .service-box-icon svg { width: 22px; height: 22px; }
+            .service-box h3 { font-size: 14px; margin-bottom: 4px; }
+            .service-box > p { font-size: 11px; margin-bottom: 12px; display: none; }
+            .service-list li { padding: 8px 0; font-size: 12px; }
+            .service-list li svg { width: 14px; height: 14px; }
 
             /* Mobile Pest Control */
             .pest-card { flex: 0 0 120px; padding: 16px; }
@@ -1978,19 +1978,21 @@
             .ticker { font-size: 13px; padding: 10px 0; }
             .ticker-item { font-size: 12px; }
 
-            /* Mobile Special Offers */
-            .special-offers-grid { grid-template-columns: 1fr; gap: 16px; }
-            .special-card { padding: 24px; border-radius: 16px; }
-            .special-card h3 { font-size: 24px; }
-            .special-card p { font-size: 13px; }
-            .special-tag { font-size: 10px; padding: 4px 10px; }
-            .special-btn { padding: 10px 18px; font-size: 13px; }
+            /* Mobile Special Offers - 2 columns side by side */
+            .special-offers-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .special-card { padding: 16px; border-radius: 12px; }
+            .special-card h3 { font-size: 18px; line-height: 1.2; }
+            .special-card p { font-size: 11px; }
+            .special-tag { font-size: 9px; padding: 4px 8px; }
+            .special-btn { padding: 8px 14px; font-size: 11px; }
 
-            /* Mobile Promo Banners */
-            .promo-banners-grid { grid-template-columns: 1fr; gap: 16px; }
-            .promo-banner { padding: 20px; min-height: auto; flex-direction: column; gap: 16px; text-align: center; }
-            .promo-banner h3 { font-size: 18px; }
-            .promo-icon { width: 60px; height: 60px; }
+            /* Mobile Promo Banners - 2 columns side by side */
+            .promo-banners-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .promo-banner { padding: 16px; min-height: auto; flex-direction: column; gap: 10px; text-align: left; }
+            .promo-banner h3 { font-size: 14px; line-height: 1.2; }
+            .promo-banner p { font-size: 11px; }
+            .promo-icon { width: 40px; height: 40px; }
+            .promo-btn { padding: 8px 12px; font-size: 11px; }
 
             /* Mobile Category Ticker */
             .category-ticker { padding: 12px 0; }
