@@ -1906,7 +1906,7 @@
             .offer-price { font-size: 22px; }
             .offer-btn { padding: 8px 16px; font-size: 12px; }
 
-            /* Mobile Features/Cards - Full width stacked */
+            /* Mobile Features/Cards - Full width stacked with motion */
             .features-grid { grid-template-columns: 1fr; gap: 16px; }
             .feature-card {
                 padding: 24px;
@@ -1920,7 +1920,15 @@
             .feature-card h3 { font-size: 14px; }
             .feature-card h4 { font-size: 18px; }
             .feature-card p { font-size: 13px; line-height: 1.5; }
-            .feature-icon { width: 80px; height: 80px; margin-bottom: 16px; }
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 16px auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: float 3s ease-in-out infinite;
+            }
 
             /* Mobile Why Choose Us */
             .why-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
