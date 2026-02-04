@@ -182,10 +182,28 @@
         .cat-badge-icon { font-size: 18px; }
 
         /* SEO */
-        .seo-section { padding: 50px 80px; background: var(--white); }
-        .seo-section:nth-child(even) { background: var(--gray-50); }
-        .seo-section h2 { font-size: 26px; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; }
-        .seo-section p { font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 800px; }
+        .seo-sections-wrapper { padding: 50px 80px; background: var(--gray-50); }
+        .seo-sections-wrapper > h2 { font-size: 28px; font-weight: 700; color: var(--gray-900); text-align: center; margin-bottom: 36px; }
+        .seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .seo-card { position: relative; background: var(--white); border-radius: 20px; padding: 32px 28px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #F3F4F6; overflow: hidden; transition: all 0.3s; }
+        .seo-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(124, 58, 237, 0.12); border-color: #DDD6FE; }
+        .seo-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+        .seo-card:nth-child(1) .seo-card-accent { background: linear-gradient(90deg, #7C3AED, #9333EA); }
+        .seo-card:nth-child(2) .seo-card-accent { background: linear-gradient(90deg, #10B981, #059669); }
+        .seo-card:nth-child(3) .seo-card-accent { background: linear-gradient(90deg, #F59E0B, #D97706); }
+        .seo-card:nth-child(4) .seo-card-accent { background: linear-gradient(90deg, #3B82F6, #2563EB); }
+        .seo-card-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+        .seo-card:nth-child(1) .seo-card-icon { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); }
+        .seo-card:nth-child(2) .seo-card-icon { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); }
+        .seo-card:nth-child(3) .seo-card-icon { background: linear-gradient(135deg, #FFFBEB, #FEF3C7); }
+        .seo-card:nth-child(4) .seo-card-icon { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); }
+        .seo-card-icon svg { width: 28px; height: 28px; }
+        .seo-card:nth-child(1) .seo-card-icon svg { color: #7C3AED; }
+        .seo-card:nth-child(2) .seo-card-icon svg { color: #10B981; }
+        .seo-card:nth-child(3) .seo-card-icon svg { color: #F59E0B; }
+        .seo-card:nth-child(4) .seo-card-icon svg { color: #3B82F6; }
+        .seo-card h2 { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 14px; line-height: 1.3; }
+        .seo-card p { font-size: 14px; color: var(--gray-600); line-height: 1.8; }
 
         /* SERVICE AREAS */
         .service-areas-section { padding: 50px 80px; background: var(--gray-50); text-align: center; }
@@ -287,7 +305,7 @@
             .service-packages { padding: 30px 40px; }
             .mega-offers-section { padding: 40px; }
             .mega-offers-grid { grid-template-columns: 1fr; }
-            .seo-section { padding: 40px; }
+            .seo-sections-wrapper { padding: 40px; }
             .service-areas-section { padding: 40px; }
             .faq-section { padding: 40px; }
             .trust-badges-section { padding: 30px 40px; }
@@ -325,8 +343,12 @@
             .mega-offers-section { padding: 24px 16px; }
             .mega-offers-grid { grid-template-columns: 1fr; gap: 16px; overflow-x: auto; display: flex; padding-bottom: 10px; scroll-snap-type: x mandatory; }
             .combo-card { flex: 0 0 85%; scroll-snap-align: start; }
-            .seo-section { padding: 24px 16px; }
-            .seo-section h2 { font-size: 22px; }
+            .seo-sections-wrapper { padding: 24px 16px; }
+            .seo-grid { grid-template-columns: 1fr; gap: 16px; }
+            .seo-card h2 { font-size: 18px; }
+            .seo-card { padding: 24px 20px 20px; }
+            .seo-card-icon { width: 48px; height: 48px; margin-bottom: 14px; }
+            .seo-card-icon svg { width: 24px; height: 24px; }
             .service-areas-section { padding: 24px 16px; }
             .service-areas-section h2 { font-size: 22px; }
             .special-offers-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -1302,21 +1324,42 @@
     </div>
 
     <!-- ==================== SEO SECTIONS ==================== -->
-    <section class="seo-section">
-        <h2>Deep Cleaning Services in Bangalore</h2>
-        <p>Stain-33 offers the most comprehensive deep cleaning services in Bangalore, designed to transform your living spaces from top to bottom. Our trained professionals use industrial-grade equipment and eco-friendly cleaning agents to eliminate stubborn dirt, grime, and bacteria that regular cleaning misses. Whether you live in a compact 1 BHK apartment in Koramangala or a sprawling villa in Whitefield, our deep cleaning service covers every inch -- from ceiling fans and light fixtures to under-furniture areas and hidden corners. We pay special attention to high-touch surfaces, ensuring your home is not just visibly clean but hygienically safe for your family. Our deep cleaning packages include floor scrubbing, wall spot-cleaning, window track cleaning, switchboard sanitisation, and detailed dusting of all surfaces. With over 5,000 homes cleaned across Bangalore, Stain-33 has built a reputation for thoroughness, punctuality, and exceptional customer satisfaction. Book a deep cleaning session today and experience the Stain-33 difference.</p>
-    </section>
-    <section class="seo-section">
-        <h2>Bathroom Cleaning Services</h2>
-        <p>A clean bathroom is essential for both hygiene and peace of mind. Stain-33's professional bathroom cleaning services in Bangalore tackle the toughest challenges -- hard water stains, mould buildup, soap scum, and grout discolouration. Our expert team uses specialised acid-based and alkaline cleaning solutions that are safe for all types of tiles, fittings, and fixtures. The service includes thorough scrubbing of floor and wall tiles, cleaning of shower areas and glass partitions, descaling of taps and showerheads, toilet bowl deep cleaning, mirror polishing, and exhaust fan dusting. We also treat bathroom surfaces with anti-bacterial solutions to prevent mould regrowth and keep your bathroom fresh for longer. Whether you need a single bathroom refreshed or all bathrooms in your home serviced, our per-bathroom pricing makes it affordable and transparent. Our technicians arrive with all necessary equipment and cleaning supplies, so you don't need to worry about a thing. Trust Stain-33 for bathrooms that sparkle and smell fresh every day.</p>
-    </section>
-    <section class="seo-section">
-        <h2>Kitchen Deep Cleaning</h2>
-        <p>The kitchen is the heart of every home, and Stain-33's kitchen deep cleaning service in Bangalore ensures it stays spotless and hygienic. Our comprehensive kitchen cleaning covers chimney and hob degreasing, cabinet exterior wiping, countertop scrubbing, sink deep cleaning, and tile and grout restoration. We remove tough oil and grease stains that accumulate over months of cooking, leaving your kitchen surfaces gleaming. Our team also cleans behind and under appliances, wipes down cabinet handles and knobs, and sanitises food preparation areas. We use food-safe, non-toxic cleaning agents so your kitchen is safe for cooking immediately after our service. The Stain-33 kitchen cleaning process has been refined over thousands of service visits to deliver consistent, high-quality results. Whether you have a modular kitchen or a traditional setup, our professionals adapt their approach to suit your kitchen's layout and material type. From granite countertops to stainless steel sinks, every surface receives the attention it deserves. Book your kitchen deep cleaning today and cook in a space that feels brand new.</p>
-    </section>
-    <section class="seo-section">
-        <h2>Sofa &amp; Carpet Shampooing</h2>
-        <p>Over time, sofas and carpets absorb dust, allergens, pet dander, food particles, and odours that regular vacuuming cannot remove. Stain-33's professional sofa and carpet shampooing service in Bangalore uses advanced extraction technology to deep-clean upholstery and carpets, restoring them to their original freshness. Our process involves pre-treatment of stains, application of premium foam shampoo, mechanical agitation to loosen embedded dirt, and hot water extraction to pull out all contaminants. The result is visibly cleaner, softer, and fresher-smelling fabrics. We handle all types of upholstery materials including fabric, microfibre, leather, and velvet, adjusting our cleaning technique and products accordingly. For carpets, we offer both on-site shampooing and pickup-and-delivery deep cleaning for larger or heavily soiled pieces. Our technicians are trained to identify fabric types and choose the appropriate cleaning method to prevent damage or colour bleeding. After shampooing, we apply a fabric protector that helps repel future stains and extends the life of your upholstery. Experience the comfort of truly clean furniture with Stain-33's expert shampooing services.</p>
+    <section class="seo-sections-wrapper">
+        <h2>Our Cleaning Services</h2>
+        <div class="seo-grid">
+            <div class="seo-card">
+                <div class="seo-card-accent"></div>
+                <div class="seo-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V12h4v10"/><path d="M7 12V2h4v20"/><path d="M11 7h4v15"/><path d="M15 2h4v20"/><circle cx="5" cy="8" r="2"/></svg>
+                </div>
+                <h2>Deep Cleaning Services in Bangalore</h2>
+                <p>Stain-33 offers the most comprehensive deep cleaning services in Bangalore, designed to transform your living spaces from top to bottom. Our trained professionals use industrial-grade equipment and eco-friendly cleaning agents to eliminate stubborn dirt, grime, and bacteria that regular cleaning misses. Whether you live in a compact 1 BHK apartment in Koramangala or a sprawling villa in Whitefield, our deep cleaning service covers every inch -- from ceiling fans and light fixtures to under-furniture areas and hidden corners. We pay special attention to high-touch surfaces, ensuring your home is not just visibly clean but hygienically safe for your family. Our deep cleaning packages include floor scrubbing, wall spot-cleaning, window track cleaning, switchboard sanitisation, and detailed dusting of all surfaces. With over 5,000 homes cleaned across Bangalore, Stain-33 has built a reputation for thoroughness, punctuality, and exceptional customer satisfaction. Book a deep cleaning session today and experience the Stain-33 difference.</p>
+            </div>
+            <div class="seo-card">
+                <div class="seo-card-accent"></div>
+                <div class="seo-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V8l8-6 8 6v14H4z"/><path d="M9 22v-6h6v6"/><path d="M8 12h2"/><path d="M14 12h2"/></svg>
+                </div>
+                <h2>Bathroom Cleaning Services</h2>
+                <p>A clean bathroom is essential for both hygiene and peace of mind. Stain-33's professional bathroom cleaning services in Bangalore tackle the toughest challenges -- hard water stains, mould buildup, soap scum, and grout discolouration. Our expert team uses specialised acid-based and alkaline cleaning solutions that are safe for all types of tiles, fittings, and fixtures. The service includes thorough scrubbing of floor and wall tiles, cleaning of shower areas and glass partitions, descaling of taps and showerheads, toilet bowl deep cleaning, mirror polishing, and exhaust fan dusting. We also treat bathroom surfaces with anti-bacterial solutions to prevent mould regrowth and keep your bathroom fresh for longer. Whether you need a single bathroom refreshed or all bathrooms in your home serviced, our per-bathroom pricing makes it affordable and transparent. Our technicians arrive with all necessary equipment and cleaning supplies, so you don't need to worry about a thing. Trust Stain-33 for bathrooms that sparkle and smell fresh every day.</p>
+            </div>
+            <div class="seo-card">
+                <div class="seo-card-accent"></div>
+                <div class="seo-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18"/><path d="M5 11V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M3 11v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/></svg>
+                </div>
+                <h2>Kitchen Deep Cleaning</h2>
+                <p>The kitchen is the heart of every home, and Stain-33's kitchen deep cleaning service in Bangalore ensures it stays spotless and hygienic. Our comprehensive kitchen cleaning covers chimney and hob degreasing, cabinet exterior wiping, countertop scrubbing, sink deep cleaning, and tile and grout restoration. We remove tough oil and grease stains that accumulate over months of cooking, leaving your kitchen surfaces gleaming. Our team also cleans behind and under appliances, wipes down cabinet handles and knobs, and sanitises food preparation areas. We use food-safe, non-toxic cleaning agents so your kitchen is safe for cooking immediately after our service. The Stain-33 kitchen cleaning process has been refined over thousands of service visits to deliver consistent, high-quality results. Whether you have a modular kitchen or a traditional setup, our professionals adapt their approach to suit your kitchen's layout and material type. From granite countertops to stainless steel sinks, every surface receives the attention it deserves. Book your kitchen deep cleaning today and cook in a space that feels brand new.</p>
+            </div>
+            <div class="seo-card">
+                <div class="seo-card-accent"></div>
+                <div class="seo-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><path d="M12 4v4"/><path d="M8 8h8"/><rect x="6" y="14" width="12" height="4" rx="1"/></svg>
+                </div>
+                <h2>Sofa &amp; Carpet Shampooing</h2>
+                <p>Over time, sofas and carpets absorb dust, allergens, pet dander, food particles, and odours that regular vacuuming cannot remove. Stain-33's professional sofa and carpet shampooing service in Bangalore uses advanced extraction technology to deep-clean upholstery and carpets, restoring them to their original freshness. Our process involves pre-treatment of stains, application of premium foam shampoo, mechanical agitation to loosen embedded dirt, and hot water extraction to pull out all contaminants. The result is visibly cleaner, softer, and fresher-smelling fabrics. We handle all types of upholstery materials including fabric, microfibre, leather, and velvet, adjusting our cleaning technique and products accordingly. For carpets, we offer both on-site shampooing and pickup-and-delivery deep cleaning for larger or heavily soiled pieces. Our technicians are trained to identify fabric types and choose the appropriate cleaning method to prevent damage or colour bleeding. After shampooing, we apply a fabric protector that helps repel future stains and extends the life of your upholstery. Experience the comfort of truly clean furniture with Stain-33's expert shampooing services.</p>
+            </div>
+        </div>
     </section>
 
     <!-- ==================== SERVICE AREAS ==================== -->
