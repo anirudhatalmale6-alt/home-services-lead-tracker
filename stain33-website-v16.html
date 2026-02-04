@@ -2431,7 +2431,7 @@
             <div class="hero-badge">Limited Offer</div>
             <h1>Deep Home Cleaning at 20% OFF!</h1>
             <p>Get your entire home professionally cleaned by our expert team. Valid for first-time customers.</p>
-            <a href="#" class="btn-book">
+            <a href="cleaning-services-bangalore.html" class="btn-book">
                 Book Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -3484,7 +3484,7 @@
             document.addEventListener('touchstart',function(e){if(e.touches.length>1){e.preventDefault();}},{passive:false});
             document.addEventListener('touchmove',function(e){if(e.touches.length>1){e.preventDefault();}},{passive:false});
             var lastTouchEnd=0;
-            document.addEventListener('touchend',function(e){var now=Date.now();if(now-lastTouchEnd<=300){e.preventDefault();}lastTouchEnd=now;},false);
+            document.addEventListener('touchend',function(e){var now=Date.now();if(now-lastTouchEnd<=300&&!e.target.closest('a,button,input,select,textarea,.btn-book,.btn-combo-book,.offer-btn,.explore-btn,.promo-btn,.see-all-btn,.back-home,.contact-btn,.tab-card,.area-tag,.faq-question')){e.preventDefault();}lastTouchEnd=now;},false);
         } else {
             var v=document.querySelector('meta[name="viewport"]');
             if(v)v.setAttribute('content','width=device-width,initial-scale=1.0');
