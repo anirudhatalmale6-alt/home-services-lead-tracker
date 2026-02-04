@@ -320,6 +320,167 @@
             background: var(--primary-purple-dark);
         }
 
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%);
+            min-height: 280px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 50px 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.2);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #FCD34D;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .btn-book {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--white);
+            color: var(--primary-purple);
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 24px;
+        }
+
+        .hero-stat {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .hero-stat span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==================== RUNNING TICKER ==================== */
+        .ticker {
+            background: var(--gray-900);
+            padding: 14px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 3s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            white-space: nowrap;
+            padding-right: 0;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ticker-item::before {
+            content: '›';
+            font-size: 24px;
+            margin: 0 20px;
+            opacity: 0.7;
+        }
+
         /* ==================== SECTIONS COMMON ==================== */
         .section {
             padding: 50px 80px;
@@ -342,7 +503,6 @@
 
         /* ==================== SERVICE TABS ==================== */
         .service-tabs-wrapper {
-            margin-top: 70px;
             position: sticky;
             top: 70px;
             z-index: 100;
@@ -1311,6 +1471,19 @@
             .logo { font-size: 24px; }
             .contact-btn { padding: 8px 16px; font-size: 12px; }
 
+            /* Mobile Hero */
+            .hero { padding: 32px 16px; min-height: auto; margin-top: 60px; }
+            .hero h1 { font-size: 26px; }
+            .hero p { font-size: 14px; margin-bottom: 16px; }
+            .btn-book { padding: 12px 24px; font-size: 14px; width: 100%; justify-content: center; }
+            .hero-stats { gap: 20px; margin-top: 20px; }
+            .hero-stat strong { font-size: 20px; }
+            .hero-stat span { font-size: 11px; }
+
+            /* Mobile Ticker */
+            .ticker { font-size: 13px; padding: 10px 0; }
+            .ticker-item { font-size: 12px; }
+
             /* Mobile Tabs */
             .service-tabs-wrapper {
                 margin-top: 60px;
@@ -1543,6 +1716,59 @@
                 </select>
                 <button type="submit" class="popup-submit">Book Now</button>
             </form>
+        </div>
+    </div>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Bangalore's Trusted Cleaning Experts</span>
+            <h1>Professional Cleaning Services in Bangalore</h1>
+            <p>Deep home cleaning, bathroom cleaning, kitchen cleaning & sofa shampooing by trained professionals. Eco-friendly products, affordable rates.</p>
+            <button class="btn-book" onclick="openContactPopup()">
+                Book a Service
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </button>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>10,000+</strong>
+                    <span>Homes Cleaned</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>4.8/5</strong>
+                    <span>Customer Rating</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>200+</strong>
+                    <span>Trained Staff</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RUNNING TICKER -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <span class="ticker-item">Deep Home Cleaning</span>
+                <span class="ticker-item">Professional Staff</span>
+                <span class="ticker-item">Pest Control</span>
+                <span class="ticker-item">Eco-Friendly Products</span>
+                <span class="ticker-item">100% Satisfaction</span>
+                <span class="ticker-item">Affordable Rates</span>
+                <span class="ticker-item">Expert Team</span>
+                <span class="ticker-item">Premium Quality</span>
+            </div>
+            <div class="ticker-content">
+                <span class="ticker-item">Deep Home Cleaning</span>
+                <span class="ticker-item">Professional Staff</span>
+                <span class="ticker-item">Pest Control</span>
+                <span class="ticker-item">Eco-Friendly Products</span>
+                <span class="ticker-item">100% Satisfaction</span>
+                <span class="ticker-item">Affordable Rates</span>
+                <span class="ticker-item">Expert Team</span>
+                <span class="ticker-item">Premium Quality</span>
+            </div>
         </div>
     </div>
 
