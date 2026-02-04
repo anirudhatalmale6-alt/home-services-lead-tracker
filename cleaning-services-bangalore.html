@@ -41,7 +41,7 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; touch-action: pan-x pan-y; }
         body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
         /* HEADER */
@@ -1612,7 +1612,21 @@
         });
     </script>
     <script>
-    (function(){if(!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)){var v=document.querySelector('meta[name="viewport"]');if(v)v.setAttribute('content','width=device-width,initial-scale=1.0');}})();
+    (function(){
+        if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)){
+            document.addEventListener('gesturestart',function(e){e.preventDefault();},false);
+            document.addEventListener('gesturechange',function(e){e.preventDefault();},false);
+            document.addEventListener('gestureend',function(e){e.preventDefault();},false);
+            document.addEventListener('touchstart',function(e){if(e.touches.length>1){e.preventDefault();}},{passive:false});
+            document.addEventListener('touchmove',function(e){if(e.touches.length>1){e.preventDefault();}},{passive:false});
+            var lastTouchEnd=0;
+            document.addEventListener('touchend',function(e){var now=Date.now();if(now-lastTouchEnd<=300){e.preventDefault();}lastTouchEnd=now;},false);
+        } else {
+            var v=document.querySelector('meta[name="viewport"]');
+            if(v)v.setAttribute('content','width=device-width,initial-scale=1.0');
+            document.querySelector('*').style.touchAction='auto';
+        }
+    })();
     </script>
 </body>
 </html>
