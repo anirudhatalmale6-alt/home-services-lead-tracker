@@ -219,6 +219,8 @@
         .area-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
         .area-tag { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border: 1px solid #DDD6FE; border-radius: 50px; font-size: 14px; font-weight: 600; color: #5B21B6; transition: all 0.3s; box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08); }
         .area-tag:hover { border-color: var(--primary-purple); color: var(--white); background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); transform: translateY(-3px); box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25); }
+        .area-tag.selected { border-color: var(--primary-purple); color: var(--white); background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25); }
+        .area-tag.selected svg { color: var(--white); }
         .area-tag svg { width: 16px; height: 16px; color: var(--primary-green); }
 
         /* SPECIAL OFFERS */
@@ -1595,6 +1597,14 @@
                 setTimeout(function() { self.style.animationPlayState = 'running'; }, 3000);
             });
         }
+
+        // Area tag bubble/tap effect
+        document.querySelectorAll('.area-tag').forEach(function(tag) {
+            tag.addEventListener('click', function() {
+                document.querySelectorAll('.area-tag').forEach(function(t) { t.classList.remove('selected'); });
+                this.classList.add('selected');
+            });
+        });
     </script>
 </body>
 </html>
