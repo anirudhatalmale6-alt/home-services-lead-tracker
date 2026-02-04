@@ -106,14 +106,15 @@
         .section-title { font-size: 28px; font-weight: 700; color: var(--gray-900); margin-bottom: 24px; }
 
         /* SERVICE TAB CARDS (thumbnail style) */
-        .service-tab-cards { display: flex; gap: 16px; padding: 20px 80px; background: var(--white); border-bottom: 1px solid #E5E7EB; overflow-x: auto; position: sticky; top: 70px; z-index: 100; scrollbar-width: none; }
+        .tab-sticky-wrapper { position: sticky; top: 70px; z-index: 100; background: var(--white); border-bottom: 1px solid #E5E7EB; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .service-tab-cards { display: flex; gap: 16px; padding: 12px 80px 16px; background: var(--white); overflow-x: auto; scrollbar-width: none; }
         .service-tab-cards::-webkit-scrollbar { display: none; }
         .tab-card { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-width: 90px; border: 2px solid transparent; background: var(--gray-50); }
         .tab-card.active { border-color: #7C3AED; background: #F5F3FF; }
         .tab-card:hover { background: #F5F3FF; }
         .tab-card-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--white); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .tab-card span { font-size: 12px; font-weight: 600; color: #4B5563; white-space: nowrap; }
-        .tab-label { font-size: 13px; font-weight: 500; color: var(--gray-500); padding: 8px 80px 0; background: var(--white); display: block; position: sticky; top: 70px; z-index: 101; }
+        .tab-label { font-size: 13px; font-weight: 500; color: var(--gray-500); padding: 10px 80px 0; background: var(--white); display: block; }
         .tab-card.active span { color: #7C3AED; }
 
         /* TAB CONTENT */
@@ -305,8 +306,9 @@
             .btn-book { padding: 12px 24px; font-size: 14px; width: 100%; justify-content: center; }
             .ticker { font-size: 13px; padding: 10px 0; }
             .ticker-item { font-size: 12px; }
-            .tab-label { padding: 6px 16px 0; top: 60px; font-size: 12px; }
-            .service-tab-cards { padding: 6px 16px 10px; gap: 8px; position: sticky; top: 82px; z-index: 999; -webkit-overflow-scrolling: touch; overflow: auto; }
+            .tab-sticky-wrapper { top: 60px; }
+            .tab-label { padding: 6px 16px 0; font-size: 12px; }
+            .service-tab-cards { padding: 6px 16px 10px; gap: 8px; -webkit-overflow-scrolling: touch; overflow: auto; }
             .tab-card { padding: 8px 12px; min-width: 70px; flex-shrink: 0; }
             .tab-card-icon { width: 32px; height: 32px; }
             .tab-card span { font-size: 10px; white-space: nowrap; }
@@ -464,6 +466,7 @@
     </div>
 
     <!-- SERVICE SELECTOR TABS (Thumbnail Style) -->
+    <div class="tab-sticky-wrapper">
     <span class="tab-label">Select a service</span>
     <div class="service-tab-cards">
         <div class="tab-card active" data-tab="pestcontrol" onclick="switchTab('pestcontrol')">
@@ -478,6 +481,7 @@
             </div>
             <span>Termite Control</span>
         </div>
+    </div>
     </div>
 
     <!-- ==================== PEST CONTROL TAB ==================== -->
