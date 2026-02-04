@@ -562,7 +562,7 @@
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 24px;
         }
 
@@ -574,6 +574,40 @@
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .package-card-content {
+            flex: 1;
+        }
+
+        .package-card-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .package-card-image svg.card-illustration {
+            width: 80px;
+            height: 80px;
+        }
+
+        .package-card-image.bg-purple {
+            background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
+        }
+
+        .package-card-image.bg-green {
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
         }
 
         .package-card:hover {
@@ -687,17 +721,20 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 14px 32px;
+            padding: 10px 24px;
             background: var(--primary-purple);
             color: var(--white);
             border: none;
             border-radius: 10px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             font-family: inherit;
-            width: 100%;
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: auto;
         }
 
         .btn-book-service:hover {
@@ -1499,7 +1536,8 @@
             /* Mobile Packages */
             .service-packages { padding: 20px 16px; }
             .packages-grid { grid-template-columns: 1fr; }
-            .package-card { padding: 24px; border-radius: 16px; }
+            .package-card { padding: 24px; border-radius: 16px; flex-direction: column; }
+            .package-card-image { width: 100%; height: 160px; order: -1; }
             .package-card h3 { font-size: 18px; }
             .price-current { font-size: 24px; }
 
@@ -1788,71 +1826,93 @@
             <div class="packages-grid">
                 <!-- Furnished Bundle -->
                 <div class="package-card">
-                    <span class="save-badge">SAVE</span>
-                    <h3>2-Visits Furnished Apartment Bundle</h3>
-                    <div class="package-price">
-                        <span class="price-original">&#8377;3,400</span>
-                        <span class="price-current">&#8377;2,799</span>
-                        <span class="price-unit">per visit</span>
+                    <div class="package-card-content">
+                        <span class="save-badge">SAVE</span>
+                        <h3>2-Visits Furnished Apartment Bundle</h3>
+                        <div class="package-price">
+                            <span class="price-original">&#8377;3,400</span>
+                            <span class="price-current">&#8377;2,799</span>
+                            <span class="price-unit">per visit</span>
+                        </div>
+                        <p class="package-meta">2 visits (Weekdays only) &middot; Furnished</p>
+                        <p class="package-details">Cleaning & stain removal from rooms, kitchen, bathroom & balcony</p>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Mopping
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Dusting
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Cobweb Removal
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            3 hrs 45 mins
+                        </div>
                     </div>
-                    <p class="package-meta">2 visits (Weekdays only) &middot; Furnished</p>
-                    <p class="package-details">Cleaning & stain removal from rooms, kitchen, bathroom & balcony</p>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Mopping
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Dusting
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Cobweb Removal
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        3 hrs 45 mins
+                    <div class="package-card-image bg-purple">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#EDE9FE"/>
+                            <rect x="55" y="20" width="6" height="65" rx="3" fill="#7C3AED"/>
+                            <path d="M42 85 C42 75, 50 70, 58 70 L62 70 C70 70, 78 75, 78 85 L78 90 C78 92, 76 94, 74 94 L46 94 C44 94, 42 92, 42 90 Z" fill="#9333EA"/>
+                            <line x1="42" y1="78" x2="78" y2="78" stroke="#7C3AED" stroke-width="2"/>
+                            <circle cx="35" cy="30" r="3" fill="#FCD34D"/>
+                            <circle cx="80" cy="25" r="2.5" fill="#FCD34D"/>
+                            <circle cx="75" cy="40" r="2" fill="#FCD34D"/>
+                            <path d="M32 26 L35 30 L38 26" stroke="#FCD34D" stroke-width="1.5" fill="none"/>
+                            <path d="M77 21 L80 25 L83 21" stroke="#FCD34D" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('maintenance-furnished')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('maintenance-furnished')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
 
                 <!-- Unfurnished Bundle -->
                 <div class="package-card">
-                    <h3>2-Visits Unfurnished Apartment Bundle</h3>
-                    <div class="package-price">
-                        <span class="price-original">&#8377;3,100</span>
-                        <span class="price-current">&#8377;2,559</span>
-                        <span class="price-unit">per visit</span>
+                    <div class="package-card-content">
+                        <h3>2-Visits Unfurnished Apartment Bundle</h3>
+                        <div class="package-price">
+                            <span class="price-original">&#8377;3,100</span>
+                            <span class="price-current">&#8377;2,559</span>
+                            <span class="price-unit">per visit</span>
+                        </div>
+                        <p class="package-meta">2 visits (Weekdays only) &middot; Unfurnished</p>
+                        <p class="package-details">Cleaning & stain removal from rooms, kitchen, bathroom & balcony</p>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Mopping
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Dusting
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Cobweb Removal
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            3 hrs 30 mins
+                        </div>
                     </div>
-                    <p class="package-meta">2 visits (Weekdays only) &middot; Unfurnished</p>
-                    <p class="package-details">Cleaning & stain removal from rooms, kitchen, bathroom & balcony</p>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Mopping
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Dusting
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Cobweb Removal
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        3 hrs 30 mins
+                    <div class="package-card-image bg-green">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#D1FAE5"/>
+                            <path d="M40 45 C40 40, 44 36, 49 36 L71 36 C76 36, 80 40, 80 45 L80 80 C80 82, 78 84, 76 84 L44 84 C42 84, 40 82, 40 80 Z" fill="#10B981"/>
+                            <ellipse cx="60" cy="36" rx="22" ry="5" fill="#059669"/>
+                            <rect x="56" y="24" width="8" height="14" rx="4" fill="#059669"/>
+                            <rect x="50" y="50" width="4" height="20" rx="2" fill="#ECFDF5" transform="rotate(-15 50 50)"/>
+                            <rect x="64" y="48" width="4" height="22" rx="2" fill="#ECFDF5" transform="rotate(10 64 48)"/>
+                            <circle cx="52" cy="46" r="4" fill="#FCD34D" opacity="0.8"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('maintenance-unfurnished')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('maintenance-unfurnished')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -1864,80 +1924,105 @@
             <div class="packages-grid">
                 <!-- Furnished Apartment -->
                 <div class="package-card">
-                    <h3>Furnished Apartment Cleaning</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;2,200</span>
-                        <span class="price-unit">approx</span>
+                    <div class="package-card-content">
+                        <h3>Furnished Apartment Cleaning</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;2,200</span>
+                            <span class="price-unit">approx</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Cleaning & stain removal from all rooms
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Marble floor scrubbing
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Kitchen deep cleaning
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Bathroom scrubbing & disinfection
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Balcony cleaning
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            2 hrs 45 mins
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Cleaning & stain removal from all rooms
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Marble floor scrubbing
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Kitchen deep cleaning
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Bathroom scrubbing & disinfection
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Balcony cleaning
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        2 hrs 45 mins
+                    <div class="package-card-image bg-purple">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#EDE9FE"/>
+                            <path d="M25 70 C25 58, 30 55, 35 55 L85 55 C90 55, 95 58, 95 70 L95 80 C95 82, 93 84, 91 84 L29 84 C27 84, 25 82, 25 80 Z" fill="#7C3AED"/>
+                            <rect x="30" y="60" width="60" height="15" rx="6" fill="#9333EA"/>
+                            <rect x="25" y="84" width="8" height="8" rx="2" fill="#5B21B6"/>
+                            <rect x="87" y="84" width="8" height="8" rx="2" fill="#5B21B6"/>
+                            <path d="M20 55 L25 55 L25 75 L20 75 C18 75, 16 73, 16 71 L16 59 C16 57, 18 55, 20 55 Z" fill="#9333EA"/>
+                            <path d="M95 55 L100 55 C102 55, 104 57, 104 59 L104 71 C104 73, 102 75, 100 75 L95 75 Z" fill="#9333EA"/>
+                            <circle cx="70" cy="42" r="3" fill="#FCD34D"/>
+                            <circle cx="82" cy="38" r="2" fill="#FCD34D"/>
+                            <path d="M67 38 L70 42 L73 38" stroke="#FCD34D" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('apartment-furnished')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('apartment-furnished')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
 
                 <!-- Unfurnished Apartment -->
                 <div class="package-card">
-                    <h3>Unfurnished Apartment Cleaning</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;1,799</span>
-                        <span class="price-unit">approx</span>
+                    <div class="package-card-content">
+                        <h3>Unfurnished Apartment Cleaning</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;1,799</span>
+                            <span class="price-unit">approx</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Cleaning & stain removal from all rooms
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Floor mopping & scrubbing
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Kitchen cleaning
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Bathroom cleaning
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Cobweb & dust removal
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            2 hrs 30 mins
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Cleaning & stain removal from all rooms
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Floor mopping & scrubbing
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Kitchen cleaning
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Bathroom cleaning
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Cobweb & dust removal
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        2 hrs 30 mins
+                    <div class="package-card-image bg-green">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#D1FAE5"/>
+                            <rect x="30" y="35" width="60" height="55" rx="4" fill="none" stroke="#10B981" stroke-width="3"/>
+                            <line x1="30" y1="90" x2="90" y2="90" stroke="#059669" stroke-width="4"/>
+                            <rect x="62" y="22" width="5" height="58" rx="2.5" fill="#10B981"/>
+                            <path d="M50 80 L74 80 L74 90 L50 90 Z" fill="#10B981" opacity="0.3"/>
+                            <ellipse cx="62" cy="82" rx="16" ry="4" fill="#10B981" opacity="0.25"/>
+                            <rect x="52" y="75" width="20" height="6" rx="3" fill="#059669"/>
+                            <circle cx="45" cy="45" r="2.5" fill="#FCD34D"/>
+                            <circle cx="78" cy="42" r="2" fill="#FCD34D"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('apartment-unfurnished')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('apartment-unfurnished')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -1949,72 +2034,99 @@
             <div class="packages-grid">
                 <!-- Furnished Bungalow -->
                 <div class="package-card">
-                    <h3>Furnished Bungalow / Duplex Cleaning</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;3,775</span>
-                        <span class="price-unit">approx</span>
+                    <div class="package-card-content">
+                        <h3>Furnished Bungalow / Duplex Cleaning</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;3,775</span>
+                            <span class="price-unit">approx</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Full bungalow deep cleaning
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                All rooms, kitchen & bathrooms
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Staircase & balcony cleaning
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Furniture dusting & mopping
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            5 hrs 20 mins
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Full bungalow deep cleaning
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            All rooms, kitchen & bathrooms
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Staircase & balcony cleaning
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Furniture dusting & mopping
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        5 hrs 20 mins
+                    <div class="package-card-image bg-purple">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#EDE9FE"/>
+                            <path d="M60 25 L95 55 L90 55 L90 90 L30 90 L30 55 L25 55 Z" fill="#7C3AED"/>
+                            <rect x="35" y="55" width="50" height="35" fill="#9333EA"/>
+                            <rect x="45" y="65" width="12" height="12" rx="2" fill="#EDE9FE"/>
+                            <rect x="63" y="65" width="12" height="12" rx="2" fill="#EDE9FE"/>
+                            <rect x="53" y="75" width="14" height="15" rx="2" fill="#5B21B6"/>
+                            <circle cx="64" cy="83" r="1.5" fill="#FCD34D"/>
+                            <circle cx="40" cy="35" r="3" fill="#FCD34D"/>
+                            <circle cx="82" cy="40" r="2.5" fill="#FCD34D"/>
+                            <circle cx="75" cy="30" r="2" fill="#FCD34D"/>
+                            <path d="M37 31 L40 35 L43 31" stroke="#FCD34D" stroke-width="1.5" fill="none"/>
+                            <path d="M79 36 L82 40 L85 36" stroke="#FCD34D" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('bungalow-furnished')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('bungalow-furnished')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
 
                 <!-- Unfurnished Bungalow -->
                 <div class="package-card">
-                    <h3>Unfurnished Bungalow / Duplex Cleaning</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;3,199</span>
-                        <span class="price-unit">approx</span>
+                    <div class="package-card-content">
+                        <h3>Unfurnished Bungalow / Duplex Cleaning</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;3,199</span>
+                            <span class="price-unit">approx</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Complete floor scrubbing
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                All rooms, kitchen & bathrooms
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Staircase & balcony cleaning
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Cobweb removal & dusting
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            4 hrs 45 mins
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Complete floor scrubbing
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            All rooms, kitchen & bathrooms
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Staircase & balcony cleaning
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Cobweb removal & dusting
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        4 hrs 45 mins
+                    <div class="package-card-image bg-green">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#D1FAE5"/>
+                            <path d="M60 25 L95 55 L90 55 L90 90 L30 90 L30 55 L25 55 Z" fill="none" stroke="#10B981" stroke-width="3"/>
+                            <rect x="35" y="55" width="50" height="35" fill="none" stroke="#10B981" stroke-width="2"/>
+                            <rect x="45" y="65" width="12" height="12" rx="2" fill="none" stroke="#059669" stroke-width="2"/>
+                            <rect x="63" y="65" width="12" height="12" rx="2" fill="none" stroke="#059669" stroke-width="2"/>
+                            <rect x="53" y="75" width="14" height="15" rx="2" fill="none" stroke="#059669" stroke-width="2"/>
+                            <rect x="70" y="40" width="4" height="40" rx="2" fill="#10B981"/>
+                            <ellipse cx="70" cy="82" rx="10" ry="3" fill="#10B981" opacity="0.3"/>
+                            <rect x="62" y="78" width="16" height="5" rx="2.5" fill="#059669"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('bungalow-unfurnished')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('bungalow-unfurnished')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -2025,123 +2137,180 @@
         <div class="service-packages">
             <div class="packages-grid">
                 <div class="package-card">
-                    <h3>Bathroom Deep Cleaning</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;449</span>
-                        <span class="price-unit">per bathroom</span>
+                    <div class="package-card-content">
+                        <h3>Bathroom Deep Cleaning</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;449</span>
+                            <span class="price-unit">per bathroom</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Tile & grout scrubbing
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Stain removal from fittings
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Mirror & glass cleaning
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            45 mins
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Tile & grout scrubbing
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Stain removal from fittings
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Mirror & glass cleaning
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        45 mins
+                    <div class="package-card-image bg-purple">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#EDE9FE"/>
+                            <rect x="30" y="50" width="60" height="6" rx="3" fill="#7C3AED"/>
+                            <path d="M35 56 L35 75 C35 82, 42 88, 60 88 C78 88, 85 82, 85 75 L85 56" fill="#9333EA"/>
+                            <rect x="28" y="30" width="6" height="28" rx="3" fill="#7C3AED"/>
+                            <circle cx="31" cy="28" r="5" fill="#9333EA"/>
+                            <path d="M31 28 L31 22" stroke="#7C3AED" stroke-width="2"/>
+                            <circle cx="31" cy="20" r="3" fill="#7C3AED"/>
+                            <rect x="55" y="30" width="20" height="14" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="2"/>
+                            <line x1="60" y1="34" x2="60" y2="40" stroke="#9333EA" stroke-width="1.5"/>
+                            <line x1="65" y1="34" x2="65" y2="40" stroke="#9333EA" stroke-width="1.5"/>
+                            <line x1="70" y1="34" x2="70" y2="40" stroke="#9333EA" stroke-width="1.5"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('bathroom-cleaning')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('bathroom-cleaning')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
 
                 <div class="package-card">
-                    <h3>Kitchen Deep Cleaning</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;799</span>
-                        <span class="price-unit">per kitchen</span>
+                    <div class="package-card-content">
+                        <h3>Kitchen Deep Cleaning</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;799</span>
+                            <span class="price-unit">per kitchen</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Chimney & hob degreasing
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Cabinet exterior cleaning
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Sink & countertop scrubbing
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            1 hr 15 mins
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Chimney & hob degreasing
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Cabinet exterior cleaning
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Sink & countertop scrubbing
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        1 hr 15 mins
+                    <div class="package-card-image bg-green">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#D1FAE5"/>
+                            <path d="M35 45 L35 85 C35 87, 37 89, 39 89 L81 89 C83 89, 85 87, 85 85 L85 45" fill="none" stroke="#10B981" stroke-width="3"/>
+                            <line x1="35" y1="45" x2="85" y2="45" stroke="#059669" stroke-width="4"/>
+                            <ellipse cx="60" cy="67" rx="18" ry="16" fill="#10B981" opacity="0.2"/>
+                            <ellipse cx="60" cy="67" rx="14" ry="12" fill="none" stroke="#059669" stroke-width="2"/>
+                            <path d="M60 55 L60 48 C60 44, 58 42, 56 42" stroke="#10B981" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <rect x="42" y="28" width="3" height="18" rx="1.5" fill="#059669"/>
+                            <circle cx="43.5" cy="26" r="3" fill="#059669"/>
+                            <rect x="52" y="25" width="3" height="20" rx="1.5" fill="#059669"/>
+                            <path d="M50 25 L56 25 L53.5 30 Z" fill="#059669"/>
+                            <rect x="75" y="28" width="3" height="18" rx="1.5" fill="#059669"/>
+                            <path d="M73 28 L80 28 L80 32 L73 32 Z" rx="1" fill="#059669"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('kitchen-cleaning')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('kitchen-cleaning')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
 
                 <div class="package-card">
-                    <h3>Sofa Shampooing</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;549</span>
-                        <span class="price-unit">per seat</span>
+                    <div class="package-card-content">
+                        <h3>Sofa Shampooing</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;549</span>
+                            <span class="price-unit">per seat</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Deep foam shampooing
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Stain & odour removal
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Sanitisation included
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            30 mins per seat
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Deep foam shampooing
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Stain & odour removal
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Sanitisation included
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        30 mins per seat
+                    <div class="package-card-image bg-purple">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#EDE9FE"/>
+                            <path d="M25 68 C25 56, 30 53, 35 53 L85 53 C90 53, 95 56, 95 68 L95 78 C95 80, 93 82, 91 82 L29 82 C27 82, 25 80, 25 78 Z" fill="#7C3AED"/>
+                            <rect x="30" y="58" width="60" height="15" rx="6" fill="#9333EA"/>
+                            <path d="M20 53 L25 53 L25 73 L20 73 C18 73, 16 71, 16 69 L16 57 C16 55, 18 53, 20 53 Z" fill="#9333EA"/>
+                            <path d="M95 53 L100 53 C102 53, 104 55, 104 57 L104 69 C104 71, 102 73, 100 73 L95 73 Z" fill="#9333EA"/>
+                            <rect x="25" y="82" width="8" height="8" rx="2" fill="#5B21B6"/>
+                            <rect x="87" y="82" width="8" height="8" rx="2" fill="#5B21B6"/>
+                            <ellipse cx="50" cy="48" rx="12" ry="4" fill="#A78BFA" opacity="0.5"/>
+                            <ellipse cx="70" cy="46" rx="8" ry="3" fill="#A78BFA" opacity="0.4"/>
+                            <circle cx="45" cy="44" r="2" fill="#FCD34D"/>
+                            <circle cx="55" cy="42" r="1.5" fill="#FCD34D"/>
+                            <circle cx="65" cy="41" r="2" fill="#FCD34D"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('sofa-shampooing')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('sofa-shampooing')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
 
                 <div class="package-card">
-                    <h3>Carpet Shampooing</h3>
-                    <div class="package-price">
-                        <span class="price-current">&#8377;3</span>
-                        <span class="price-unit">per sq.ft</span>
+                    <div class="package-card-content">
+                        <h3>Carpet Shampooing</h3>
+                        <div class="package-price">
+                            <span class="price-current">&#8377;3</span>
+                            <span class="price-unit">per sq.ft</span>
+                        </div>
+                        <ul class="package-includes">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Industrial-grade shampooing
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Deep stain extraction
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                                Anti-allergen treatment
+                            </li>
+                        </ul>
+                        <div class="package-duration">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            Varies by area
+                        </div>
                     </div>
-                    <ul class="package-includes">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Industrial-grade shampooing
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Deep stain extraction
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                            Anti-allergen treatment
-                        </li>
-                    </ul>
-                    <div class="package-duration">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        Varies by area
+                    <div class="package-card-image bg-green">
+                        <svg class="card-illustration" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="50" fill="#D1FAE5"/>
+                            <rect x="25" y="55" width="70" height="35" rx="4" fill="#10B981"/>
+                            <rect x="28" y="58" width="64" height="29" rx="2" fill="#059669"/>
+                            <path d="M30 60 L40 70 L50 60 L60 70 L70 60 L80 70 L90 60" stroke="#D1FAE5" stroke-width="2" fill="none"/>
+                            <path d="M30 70 L40 80 L50 70 L60 80 L70 70 L80 80 L90 70" stroke="#D1FAE5" stroke-width="2" fill="none" opacity="0.5"/>
+                            <rect x="25" y="52" width="70" height="6" rx="3" fill="#10B981"/>
+                            <ellipse cx="55" cy="45" rx="14" ry="5" fill="#A7F3D0" opacity="0.6"/>
+                            <ellipse cx="68" cy="42" rx="8" ry="3" fill="#A7F3D0" opacity="0.4"/>
+                            <circle cx="50" cy="40" r="2" fill="#FCD34D"/>
+                            <circle cx="62" cy="38" r="1.5" fill="#FCD34D"/>
+                        </svg>
+                        <button class="btn-book-service" onclick="openContactPopup('sofa-shampooing')">Book</button>
                     </div>
-                    <button class="btn-book-service" onclick="openContactPopup('sofa-shampooing')">
-                        Book
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
                 </div>
             </div>
         </div>
