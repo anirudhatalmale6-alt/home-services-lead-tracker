@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stain-33 | Professional Cleaning Services</title>
+    <title>Stain-33 | Professional Cleaning Services in Bangalore</title>
+    <meta name="description" content="Stain-33 offers professional home cleaning, pest control, facility management and deep cleaning services in Bangalore. Trained staff, eco-friendly products, 100% satisfaction guaranteed.">
+    <meta name="keywords" content="cleaning services Bangalore, home cleaning, pest control, deep cleaning, facility management, eco-friendly cleaning, professional cleaners">
+    <meta name="author" content="Stain-33">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Stain-33 | Professional Cleaning Services in Bangalore">
+    <meta property="og:description" content="Professional home cleaning, pest control & facility management services. Trained staff, eco-friendly products, affordable rates.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stain-33 | Professional Cleaning Services">
+    <meta name="twitter:description" content="Professional home cleaning, pest control & facility management services in Bangalore.">
+    <link rel="canonical" href="https://stain33.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -551,6 +563,19 @@
             margin-bottom: 24px;
         }
 
+        /* Section hierarchy - subtle top borders for visual separation */
+        .section-divider {
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--gray-500);
+            margin-top: -16px;
+            margin-bottom: 28px;
+            max-width: 500px;
+        }
+
         /* ==================== OFFERS & DISCOUNTS ==================== */
         .offers-section {
             background: var(--gray-50);
@@ -681,6 +706,7 @@
         /* ==================== PROMOTIONAL BANNERS ==================== */
         .promo-banners-section {
             padding: 0 80px 40px;
+            background: var(--white);
         }
 
         .promo-banners-grid {
@@ -1173,8 +1199,9 @@
 
         /* ==================== EXPLORE BY SPACE ==================== */
         .explore-section {
-            background: var(--white);
+            background: var(--gray-50);
             overflow: hidden;
+            border-top: 1px solid var(--gray-200);
         }
 
         .explore-wrapper {
@@ -1378,7 +1405,8 @@
 
         /* ==================== OUR SERVICES ==================== */
         .services-section {
-            background: var(--white);
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
         }
 
         .services-grid {
@@ -1486,7 +1514,8 @@
 
         /* ==================== PEST CONTROL ==================== */
         .pest-section {
-            background: var(--gray-50);
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
         }
 
         .pest-grid {
@@ -1632,7 +1661,8 @@
 
         /* ==================== WHY STAIN-33 ==================== */
         .why-section {
-            background: var(--white);
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
         }
 
         .why-grid {
@@ -1756,6 +1786,26 @@
             width: auto;
             object-fit: contain;
             background: #fff;
+        }
+
+        .registered-logo .reg-name {
+            font-weight: bold;
+            display: block;
+            text-align: center;
+        }
+
+        .registered-logo .reg-subtitle {
+            font-size: 9px;
+            color: #666;
+            display: block;
+            text-align: center;
+        }
+
+        .registered-logo .reg-ministry {
+            font-size: 12px;
+            color: #4a5568;
+            display: block;
+            text-align: center;
         }
 
         /* ==================== FOOTER ==================== */
@@ -1961,44 +2011,104 @@
             .explore-nav { width: 36px; height: 36px; }
             .explore-nav svg { width: 18px; height: 18px; }
 
-            /* Mobile Services Grid - 2 columns side by side */
-            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            /* Mobile Services Grid - Full width stacked */
+            .services-grid { grid-template-columns: 1fr; gap: 16px; }
             .service-box {
-                padding: 16px;
-                border-radius: 12px;
-                background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                padding: 24px;
+                border-radius: 16px;
+                background: var(--white);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.06);
                 transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
             }
             .service-box:active {
                 transform: scale(0.98);
                 box-shadow: 0 4px 16px rgba(124, 58, 237, 0.15);
             }
-            .service-box-icon { width: 44px; height: 44px; border-radius: 10px; margin-bottom: 12px; }
-            .service-box-icon svg { width: 22px; height: 22px; }
-            .service-box h3 { font-size: 14px; margin-bottom: 4px; }
-            .service-box > p { font-size: 11px; margin-bottom: 10px; color: #6B7280; display: none; }
-            .service-list li { padding: 8px 0; font-size: 12px; }
-            .service-list li svg { width: 14px; height: 14px; }
+            .service-box-icon { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 14px; }
+            .service-box-icon svg { width: 24px; height: 24px; }
+            .service-box h3 { font-size: 17px; margin-bottom: 6px; }
+            .service-box > p { font-size: 13px; margin-bottom: 12px; color: #6B7280; display: block; }
+            .service-list li { padding: 8px 0; font-size: 13px; }
+            .service-list li svg { width: 16px; height: 16px; }
 
-            /* Mobile Pest Control */
-            .pest-card { flex: 0 0 120px; padding: 16px; }
+            /* Mobile Pest Control - with blue select/tap effect */
+            .pest-card {
+                flex: 0 0 130px;
+                padding: 18px;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+            }
+            .pest-card:active,
+            .pest-card.selected {
+                border-color: #3B82F6;
+                background: #EFF6FF;
+                transform: translateY(-4px);
+                box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+            }
+            .pest-card:active .pest-icon,
+            .pest-card.selected .pest-icon {
+                background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            }
+            .pest-card:active .pest-icon svg,
+            .pest-card.selected .pest-icon svg {
+                color: var(--white);
+            }
+            .pest-card:active h4,
+            .pest-card.selected h4 {
+                color: #1D4ED8;
+            }
             .pest-icon { width: 48px; height: 48px; }
             .pest-card h4 { font-size: 12px; }
 
-            /* Mobile Registered With */
-            .registered-section { padding: 24px 16px; }
-            .registered-logos { gap: 16px; flex-wrap: wrap; justify-content: center; }
-            .registered-logo { padding: 12px 16px; }
-            .registered-logo span { font-size: 14px; }
+            /* Mobile Registered With - centered alignment */
+            .registered-section { padding: 32px 16px; }
+            .registered-section .section-title { font-size: 16px; margin-bottom: 24px; }
+            .registered-logos {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .registered-logo {
+                padding: 16px 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                min-height: 90px;
+            }
+            .registered-logo span { font-size: 13px; }
+            .registered-logo img { height: 35px; }
 
-            /* Mobile Footer */
-            .footer { padding: 32px 16px 16px; }
-            .footer-top { grid-template-columns: 1fr; gap: 24px; }
-            .footer-brand p { font-size: 13px; }
-            .footer-title { font-size: 15px; }
+            /* Mobile Footer - improved alignment */
+            .footer { padding: 32px 16px 20px; }
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .footer-brand {
+                grid-column: 1 / -1;
+                text-align: center;
+                margin-bottom: 8px;
+            }
+            .footer-brand .logo { display: block; text-align: center; }
+            .footer-brand p { font-size: 13px; max-width: 100%; text-align: center; }
+            .footer-title { font-size: 14px; margin-bottom: 14px; }
+            .footer-links li { margin-bottom: 10px; }
             .footer-links li a { font-size: 13px; }
-            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+                padding-top: 20px;
+            }
+            .footer-bottom p { font-size: 12px; }
+            .social-links { justify-content: center; }
+            .social-links a { width: 36px; height: 36px; border-radius: 8px; }
 
             /* Mobile Ticker */
             .ticker { font-size: 13px; padding: 10px 0; }
@@ -2051,7 +2161,9 @@
             .why-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             .why-card { padding: 12px; }
             .why-icon { width: 40px; height: 40px; }
-            .registered-logo span { font-size: 12px; }
+            .registered-logo span { font-size: 11px; }
+            .registered-logos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .registered-logo { padding: 12px 8px; min-height: 80px; }
         }
 
         /* Mobile Menu Styles */
@@ -3142,8 +3254,8 @@
                     <rect x="22" y="34" width="16" height="3" fill="#1a237e"/>
                     <rect x="18" y="37" width="24" height="2" fill="#1a237e"/>
                 </svg>
-                <span style="font-family: Arial Black, sans-serif; font-size: 18px; font-weight: bold; color: #1a237e; display: block; text-align: center;">Skill India</span>
-                <span style="font-size: 9px; color: #666; display: block; text-align: center;">कौशल भारत - कुशल भारत</span>
+                <span class="reg-name" style="font-family: Arial Black, sans-serif; font-size: 18px; color: #1a237e;">Skill India</span>
+                <span class="reg-subtitle">कौशल भारत - कुशल भारत</span>
             </div>
 
             <!-- Startup India Logo -->
@@ -3156,8 +3268,8 @@
 
             <!-- Ministry of Labour Logo -->
             <div class="registered-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/150px-Emblem_of_India.svg.png" alt="Emblem" style="height: 45px; display: block; margin: 0 auto 8px;">
-                <span style="font-size: 12px; color: #4a5568; display: block; text-align: center;">Ministry of Labour<br>Govt. of India</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/150px-Emblem_of_India.svg.png" alt="Government of India Emblem - Ministry of Labour" style="height: 45px; display: block; margin: 0 auto 8px;">
+                <span class="reg-ministry">Ministry of Labour<br>Govt. of India</span>
             </div>
 
             <!-- MSME Logo -->
@@ -3298,6 +3410,14 @@
                 behavior: 'smooth'
             });
         }
+
+        // Pest Control card tap-to-select (mobile)
+        document.querySelectorAll('.pest-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.pest-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
 
         // Mobile Menu Toggle
         function toggleMobileMenu() {
