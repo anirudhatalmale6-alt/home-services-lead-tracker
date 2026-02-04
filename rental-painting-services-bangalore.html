@@ -83,6 +83,15 @@
         .hero-badge::before { content: ''; width: 8px; height: 8px; background: #FCD34D; border-radius: 50%; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } }
         .hero h1 { font-size: 40px; font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 14px; }
+        .hero h1 .rainbow-text { background: linear-gradient(90deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF, #9B59B6, #FF6B9D, #FF6B6B); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: rainbow-flow 4s linear infinite; }
+        @keyframes rainbow-flow { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        .paint-brush-icon { display: inline-block; vertical-align: middle; margin-left: 8px; position: relative; animation: brush-wobble 3s ease-in-out infinite; }
+        .paint-drop { position: absolute; border-radius: 50%; animation: drip 2s ease-in infinite; }
+        .paint-drop:nth-child(1) { width: 6px; height: 6px; background: #FF6B6B; bottom: -8px; left: 4px; animation-delay: 0s; }
+        .paint-drop:nth-child(2) { width: 5px; height: 5px; background: #FFD93D; bottom: -6px; left: 14px; animation-delay: 0.7s; }
+        .paint-drop:nth-child(3) { width: 4px; height: 4px; background: #4D96FF; bottom: -10px; left: 9px; animation-delay: 1.4s; }
+        @keyframes drip { 0% { opacity: 1; transform: translateY(0); } 50% { opacity: 0.8; transform: translateY(8px); } 100% { opacity: 0; transform: translateY(18px); } }
+        @keyframes brush-wobble { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(3deg); } 75% { transform: rotate(-3deg); } }
         .hero p { font-size: 16px; color: rgba(255,255,255,0.9); margin-bottom: 24px; line-height: 1.6; }
         .btn-book { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--white); color: var(--primary-purple); font-size: 15px; font-weight: 700; border-radius: 12px; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; font-family: inherit; }
         .btn-book:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
@@ -430,7 +439,7 @@
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">Bangalore's Trusted Painting Experts</span>
-            <h1>Professional Rental Painting Services in Bangalore</h1>
+            <h1><span class="rainbow-text">Professional Rental Painting Services in Bangalore</span><span class="paint-brush-icon"><svg viewBox="0 0 36 36" width="42" height="42" fill="none" stroke-width="1.5"><path d="M8 30 C8 30 10 22 14 18 C16 16 19 15 21 14 C23 13 26 11 27 9 C28 7 29 4 27 3 C25 2 23 3 21 5 C19 7 18 10 16 13 C14 16 12 20 8 30Z" fill="url(#brushGrad)" stroke="#fff" stroke-width="1"/><rect x="4" y="28" width="8" height="4" rx="2" fill="#8B5E3C" stroke="#6B4226" stroke-width="1" transform="rotate(-15 8 30)"/><defs><linearGradient id="brushGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF6B6B"/><stop offset="25%" stop-color="#FFD93D"/><stop offset="50%" stop-color="#6BCB77"/><stop offset="75%" stop-color="#4D96FF"/><stop offset="100%" stop-color="#9B59B6"/></linearGradient></defs></svg><span class="paint-drop"></span><span class="paint-drop"></span><span class="paint-drop"></span></span></h1>
             <p>Quality wall painting for apartments &amp; independent houses. Basic to premium finishes, move-in &amp; move-out packages with free inspection.</p>
             <button class="btn-book" onclick="openContactPopup()">Book a Service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>
             <div class="hero-sub-badge">&#10003; Free Inspection Available</div>
