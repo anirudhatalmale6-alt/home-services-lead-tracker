@@ -9,19 +9,94 @@
     <link rel="canonical" href="https://stain-33.com/blog">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
 
-    <!-- Blog Schema -->
+    <!-- Blog Schema for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "Stain-33 Cleaning Blog",
-        "description": "Expert cleaning tips, guides, and industry insights",
+        "description": "Expert cleaning tips, professional guides, and industry insights from Bangalore's trusted cleaning company",
         "url": "https://stain-33.com/blog",
+        "inLanguage": "en-IN",
         "publisher": {
             "@type": "Organization",
             "name": "Stain-33 Cleaning Services",
-            "logo": "https://stain-33.com/logo.png"
-        }
+            "url": "https://stain-33.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://stain-33.com/logo.png"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-8904747555",
+                "contactType": "customer service",
+                "areaServed": "Bangalore"
+            }
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "The Complete Guide to Deep Cleaning Your Home in Bangalore",
+                "description": "A comprehensive step-by-step guide to thoroughly deep clean every room in your home",
+                "datePublished": "2025-01-20",
+                "author": {"@type": "Organization", "name": "Stain-33"},
+                "keywords": "deep cleaning, home cleaning, Bangalore, professional cleaning guide"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "10 Kitchen Cleaning Hacks Every Bangalore Homeowner Should Know",
+                "description": "Discover professional kitchen cleaning secrets that will transform your cooking space",
+                "datePublished": "2025-01-15",
+                "author": {"@type": "Organization", "name": "Stain-33"},
+                "keywords": "kitchen cleaning, cleaning hacks, Bangalore home tips"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "Why Regular Office Cleaning Boosts Employee Productivity",
+                "description": "Research shows that clean workspaces significantly impact employee health and productivity",
+                "datePublished": "2025-01-12",
+                "author": {"@type": "Organization", "name": "Stain-33"},
+                "keywords": "office cleaning, workplace hygiene, productivity"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "Post Construction Cleaning Checklist for New Apartments in Bangalore",
+                "description": "Everything you need to know about post-construction cleaning for new apartments",
+                "datePublished": "2025-01-08",
+                "author": {"@type": "Organization", "name": "Stain-33"},
+                "keywords": "post construction cleaning, new apartment cleaning, Bangalore construction"
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "5 Natural Cleaning Solutions You Can Make at Home",
+                "description": "Eco-friendly cleaning solutions using ingredients from your kitchen",
+                "datePublished": "2025-01-05",
+                "author": {"@type": "Organization", "name": "Stain-33"},
+                "keywords": "natural cleaning, DIY cleaning, eco-friendly cleaning"
+            }
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://stain-33.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://stain-33.com/blog"
+            }
+        ]
     }
     </script>
 
@@ -170,12 +245,12 @@
 
     <!-- CATEGORIES -->
     <div class="categories">
-        <button class="cat-btn active">All Posts</button>
-        <button class="cat-btn">Home Cleaning</button>
-        <button class="cat-btn">Office & Commercial</button>
-        <button class="cat-btn">Deep Cleaning</button>
-        <button class="cat-btn">DIY Tips</button>
-        <button class="cat-btn">Industry News</button>
+        <button class="cat-btn active" data-filter="all">All Posts</button>
+        <button class="cat-btn" data-filter="home">Home Cleaning</button>
+        <button class="cat-btn" data-filter="office">Office & Commercial</button>
+        <button class="cat-btn" data-filter="deep">Deep Cleaning</button>
+        <button class="cat-btn" data-filter="diy">DIY Tips</button>
+        <button class="cat-btn" data-filter="industry">Industry News</button>
     </div>
 
     <!-- FEATURED POST -->
@@ -196,7 +271,7 @@
     <section class="blog-section">
         <div class="blog-grid">
             <!-- Blog 1 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder home">🧹</div>
                     <span class="blog-category">Home Cleaning</span>
@@ -210,7 +285,7 @@
             </article>
 
             <!-- Blog 2 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="office">
                 <div class="blog-image">
                     <div class="blog-image-placeholder office">🏢</div>
                     <span class="blog-category">Office Cleaning</span>
@@ -224,7 +299,7 @@
             </article>
 
             <!-- Blog 3 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="deep">
                 <div class="blog-image">
                     <div class="blog-image-placeholder tips">✨</div>
                     <span class="blog-category">Deep Cleaning</span>
@@ -238,7 +313,7 @@
             </article>
 
             <!-- Blog 4 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="industry">
                 <div class="blog-image">
                     <div class="blog-image-placeholder industry">🏗️</div>
                     <span class="blog-category">Post Construction</span>
@@ -252,7 +327,7 @@
             </article>
 
             <!-- Blog 5 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="diy">
                 <div class="blog-image">
                     <div class="blog-image-placeholder diy">🧴</div>
                     <span class="blog-category">DIY Tips</span>
@@ -266,7 +341,7 @@
             </article>
 
             <!-- Blog 6 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder home">🛋️</div>
                     <span class="blog-category">Home Cleaning</span>
@@ -280,7 +355,7 @@
             </article>
 
             <!-- Blog 7 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="office">
                 <div class="blog-image">
                     <div class="blog-image-placeholder office">🖥️</div>
                     <span class="blog-category">Office Cleaning</span>
@@ -294,7 +369,7 @@
             </article>
 
             <!-- Blog 8 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="deep">
                 <div class="blog-image">
                     <div class="blog-image-placeholder tips">🪟</div>
                     <span class="blog-category">Deep Cleaning</span>
@@ -308,7 +383,7 @@
             </article>
 
             <!-- Blog 9 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="industry">
                 <div class="blog-image">
                     <div class="blog-image-placeholder industry">📊</div>
                     <span class="blog-category">Industry News</span>
@@ -322,7 +397,7 @@
             </article>
 
             <!-- Blog 10 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="diy">
                 <div class="blog-image">
                     <div class="blog-image-placeholder diy">🌿</div>
                     <span class="blog-category">DIY Tips</span>
@@ -336,7 +411,7 @@
             </article>
 
             <!-- Blog 11 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder home">🛏️</div>
                     <span class="blog-category">Home Cleaning</span>
@@ -350,7 +425,7 @@
             </article>
 
             <!-- Blog 12 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="office">
                 <div class="blog-image">
                     <div class="blog-image-placeholder office">🏥</div>
                     <span class="blog-category">Commercial</span>
@@ -364,7 +439,7 @@
             </article>
 
             <!-- Blog 13 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="deep">
                 <div class="blog-image">
                     <div class="blog-image-placeholder tips">🚿</div>
                     <span class="blog-category">Deep Cleaning</span>
@@ -378,7 +453,7 @@
             </article>
 
             <!-- Blog 14 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="industry">
                 <div class="blog-image">
                     <div class="blog-image-placeholder industry">🏠</div>
                     <span class="blog-category">Move In/Out</span>
@@ -392,7 +467,7 @@
             </article>
 
             <!-- Blog 15 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="diy">
                 <div class="blog-image">
                     <div class="blog-image-placeholder diy">🧽</div>
                     <span class="blog-category">DIY Tips</span>
@@ -406,7 +481,7 @@
             </article>
 
             <!-- Blog 16 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder home">🍳</div>
                     <span class="blog-category">Kitchen</span>
@@ -420,7 +495,7 @@
             </article>
 
             <!-- Blog 17 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="office">
                 <div class="blog-image">
                     <div class="blog-image-placeholder office">🏬</div>
                     <span class="blog-category">Commercial</span>
@@ -434,7 +509,7 @@
             </article>
 
             <!-- Blog 18 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="deep">
                 <div class="blog-image">
                     <div class="blog-image-placeholder tips">🧼</div>
                     <span class="blog-category">Deep Cleaning</span>
@@ -448,7 +523,7 @@
             </article>
 
             <!-- Blog 19 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="industry">
                 <div class="blog-image">
                     <div class="blog-image-placeholder industry">🔧</div>
                     <span class="blog-category">Facility Management</span>
@@ -462,7 +537,7 @@
             </article>
 
             <!-- Blog 20 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="diy">
                 <div class="blog-image">
                     <div class="blog-image-placeholder diy">💡</div>
                     <span class="blog-category">DIY Tips</span>
@@ -476,7 +551,7 @@
             </article>
 
             <!-- Blog 21 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder home">🚪</div>
                     <span class="blog-category">Home Cleaning</span>
@@ -490,7 +565,7 @@
             </article>
 
             <!-- Blog 22 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="office">
                 <div class="blog-image">
                     <div class="blog-image-placeholder office">🏫</div>
                     <span class="blog-category">Commercial</span>
@@ -504,7 +579,7 @@
             </article>
 
             <!-- Blog 23 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder tips">🌙</div>
                     <span class="blog-category">Tips</span>
@@ -518,7 +593,7 @@
             </article>
 
             <!-- Blog 24 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="industry">
                 <div class="blog-image">
                     <div class="blog-image-placeholder industry">🏗️</div>
                     <span class="blog-category">Post Construction</span>
@@ -532,7 +607,7 @@
             </article>
 
             <!-- Blog 25 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder diy">🌸</div>
                     <span class="blog-category">Seasonal</span>
@@ -546,7 +621,7 @@
             </article>
 
             <!-- Blog 26 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder home">🚰</div>
                     <span class="blog-category">Plumbing</span>
@@ -560,7 +635,7 @@
             </article>
 
             <!-- Blog 27 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="office">
                 <div class="blog-image">
                     <div class="blog-image-placeholder office">🏨</div>
                     <span class="blog-category">Hospitality</span>
@@ -574,7 +649,7 @@
             </article>
 
             <!-- Blog 28 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="home">
                 <div class="blog-image">
                     <div class="blog-image-placeholder tips">🐕</div>
                     <span class="blog-category">Pet Owners</span>
@@ -588,7 +663,7 @@
             </article>
 
             <!-- Blog 29 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="industry">
                 <div class="blog-image">
                     <div class="blog-image-placeholder industry">📱</div>
                     <span class="blog-category">Technology</span>
@@ -602,7 +677,7 @@
             </article>
 
             <!-- Blog 30 -->
-            <article class="blog-card">
+            <article class="blog-card" data-category="diy">
                 <div class="blog-image">
                     <div class="blog-image-placeholder diy">⏰</div>
                     <span class="blog-category">Productivity</span>
@@ -665,6 +740,49 @@
             <p>&copy; 2025 Stain-33. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Category Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.cat-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            const featuredSection = document.querySelector('.featured');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active state
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    // Show/hide featured section
+                    if (filter === 'all') {
+                        featuredSection.style.display = 'block';
+                    } else {
+                        featuredSection.style.display = 'none';
+                    }
+
+                    // Filter blog cards with animation
+                    blogCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.transition = 'opacity 0.3s, transform 0.3s';
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
