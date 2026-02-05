@@ -203,9 +203,17 @@
         .cta-btn svg { width: 20px; height: 20px; }
 
         /* FOOTER */
-        .footer { background: var(--gray-900); padding: 40px 80px; text-align: center; }
-        .footer .logo { color: var(--white); display: inline-block; margin-bottom: 16px; }
-        .footer p { color: var(--gray-400); font-size: 14px; }
+        .footer { background: var(--gray-900); padding: 48px 80px 32px; }
+        .footer-top { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+        .footer-brand .logo { color: var(--white); display: inline-block; margin-bottom: 12px; }
+        .footer-brand p { color: var(--gray-400); font-size: 14px; line-height: 1.6; max-width: 280px; }
+        .footer-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: var(--gray-400); font-size: 14px; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 32px; margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { color: var(--gray-400); font-size: 14px; }
 
         /* MOBILE */
         @media (max-width: 1024px) {
@@ -240,6 +248,8 @@
             .cta-section { padding: 40px 16px; }
             .cta-section h2 { font-size: 28px; }
             .footer { padding: 32px 16px; }
+            .footer-top { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+            .footer-brand p { max-width: 100%; }
         }
     </style>
 </head>
@@ -613,8 +623,41 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <a href="stain33-website-v16.html" class="logo">Stain-<span>33</span></a>
-        <p>&copy; 2025 Stain-33. Professional Cleaning Services in Bangalore. All rights reserved.</p>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="stain33-website-v16.html" class="logo">Stain-<span>33</span></a>
+                <p>Professional cleaning services trusted by thousands across Bangalore. Your satisfaction is our priority.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="cleaning-services-bangalore.html">Home Cleaning</a></li>
+                    <li><a href="facility-management-bangalore.html">Facility Management</a></li>
+                    <li><a href="post-construction-cleaning-bangalore.html">Post Construction</a></li>
+                    <li><a href="rental-painting-services-bangalore.html">Painting Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="contact-cleaning-services-bangalore.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Location</h4>
+                <ul class="footer-links">
+                    <li><a href="cleaning-services-bangalore-location.html">Bangalore</a></li>
+                    <li><a href="tel:8904747555">8904747555</a></li>
+                    <li><a href="mailto:care@stain-33.com">care@stain-33.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stain-33. Professional Cleaning Services in Bangalore. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
