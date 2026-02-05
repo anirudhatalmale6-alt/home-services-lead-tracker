@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Stain-33 | Professional Cleaning Services Bangalore</title>
+    <meta name="description" content="Learn about Stain-33 - Bangalore's trusted cleaning company. Meet our team, see our projects, and discover our commitment to excellence.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #7C3AED;
+            --primary-purple-dark: #5B21B6;
+            --primary-green: #10B981;
+            --primary-orange: #F59E0B;
+            --dark: #1F2937;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        @keyframes slideRight { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes countUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease forwards; }
+        .animate-fadeInLeft { animation: fadeInLeft 0.8s ease forwards; }
+        .animate-fadeInRight { animation: fadeInRight 0.8s ease forwards; }
+        .animate-scaleIn { animation: scaleIn 0.6s ease forwards; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* HEADER */
+        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 0 24px; height: 70px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
+        .header-left { display: flex; align-items: center; gap: 0; }
+        .back-home { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: var(--gray-100); margin-right: 12px; text-decoration: none; transition: all 0.3s; }
+        .back-home:hover { background: var(--gray-200); transform: scale(1.05); }
+        .back-home svg { width: 20px; height: 20px; color: var(--gray-600); }
+        .logo { font-family: 'Permanent Marker', cursive; font-size: 28px; color: var(--gray-900); text-decoration: none; letter-spacing: -1px; }
+        .logo span { color: var(--primary-purple); }
+        .header-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--primary-purple); color: var(--white); border: none; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .header-btn:hover { background: var(--primary-purple-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+        /* HERO SECTION */
+        .hero { margin-top: 70px; min-height: 70vh; background: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%); position: relative; display: flex; align-items: center; padding: 80px; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 100%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%); }
+        .hero::after { content: ''; position: absolute; bottom: -50%; left: -30%; width: 80%; height: 150%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 50%); }
+        .hero-content { max-width: 600px; z-index: 2; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.2); color: var(--white); padding: 10px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 24px; backdrop-filter: blur(10px); }
+        .hero-badge::before { content: ''; width: 8px; height: 8px; background: #FCD34D; border-radius: 50%; animation: pulse 2s infinite; }
+        .hero h1 { font-size: 52px; font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 24px; }
+        .hero h1 .highlight { color: #FCD34D; }
+        .hero p { font-size: 18px; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 32px; }
+        .hero-stats { display: flex; gap: 40px; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 42px; font-weight: 800; color: var(--white); display: block; }
+        .hero-stat-label { font-size: 14px; color: rgba(255,255,255,0.8); }
+        .hero-visual { position: absolute; right: 80px; top: 50%; transform: translateY(-50%); z-index: 1; }
+        .hero-shapes { position: relative; width: 400px; height: 400px; }
+        .shape { position: absolute; border-radius: 20px; animation: float 6s ease-in-out infinite; }
+        .shape-1 { width: 200px; height: 200px; background: rgba(255,255,255,0.1); top: 0; left: 50px; animation-delay: 0s; }
+        .shape-2 { width: 150px; height: 150px; background: rgba(255,255,255,0.15); bottom: 50px; right: 0; animation-delay: 1s; }
+        .shape-3 { width: 100px; height: 100px; background: rgba(255,255,255,0.2); top: 100px; right: 80px; animation-delay: 2s; border-radius: 50%; }
+
+        /* SECTION STYLES */
+        .section { padding: 80px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-badge { display: inline-flex; align-items: center; gap: 6px; background: #EDE9FE; color: var(--primary-purple); padding: 8px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+        .section-title { font-size: 40px; font-weight: 800; color: var(--gray-900); margin-bottom: 16px; }
+        .section-subtitle { font-size: 18px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+
+        /* MISSION VISION */
+        .mission-section { background: var(--gray-50); }
+        .mission-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+        .mission-card { background: var(--white); border-radius: 24px; padding: 48px; position: relative; overflow: hidden; box-shadow: var(--shadow-md); transition: all 0.4s; }
+        .mission-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+        .mission-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary-purple) 0%, #A855F7 100%); }
+        .mission-icon { width: 72px; height: 72px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 32px; }
+        .mission-icon.purple { background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%); }
+        .mission-icon.green { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+        .mission-card h3 { font-size: 28px; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; }
+        .mission-card p { font-size: 16px; color: var(--gray-600); line-height: 1.8; }
+
+        /* STORY TIMELINE */
+        .story-section { background: var(--white); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--primary-purple), #A855F7); transform: translateX(-50%); border-radius: 3px; }
+        .timeline-item { display: flex; align-items: center; margin-bottom: 60px; position: relative; }
+        .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+        .timeline-content { width: 45%; padding: 32px; background: var(--gray-50); border-radius: 20px; position: relative; transition: all 0.4s; }
+        .timeline-content:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+        .timeline-year { position: absolute; left: 50%; transform: translateX(-50%); width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-purple) 0%, #A855F7 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 800; font-size: 18px; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3); }
+        .timeline-content h4 { font-size: 22px; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; }
+        .timeline-content p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
+
+        /* STATS COUNTER */
+        .stats-section { background: linear-gradient(135deg, #1F2937 0%, #374151 100%); padding: 60px 80px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+        .stat-card { text-align: center; padding: 32px; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.4s; }
+        .stat-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
+        .stat-icon { font-size: 40px; margin-bottom: 16px; }
+        .stat-number { font-size: 48px; font-weight: 800; color: var(--white); display: block; margin-bottom: 8px; }
+        .stat-label { font-size: 15px; color: rgba(255,255,255,0.7); }
+
+        /* TEAM SECTION */
+        .team-section { background: var(--gray-50); }
+        .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+        .team-card { background: var(--white); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.4s; }
+        .team-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
+        .team-image { height: 280px; background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .team-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%); }
+        .team-avatar { width: 120px; height: 120px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 48px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .team-info { padding: 28px; text-align: center; }
+        .team-info h4 { font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+        .team-info .role { font-size: 14px; color: var(--primary-purple); font-weight: 600; margin-bottom: 12px; }
+        .team-info p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+        .team-social { display: flex; justify-content: center; gap: 12px; margin-top: 16px; }
+        .team-social a { width: 36px; height: 36px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; color: var(--gray-600); transition: all 0.3s; }
+        .team-social a:hover { background: var(--primary-purple); color: var(--white); }
+        .team-social svg { width: 18px; height: 18px; }
+
+        /* PROJECTS GALLERY */
+        .projects-section { background: var(--white); overflow: hidden; }
+        .projects-slider { display: flex; gap: 24px; animation: slideRight 30s linear infinite; width: max-content; }
+        .projects-slider:hover { animation-play-state: paused; }
+        .project-card { width: 350px; height: 280px; border-radius: 20px; overflow: hidden; position: relative; flex-shrink: 0; cursor: pointer; }
+        .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .project-card:hover img { transform: scale(1.1); }
+        .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; opacity: 0; transition: opacity 0.4s; }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-overlay h4 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+        .project-overlay p { font-size: 14px; color: rgba(255,255,255,0.8); }
+        .project-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%); display: flex; align-items: center; justify-content: center; font-size: 64px; }
+
+        /* FOUNDER VIDEO */
+        .founder-section { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); }
+        .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .founder-video { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-xl); aspect-ratio: 16/9; background: var(--gray-900); }
+        .video-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #1F2937 0%, #374151 100%); }
+        .play-btn { width: 80px; height: 80px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.4s; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+        .play-btn:hover { transform: scale(1.1); background: var(--primary-purple); }
+        .play-btn:hover svg { color: var(--white); }
+        .play-btn svg { width: 32px; height: 32px; color: var(--primary-purple); margin-left: 4px; }
+        .video-label { color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 14px; }
+        .founder-content h3 { font-size: 36px; font-weight: 800; color: var(--gray-900); margin-bottom: 20px; line-height: 1.2; }
+        .founder-content p { font-size: 17px; color: var(--gray-600); line-height: 1.8; margin-bottom: 16px; }
+        .founder-quote { font-size: 20px; font-style: italic; color: var(--primary-purple); padding-left: 24px; border-left: 4px solid var(--primary-purple); margin: 28px 0; }
+        .founder-name { font-weight: 700; color: var(--gray-900); }
+        .founder-title { font-size: 14px; color: var(--gray-500); }
+
+        /* VALUES SECTION */
+        .values-section { background: var(--white); }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .value-card { padding: 40px; border-radius: 24px; background: var(--gray-50); text-align: center; transition: all 0.4s; position: relative; overflow: hidden; }
+        .value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: transparent; transition: background 0.4s; }
+        .value-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); background: var(--white); }
+        .value-card:hover::before { background: linear-gradient(90deg, var(--primary-purple), #A855F7); }
+        .value-icon { width: 80px; height: 80px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 36px; transition: transform 0.4s; }
+        .value-card:hover .value-icon { transform: scale(1.1) rotate(5deg); }
+        .value-icon.purple { background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%); }
+        .value-icon.green { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+        .value-icon.blue { background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); }
+        .value-icon.orange { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
+        .value-card h4 { font-size: 22px; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; }
+        .value-card p { font-size: 15px; color: var(--gray-500); line-height: 1.7; }
+
+        /* CERTIFICATIONS */
+        .cert-section { background: var(--gray-50); padding: 50px 80px; }
+        .cert-track { overflow: hidden; }
+        .cert-slider { display: flex; gap: 60px; animation: slideRight 20s linear infinite; width: max-content; }
+        .cert-item { display: flex; align-items: center; gap: 16px; padding: 20px 32px; background: var(--white); border-radius: 16px; box-shadow: var(--shadow-sm); }
+        .cert-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; background: #EDE9FE; }
+        .cert-item span { font-size: 15px; font-weight: 600; color: var(--gray-700); white-space: nowrap; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); padding: 80px; text-align: center; }
+        .cta-section h2 { font-size: 40px; font-weight: 800; color: var(--white); margin-bottom: 16px; }
+        .cta-section p { font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 18px 40px; background: var(--white); color: var(--primary-purple); font-size: 16px; font-weight: 700; border-radius: 14px; text-decoration: none; transition: all 0.4s; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        .cta-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+        .cta-btn svg { width: 20px; height: 20px; }
+
+        /* FOOTER */
+        .footer { background: var(--gray-900); padding: 40px 80px; text-align: center; }
+        .footer .logo { color: var(--white); display: inline-block; margin-bottom: 16px; }
+        .footer p { color: var(--gray-400); font-size: 14px; }
+
+        /* MOBILE */
+        @media (max-width: 1024px) {
+            .hero-visual { display: none; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .header { padding: 0 16px; height: 60px; }
+            .logo { font-size: 22px; }
+            .header-btn { padding: 8px 14px; font-size: 12px; }
+            .hero { margin-top: 60px; padding: 40px 16px; min-height: auto; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 15px; }
+            .hero-stats { flex-wrap: wrap; gap: 24px; }
+            .hero-stat-number { font-size: 32px; }
+            .section { padding: 40px 16px; }
+            .section-title { font-size: 28px; }
+            .mission-grid { grid-template-columns: 1fr; }
+            .mission-card { padding: 32px; }
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: column; align-items: flex-start; padding-left: 60px; }
+            .timeline-content { width: 100%; }
+            .timeline-year { left: 0; transform: none; width: 50px; height: 50px; font-size: 14px; }
+            .stats-section { padding: 40px 16px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .stat-number { font-size: 32px; }
+            .team-grid { grid-template-columns: 1fr; }
+            .founder-grid { grid-template-columns: 1fr; gap: 32px; }
+            .founder-content h3 { font-size: 28px; }
+            .values-grid { grid-template-columns: 1fr; }
+            .cert-section { padding: 32px 16px; }
+            .cta-section { padding: 40px 16px; }
+            .cta-section h2 { font-size: 28px; }
+            .footer { padding: 32px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <a href="stain33-website-v16.html" class="back-home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </a>
+            <a href="stain33-website-v16.html" class="logo">Stain-<span>33</span></a>
+        </div>
+        <a href="contact-cleaning-services-bangalore.html" class="header-btn">Connect</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content animate-fadeInUp">
+            <div class="hero-badge">Since 2018</div>
+            <h1>Transforming Spaces, <span class="highlight">Transforming Lives</span></h1>
+            <p>We're not just a cleaning company — we're your partners in creating healthier, happier spaces. With a passion for perfection and a commitment to excellence, Stain-33 has become Bangalore's most trusted name in professional cleaning services.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">5000+</span>
+                    <span class="hero-stat-label">Happy Customers</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">150+</span>
+                    <span class="hero-stat-label">Team Members</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">7+</span>
+                    <span class="hero-stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="section mission-section">
+        <div class="section-header">
+            <div class="section-badge">What Drives Us</div>
+            <h2 class="section-title">Our Mission & Vision</h2>
+            <p class="section-subtitle">Building a cleaner, healthier Bangalore — one space at a time</p>
+        </div>
+        <div class="mission-grid">
+            <div class="mission-card animate-fadeInLeft">
+                <div class="mission-icon purple">🎯</div>
+                <h3>Our Mission</h3>
+                <p>To deliver exceptional cleaning services that exceed expectations, using eco-friendly practices and cutting-edge technology. We aim to create spotless environments that promote health, productivity, and peace of mind for every client we serve.</p>
+            </div>
+            <div class="mission-card animate-fadeInRight">
+                <div class="mission-icon green">🌟</div>
+                <h3>Our Vision</h3>
+                <p>To be India's most trusted cleaning service provider, setting industry standards for quality, innovation, and customer satisfaction. We envision a future where every home and workplace benefits from professional cleaning excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="section story-section">
+        <div class="section-header">
+            <div class="section-badge">Our Journey</div>
+            <h2 class="section-title">The Stain-33 Story</h2>
+            <p class="section-subtitle">From a small team to Bangalore's leading cleaning company</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>The Beginning</h4>
+                    <p>Started with just 5 passionate individuals and a dream to revolutionize the cleaning industry in Bangalore.</p>
+                </div>
+                <div class="timeline-year">2018</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>First Milestone</h4>
+                    <p>Reached 500 happy customers and expanded our team to 30 trained professionals.</p>
+                </div>
+                <div class="timeline-year">2019</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Commercial Expansion</h4>
+                    <p>Launched facility management services for offices, tech parks, and commercial spaces.</p>
+                </div>
+                <div class="timeline-year">2021</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Industry Recognition</h4>
+                    <p>Certified by Skill India and recognized as a trusted startup. Team grew to 150+ members.</p>
+                </div>
+                <div class="timeline-year">2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">🏠</div>
+                <span class="stat-number">5000+</span>
+                <span class="stat-label">Homes Cleaned</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏢</div>
+                <span class="stat-number">200+</span>
+                <span class="stat-label">Offices Maintained</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Team Members</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <span class="stat-number">4.9</span>
+                <span class="stat-label">Customer Rating</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section team-section">
+        <div class="section-header">
+            <div class="section-badge">Our People</div>
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">The dedicated professionals behind every spotless space</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image">
+                    <div class="team-avatar">👨‍💼</div>
+                </div>
+                <div class="team-info">
+                    <h4>Rajesh Kumar</h4>
+                    <div class="role">Founder & CEO</div>
+                    <p>Visionary leader with 15+ years in facility management</p>
+                    <div class="team-social">
+                        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <div class="team-avatar">👩‍💼</div>
+                </div>
+                <div class="team-info">
+                    <h4>Priya Sharma</h4>
+                    <div class="role">Operations Head</div>
+                    <p>Expert in streamlining processes and team management</p>
+                    <div class="team-social">
+                        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <div class="team-avatar">👨‍🔧</div>
+                </div>
+                <div class="team-info">
+                    <h4>Suresh Reddy</h4>
+                    <div class="role">Technical Manager</div>
+                    <p>Specialist in industrial equipment and cleaning solutions</p>
+                    <div class="team-social">
+                        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <div class="team-avatar">👩‍🎨</div>
+                </div>
+                <div class="team-info">
+                    <h4>Anita Desai</h4>
+                    <div class="role">Quality Manager</div>
+                    <p>Ensuring excellence in every cleaning project we deliver</p>
+                    <div class="team-social">
+                        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS GALLERY -->
+    <section class="section projects-section">
+        <div class="section-header">
+            <div class="section-badge">Our Work</div>
+            <h2 class="section-title">Projects We've Done</h2>
+            <p class="section-subtitle">A glimpse of spaces we've transformed</p>
+        </div>
+        <div class="projects-slider">
+            <div class="project-card">
+                <div class="project-placeholder">🏢</div>
+                <div class="project-overlay">
+                    <h4>Tech Park Whitefield</h4>
+                    <p>Complete facility management</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏠</div>
+                <div class="project-overlay">
+                    <h4>Luxury Villa HSR</h4>
+                    <p>Deep cleaning & maintenance</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏗️</div>
+                <div class="project-overlay">
+                    <h4>New Apartment Complex</h4>
+                    <p>Post-construction cleaning</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏥</div>
+                <div class="project-overlay">
+                    <h4>Healthcare Facility</h4>
+                    <p>Sanitization & deep clean</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏬</div>
+                <div class="project-overlay">
+                    <h4>Shopping Mall</h4>
+                    <p>Daily housekeeping services</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏫</div>
+                <div class="project-overlay">
+                    <h4>International School</h4>
+                    <p>Complete campus cleaning</p>
+                </div>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="project-card">
+                <div class="project-placeholder">🏢</div>
+                <div class="project-overlay">
+                    <h4>Tech Park Whitefield</h4>
+                    <p>Complete facility management</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏠</div>
+                <div class="project-overlay">
+                    <h4>Luxury Villa HSR</h4>
+                    <p>Deep cleaning & maintenance</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏗️</div>
+                <div class="project-overlay">
+                    <h4>New Apartment Complex</h4>
+                    <p>Post-construction cleaning</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-placeholder">🏥</div>
+                <div class="project-overlay">
+                    <h4>Healthcare Facility</h4>
+                    <p>Sanitization & deep clean</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER VIDEO -->
+    <section class="section founder-section">
+        <div class="founder-grid">
+            <div class="founder-video">
+                <div class="video-placeholder">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <div class="video-label">Watch Founder's Message</div>
+                </div>
+            </div>
+            <div class="founder-content">
+                <div class="section-badge">Founder's Message</div>
+                <h3>A Word From Our Founder</h3>
+                <p>When I started Stain-33 in 2018, I had a simple vision: to bring professional-grade cleaning services to every home and business in Bangalore. Today, seeing how our team has grown and the impact we've made on thousands of lives fills me with immense pride.</p>
+                <div class="founder-quote">"Cleanliness isn't just about appearance — it's about creating environments where people can thrive, work better, and live healthier."</div>
+                <p class="founder-name">Rajesh Kumar</p>
+                <p class="founder-title">Founder & CEO, Stain-33</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section values-section">
+        <div class="section-header">
+            <div class="section-badge">Our Core Values</div>
+            <h2 class="section-title">What We Stand For</h2>
+            <p class="section-subtitle">The principles that guide everything we do</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon purple">💎</div>
+                <h4>Excellence</h4>
+                <p>We never settle for "good enough." Every project receives our full dedication and attention to detail.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon green">🌱</div>
+                <h4>Sustainability</h4>
+                <p>Committed to eco-friendly practices and products that protect both your space and our planet.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon blue">🤝</div>
+                <h4>Integrity</h4>
+                <p>Transparent pricing, honest communication, and trustworthy service — always.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon orange">💡</div>
+                <h4>Innovation</h4>
+                <p>Constantly adopting new technologies and methods to deliver better results.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon purple">👥</div>
+                <h4>People First</h4>
+                <p>Our team is our greatest asset. We invest in their growth and wellbeing.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon green">🎯</div>
+                <h4>Customer Focus</h4>
+                <p>Your satisfaction drives every decision we make. We listen, adapt, and deliver.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SLIDER -->
+    <section class="cert-section">
+        <div class="cert-track">
+            <div class="cert-slider">
+                <div class="cert-item"><div class="cert-icon">🎓</div><span>Skill India Certified</span></div>
+                <div class="cert-item"><div class="cert-icon">🚀</div><span>Startup India Recognized</span></div>
+                <div class="cert-item"><div class="cert-icon">🏛️</div><span>MSME Registered</span></div>
+                <div class="cert-item"><div class="cert-icon">✅</div><span>ISO Standards Compliant</span></div>
+                <div class="cert-item"><div class="cert-icon">🌿</div><span>Eco-Friendly Certified</span></div>
+                <div class="cert-item"><div class="cert-icon">⭐</div><span>5-Star Google Rating</span></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="cert-item"><div class="cert-icon">🎓</div><span>Skill India Certified</span></div>
+                <div class="cert-item"><div class="cert-icon">🚀</div><span>Startup India Recognized</span></div>
+                <div class="cert-item"><div class="cert-icon">🏛️</div><span>MSME Registered</span></div>
+                <div class="cert-item"><div class="cert-icon">✅</div><span>ISO Standards Compliant</span></div>
+                <div class="cert-item"><div class="cert-icon">🌿</div><span>Eco-Friendly Certified</span></div>
+                <div class="cert-item"><div class="cert-icon">⭐</div><span>5-Star Google Rating</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Space?</h2>
+        <p>Join thousands of happy customers who trust Stain-33 for their cleaning needs</p>
+        <a href="contact-cleaning-services-bangalore.html" class="cta-btn">
+            Get Started Today
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="stain33-website-v16.html" class="logo">Stain-<span>33</span></a>
+        <p>&copy; 2025 Stain-33. Professional Cleaning Services in Bangalore. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
