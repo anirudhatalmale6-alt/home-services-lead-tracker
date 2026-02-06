@@ -340,6 +340,42 @@
             background: var(--primary-purple-dark);
         }
 
+        /* CELEBRATION POPUP */
+        .celebration-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 3000; align-items: center; justify-content: center; padding: 20px; }
+        .celebration-overlay.active { display: flex; }
+        .celebration-popup { background: var(--white); border-radius: 24px; padding: 40px; max-width: 420px; width: 100%; text-align: center; position: relative; animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); overflow: hidden; }
+        @keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        .celebration-icon { width: 100px; height: 100px; margin: 0 auto 24px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: bounceIn 0.6s ease 0.2s both; }
+        @keyframes bounceIn { 0% { transform: scale(0); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        .celebration-icon svg { width: 50px; height: 50px; color: white; }
+        .celebration-title { font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 12px; }
+        .celebration-subtitle { font-size: 16px; color: var(--gray-600); margin-bottom: 8px; line-height: 1.6; }
+        .celebration-highlight { background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700; }
+        .celebration-message { font-size: 14px; color: var(--gray-500); margin-bottom: 16px; }
+        .celebration-booking-id { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; }
+        .celebration-booking-id span { font-size: 12px; color: var(--gray-500); display: block; margin-bottom: 4px; }
+        .celebration-booking-id strong { font-size: 20px; color: #7C3AED; font-weight: 800; letter-spacing: 2px; }
+        .celebration-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 32px; background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; font-family: inherit; }
+        .celebration-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3); }
+        .confetti-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+        .confetti { position: absolute; width: 10px; height: 10px; top: -10px; animation: confettiFall 3s ease-in-out forwards; }
+        .confetti:nth-child(odd) { border-radius: 50%; }
+        .confetti:nth-child(even) { border-radius: 2px; }
+        @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(400px) rotate(720deg); opacity: 0; } }
+
+        /* OFFER POPUP */
+        .offer-popup-content { background: var(--white); border-radius: 24px; padding: 32px; max-width: 400px; width: 100%; text-align: center; position: relative; }
+        .offer-popup-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border: none; background: var(--gray-100); border-radius: 50%; cursor: pointer; font-size: 20px; color: var(--gray-500); transition: all 0.2s; }
+        .offer-popup-close:hover { background: var(--gray-200); }
+        .offer-badge { display: inline-block; padding: 6px 16px; background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); color: white; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+        .offer-title { font-size: 24px; font-weight: 800; color: var(--gray-900); margin-bottom: 8px; }
+        .offer-desc { font-size: 14px; color: var(--gray-500); margin-bottom: 20px; }
+        .promo-code-box { background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border: 2px dashed #7C3AED; padding: 16px; border-radius: 12px; margin-bottom: 20px; }
+        .promo-code-label { font-size: 12px; color: var(--gray-500); margin-bottom: 6px; }
+        .promo-code { font-size: 24px; font-weight: 800; color: #7C3AED; letter-spacing: 3px; }
+        .offer-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; font-family: inherit; }
+        .offer-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3); }
+
         /* ==================== HERO SECTION (Stain-33 Original Design) ==================== */
         .hero {
             margin-top: 70px;
@@ -2534,19 +2570,59 @@
             <button class="popup-close" onclick="closeContactPopup()">&times;</button>
             <h3>Contact Us</h3>
             <p>Get in touch with our team</p>
-            <form class="popup-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="tel" placeholder="Phone Number" required>
-                <input type="email" placeholder="Email Address">
-                <select>
+            <form class="popup-form" id="homeContactForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address">
+                <select name="service">
                     <option value="">Select Service</option>
                     <option value="home">Home Services</option>
                     <option value="facility">Facility Management</option>
                     <option value="commercial">Commercial & Post-Construction</option>
                 </select>
-                <textarea placeholder="Your Message" rows="3"></textarea>
+                <input type="text" name="promo" id="promoCodeField" placeholder="Promo Code (if any)">
+                <textarea name="message" placeholder="Your Message" rows="3"></textarea>
                 <button type="submit" class="popup-submit">Send Message</button>
             </form>
+        </div>
+    </div>
+
+    <!-- Offer Popup Modal -->
+    <div class="contact-popup" id="offerPopup">
+        <div class="popup-overlay" onclick="closeOfferPopup()"></div>
+        <div class="offer-popup-content">
+            <button class="offer-popup-close" onclick="closeOfferPopup()">&times;</button>
+            <span class="offer-badge" id="offerBadge">New Customers</span>
+            <h3 class="offer-title" id="offerTitle">First Order 25% OFF</h3>
+            <p class="offer-desc" id="offerDesc">Use this code while booking to get flat 25% discount on your first service!</p>
+            <div class="promo-code-box">
+                <div class="promo-code-label">Your Promo Code</div>
+                <div class="promo-code" id="promoCodeDisplay">FIRST25</div>
+            </div>
+            <button class="offer-btn" onclick="applyPromoCode()">Apply & Book Now</button>
+        </div>
+    </div>
+
+    <!-- Celebration Popup -->
+    <div class="celebration-overlay" id="celebrationPopup">
+        <div class="celebration-popup">
+            <div class="confetti-container" id="confettiContainer"></div>
+            <div class="celebration-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h2 class="celebration-title">Booking Received!</h2>
+            <p class="celebration-subtitle">Thank you for choosing <span class="celebration-highlight">Stain-33</span></p>
+            <div class="celebration-booking-id">
+                <span>Your Booking ID</span>
+                <strong id="bookingIdDisplay">STA0001</strong>
+            </div>
+            <p class="celebration-message">Our team will call you within 30 minutes to confirm your booking.</p>
+            <button class="celebration-btn" onclick="closeCelebration()">
+                Got it!
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
         </div>
     </div>
 
@@ -2797,7 +2873,7 @@
                 <span class="special-tag">New Customers</span>
                 <h3>First Order 25% OFF</h3>
                 <p>Get flat 25% discount on your first service booking</p>
-                <a href="#" class="special-btn">
+                <a href="javascript:void(0)" class="special-btn" onclick="openOfferPopup('FIRST25')">
                     Claim Offer
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -2808,7 +2884,7 @@
                 <span class="special-tag">Monthly Pass</span>
                 <h3>Subscribe & Save 30%</h3>
                 <p>Monthly cleaning subscription with extra savings</p>
-                <a href="#" class="special-btn">
+                <a href="javascript:void(0)" class="special-btn" onclick="openOfferPopup('MONTHLY30')">
                     Learn More
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -3559,6 +3635,14 @@
             dots[currentSlide].classList.add('active');
         }, 5000);
 
+        // Booking ID Generator
+        function generateBookingId() {
+            var lastId = localStorage.getItem('stain33_booking_counter') || 0;
+            var newId = parseInt(lastId) + 1;
+            localStorage.setItem('stain33_booking_counter', newId);
+            return 'STA' + String(newId).padStart(4, '0');
+        }
+
         // Contact Popup Functions
         function openContactPopup() {
             document.getElementById('contactPopup').classList.add('active');
@@ -3570,18 +3654,91 @@
             document.body.style.overflow = '';
         }
 
+        // Offer Popup Functions
+        var currentPromoCode = '';
+        function openOfferPopup(code) {
+            currentPromoCode = code;
+            var popup = document.getElementById('offerPopup');
+            var badge = document.getElementById('offerBadge');
+            var title = document.getElementById('offerTitle');
+            var desc = document.getElementById('offerDesc');
+            var codeDisplay = document.getElementById('promoCodeDisplay');
+
+            if (code === 'FIRST25') {
+                badge.textContent = 'New Customers';
+                title.textContent = 'First Order 25% OFF';
+                desc.textContent = 'Use this code while booking to get flat 25% discount on your first service!';
+            } else if (code === 'MONTHLY30') {
+                badge.textContent = 'Monthly Pass';
+                title.textContent = 'Subscribe & Save 30%';
+                desc.textContent = 'Sign up for monthly cleaning and get 30% off on all services every month!';
+            }
+            codeDisplay.textContent = code;
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeOfferPopup() {
+            document.getElementById('offerPopup').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function applyPromoCode() {
+            closeOfferPopup();
+            document.getElementById('promoCodeField').value = currentPromoCode;
+            openContactPopup();
+        }
+
+        // Celebration Popup Functions
+        function showCelebration(bookingId) {
+            var popup = document.getElementById('celebrationPopup');
+            document.getElementById('bookingIdDisplay').textContent = bookingId;
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            createConfetti();
+        }
+
+        function closeCelebration() {
+            var popup = document.getElementById('celebrationPopup');
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('confettiContainer').innerHTML = '';
+        }
+
+        function createConfetti() {
+            var container = document.getElementById('confettiContainer');
+            container.innerHTML = '';
+            var colors = ['#7C3AED', '#9333EA', '#10B981', '#F59E0B', '#EF4444', '#3B82F6', '#EC4899', '#8B5CF6'];
+            for (var i = 0; i < 50; i++) {
+                var confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                var size = Math.random() * 8 + 6;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                container.appendChild(confetti);
+            }
+        }
+
         // Close popup on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeContactPopup();
+                closeOfferPopup();
+                closeCelebration();
             }
         });
 
         // Form submission handler
-        document.querySelector('.popup-form').addEventListener('submit', (e) => {
+        document.getElementById('homeContactForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you! We will contact you shortly.');
+            var bookingId = generateBookingId();
             closeContactPopup();
+            showCelebration(bookingId);
+            e.target.reset();
         });
 
         // Explore by Space scroll navigation
