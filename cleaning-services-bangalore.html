@@ -86,6 +86,28 @@
         .popup-submit { padding: 16px; background: var(--primary-purple); color: var(--white); border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
         .popup-submit:hover { background: var(--primary-purple-dark); }
 
+        /* CELEBRATION POPUP */
+        .celebration-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 3000; align-items: center; justify-content: center; padding: 20px; }
+        .celebration-overlay.active { display: flex; }
+        .celebration-popup { background: var(--white); border-radius: 24px; padding: 40px; max-width: 420px; width: 100%; text-align: center; position: relative; animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); overflow: hidden; }
+        @keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        .celebration-icon { width: 100px; height: 100px; margin: 0 auto 24px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: bounceIn 0.6s ease 0.2s both; }
+        @keyframes bounceIn { 0% { transform: scale(0); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        .celebration-icon svg { width: 50px; height: 50px; color: white; }
+        .celebration-title { font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 12px; }
+        .celebration-subtitle { font-size: 16px; color: var(--gray-600); margin-bottom: 8px; line-height: 1.6; }
+        .celebration-highlight { background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700; }
+        .celebration-message { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; }
+        .celebration-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 32px; background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; font-family: inherit; }
+        .celebration-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3); }
+        .confetti-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+        .confetti { position: absolute; width: 10px; height: 10px; top: -10px; animation: confettiFall 3s ease-in-out forwards; }
+        .confetti:nth-child(odd) { border-radius: 50%; }
+        .confetti:nth-child(even) { border-radius: 2px; }
+        @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(400px) rotate(720deg); opacity: 0; } }
+        .sparkle { position: absolute; width: 20px; height: 20px; animation: sparkle 1.5s ease-in-out infinite; }
+        @keyframes sparkle { 0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; } 50% { transform: scale(1) rotate(180deg); opacity: 1; } }
+
         /* HERO */
         .hero { margin-top: 70px; background: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%); min-height: auto; position: relative; overflow: hidden; display: flex; align-items: center; padding: 28px 80px; }
         .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 80%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none; }
@@ -492,6 +514,25 @@
                 </select>
                 <button type="submit" class="popup-submit">Book Now</button>
             </form>
+        </div>
+    </div>
+
+    <!-- CELEBRATION POPUP -->
+    <div class="celebration-overlay" id="celebrationPopup">
+        <div class="celebration-popup">
+            <div class="confetti-container" id="confettiContainer"></div>
+            <div class="celebration-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h2 class="celebration-title">Booking Received!</h2>
+            <p class="celebration-subtitle">Thank you for choosing <span class="celebration-highlight">Stain-33</span></p>
+            <p class="celebration-message">Our team will call you within 30 minutes to confirm your booking and discuss your requirements.</p>
+            <button class="celebration-btn" onclick="closeCelebration()">
+                Got it!
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
         </div>
     </div>
 
@@ -1477,10 +1518,42 @@
         document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeContactPopup(); } });
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you! We will contact you shortly.');
             closeContactPopup();
+            showCelebration();
             e.target.reset();
         });
+
+        function showCelebration() {
+            var popup = document.getElementById('celebrationPopup');
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            createConfetti();
+        }
+
+        function closeCelebration() {
+            var popup = document.getElementById('celebrationPopup');
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('confettiContainer').innerHTML = '';
+        }
+
+        function createConfetti() {
+            var container = document.getElementById('confettiContainer');
+            container.innerHTML = '';
+            var colors = ['#7C3AED', '#9333EA', '#10B981', '#F59E0B', '#EF4444', '#3B82F6', '#EC4899', '#8B5CF6'];
+            for (var i = 0; i < 50; i++) {
+                var confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                var size = Math.random() * 8 + 6;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                container.appendChild(confetti);
+            }
+        }
 
         // HEADER SCROLL EFFECT
         window.addEventListener('scroll', function() {
