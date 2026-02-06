@@ -340,140 +340,256 @@
             background: var(--primary-purple-dark);
         }
 
-        /* ==================== HERO SECTION (Urban Company Style) ==================== */
+        /* ==================== HERO SECTION (Stain-33 Original Design) ==================== */
         .hero {
             margin-top: 70px;
-            background: var(--white);
-            min-height: 500px;
+            background: linear-gradient(180deg, #F5ECE0 0%, #FFFFFF 100%);
+            min-height: 520px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 50px 80px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            padding: 60px 80px;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .hero-left {
-            max-width: 550px;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-purple);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle::before {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background: var(--primary-purple);
+            border-radius: 2px;
         }
 
         .hero h1 {
-            font-size: 46px;
+            font-size: 44px;
             font-weight: 800;
             color: var(--gray-900);
-            line-height: 1.15;
-            margin-bottom: 40px;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
 
-        .hero-services-box {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: var(--shadow-md);
+        .hero h1 span {
+            color: var(--primary-purple);
         }
 
-        .hero-services-title {
+        .hero-desc {
             font-size: 16px;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin-bottom: 24px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 480px;
         }
 
-        .hero-services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .hero-services-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .hero-services-row {
+            display: flex;
             gap: 16px;
         }
 
-        .hero-service-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .hero-service-card {
+            flex: 1;
+            background: var(--white);
+            border: 2px solid var(--gray-100);
+            border-radius: 16px;
+            padding: 24px 20px;
             text-align: center;
-            padding: 16px 10px;
-            border-radius: 12px;
-            background: var(--gray-50);
-            cursor: pointer;
-            transition: all 0.3s;
             text-decoration: none;
+            transition: all 0.3s;
             position: relative;
+            overflow: hidden;
         }
 
-        .hero-service-item:hover {
-            background: #F3E8FF;
-            transform: translateY(-3px);
-        }
-
-        .hero-service-item .badge {
+        .hero-service-card::before {
+            content: '';
             position: absolute;
-            top: 8px;
-            right: 8px;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 9px;
-            font-weight: 700;
-            text-transform: uppercase;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-purple);
+            transform: scaleX(0);
+            transition: transform 0.3s;
         }
 
-        .hero-service-item .badge.new { background: #10B981; color: white; }
-        .hero-service-item .badge.sale { background: #EF4444; color: white; }
-        .hero-service-item .badge.popular { background: #F59E0B; color: white; }
+        .hero-service-card:hover {
+            border-color: var(--primary-purple);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.15);
+        }
+
+        .hero-service-card:hover::before {
+            transform: scaleX(1);
+        }
 
         .hero-service-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 12px;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 14px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 28px;
-            margin-bottom: 10px;
         }
 
-        .hero-service-icon.cleaning { background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); }
-        .hero-service-icon.pest { background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%); }
-        .hero-service-icon.painting { background: linear-gradient(135deg, #E9D5FF 0%, #DDD6FE 100%); }
-        .hero-service-icon.facility { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
-        .hero-service-icon.post { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
-        .hero-service-icon.commercial { background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%); }
+        .hero-service-icon.home { background: linear-gradient(135deg, #B0E0E6 0%, #87CEEB 100%); }
+        .hero-service-icon.facility { background: linear-gradient(135deg, #DDD6FE 0%, #C4B5FD 100%); }
+        .hero-service-icon.post { background: linear-gradient(135deg, #FDE68A 0%, #FCD34D 100%); }
 
-        .hero-service-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--gray-700);
-            line-height: 1.3;
+        .hero-service-card h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 6px;
+        }
+
+        .hero-service-card p {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin: 0;
         }
 
         .hero-right {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            height: 420px;
-        }
-
-        .hero-image-card {
-            border-radius: 16px;
-            overflow: hidden;
             position: relative;
+            height: 400px;
+            z-index: 2;
         }
 
-        .hero-image-card.tall {
-            grid-row: span 2;
-        }
-
-        .hero-image-placeholder {
+        .hero-main-image {
             width: 100%;
             height: 100%;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #9333EA 100%);
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(124, 58, 237, 0.3);
         }
 
-        .hero-image-placeholder.img1 { background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%); }
-        .hero-image-placeholder.img2 { background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%); }
-        .hero-image-placeholder.img3 { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
-        .hero-image-placeholder.img4 { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
+        .hero-main-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="70" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+        }
+
+        .hero-main-content {
+            text-align: center;
+            color: var(--white);
+            padding: 40px;
+            z-index: 1;
+        }
+
+        .hero-main-content .big-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        .hero-main-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .hero-main-content p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-floating-badge {
+            position: absolute;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 14px 18px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: floatBadge 3s ease-in-out infinite;
+        }
+
+        .hero-floating-badge.badge1 {
+            top: 20px;
+            left: -30px;
+        }
+
+        .hero-floating-badge.badge2 {
+            bottom: 40px;
+            right: -20px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-floating-badge .badge-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .hero-floating-badge .badge-icon.green { background: #D1FAE5; }
+        .hero-floating-badge .badge-icon.blue { background: #DBEAFE; }
+
+        .hero-floating-badge .badge-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .hero-floating-badge .badge-sub {
+            font-size: 11px;
+            color: var(--gray-500);
+        }
 
         /* ==================== RUNNING TICKER ==================== */
         .ticker {
@@ -1904,19 +2020,27 @@
             .logo { font-size: 24px; }
             .contact-btn { padding: 8px 16px; font-size: 12px; }
 
-            /* Mobile Hero (Urban Company Style) */
-            .hero { grid-template-columns: 1fr; padding: 24px 16px; min-height: auto; gap: 24px; }
+            /* Mobile Hero (Stain-33 Original) */
+            .hero { grid-template-columns: 1fr; padding: 32px 16px; min-height: auto; gap: 32px; }
             .hero-left { max-width: 100%; }
-            .hero h1 { font-size: 28px; line-height: 1.2; margin-bottom: 24px; }
-            .hero-services-box { padding: 20px; }
-            .hero-services-title { font-size: 14px; margin-bottom: 16px; }
-            .hero-services-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-            .hero-service-item { padding: 12px 6px; }
-            .hero-service-icon { width: 44px; height: 44px; font-size: 22px; margin-bottom: 8px; }
-            .hero-service-name { font-size: 11px; }
-            .hero-service-item .badge { font-size: 7px; padding: 2px 5px; top: 4px; right: 4px; }
-            .hero-right { height: 200px; gap: 8px; }
-            .hero-image-placeholder { font-size: 32px; }
+            .hero-subtitle { font-size: 12px; margin-bottom: 12px; }
+            .hero-subtitle::before { width: 24px; }
+            .hero h1 { font-size: 28px; line-height: 1.25; margin-bottom: 16px; }
+            .hero-desc { font-size: 14px; margin-bottom: 28px; }
+            .hero-services-label { font-size: 12px; margin-bottom: 12px; }
+            .hero-services-row { flex-direction: column; gap: 12px; }
+            .hero-service-card { padding: 20px 16px; display: flex; align-items: center; text-align: left; gap: 16px; }
+            .hero-service-card::before { display: none; }
+            .hero-service-icon { width: 50px; height: 50px; margin: 0; font-size: 24px; flex-shrink: 0; }
+            .hero-service-card h3 { font-size: 14px; margin-bottom: 2px; }
+            .hero-service-card p { font-size: 11px; }
+            .hero-right { height: 220px; }
+            .hero-main-image { border-radius: 16px; }
+            .hero-main-content { padding: 24px; }
+            .hero-main-content .big-icon { font-size: 50px; margin-bottom: 12px; }
+            .hero-main-content h2 { font-size: 18px; }
+            .hero-main-content p { font-size: 12px; }
+            .hero-floating-badge { display: none; }
 
             /* Mobile Sections */
             .section { padding: 24px 16px; }
@@ -2395,52 +2519,53 @@
         </div>
     </div>
 
-    <!-- HERO SECTION (Urban Company Style) -->
+    <!-- HERO SECTION (Stain-33 Original Design) -->
     <section class="hero">
         <div class="hero-left">
-            <h1>Home services at your doorstep</h1>
-            <div class="hero-services-box">
-                <div class="hero-services-title">What are you looking for?</div>
-                <div class="hero-services-grid">
-                    <a href="cleaning-services-bangalore.html" class="hero-service-item">
-                        <span class="badge popular">Popular</span>
-                        <div class="hero-service-icon cleaning">🧹</div>
-                        <span class="hero-service-name">Home Cleaning</span>
-                    </a>
-                    <a href="pest-control-services-bangalore.html" class="hero-service-item">
-                        <span class="badge sale">Sale</span>
-                        <div class="hero-service-icon pest">🐜</div>
-                        <span class="hero-service-name">Pest Control</span>
-                    </a>
-                    <a href="rental-painting-services-bangalore.html" class="hero-service-item">
-                        <div class="hero-service-icon painting">🎨</div>
-                        <span class="hero-service-name">Painting</span>
-                    </a>
-                    <a href="facility-management-bangalore.html" class="hero-service-item">
-                        <span class="badge new">New</span>
-                        <div class="hero-service-icon facility">🏢</div>
-                        <span class="hero-service-name">Facility Management</span>
-                    </a>
-                    <a href="post-construction-cleaning-bangalore.html" class="hero-service-item">
-                        <div class="hero-service-icon post">🏗️</div>
-                        <span class="hero-service-name">Post Construction</span>
-                    </a>
-                    <a href="post-construction-cleaning-bangalore.html" class="hero-service-item">
-                        <div class="hero-service-icon commercial">🏬</div>
-                        <span class="hero-service-name">Commercial Cleaning</span>
-                    </a>
-                </div>
+            <div class="hero-subtitle">Bangalore's Trusted Cleaning Partner</div>
+            <h1>Professional Cleaning <span>Solutions</span> for Every Space</h1>
+            <p class="hero-desc">From spotless homes to pristine commercial spaces, we deliver excellence at your doorstep. Trained professionals, eco-friendly products, 100% satisfaction guaranteed.</p>
+
+            <div class="hero-services-label">Choose Your Service</div>
+            <div class="hero-services-row">
+                <a href="cleaning-services-bangalore.html" class="hero-service-card">
+                    <div class="hero-service-icon home">🏠</div>
+                    <h3>Home Cleaning</h3>
+                    <p>Deep & Regular</p>
+                </a>
+                <a href="facility-management-bangalore.html" class="hero-service-card">
+                    <div class="hero-service-icon facility">🏢</div>
+                    <h3>Facility Management</h3>
+                    <p>Office & Commercial</p>
+                </a>
+                <a href="post-construction-cleaning-bangalore.html" class="hero-service-card">
+                    <div class="hero-service-icon post">🏗️</div>
+                    <h3>Post Construction</h3>
+                    <p>Builder & Renovation</p>
+                </a>
             </div>
         </div>
         <div class="hero-right">
-            <div class="hero-image-card tall">
-                <div class="hero-image-placeholder img1">👩‍🔧</div>
+            <div class="hero-main-image">
+                <div class="hero-main-content">
+                    <div class="big-icon">✨</div>
+                    <h2>Sparkling Clean Spaces</h2>
+                    <p>5000+ Happy Customers</p>
+                </div>
             </div>
-            <div class="hero-image-card">
-                <div class="hero-image-placeholder img2">🧽</div>
+            <div class="hero-floating-badge badge1">
+                <div class="badge-icon green">✓</div>
+                <div>
+                    <div class="badge-text">Verified Professionals</div>
+                    <div class="badge-sub">Background Checked</div>
+                </div>
             </div>
-            <div class="hero-image-card">
-                <div class="hero-image-placeholder img3">✨</div>
+            <div class="hero-floating-badge badge2">
+                <div class="badge-icon blue">⭐</div>
+                <div>
+                    <div class="badge-text">4.9 Rating</div>
+                    <div class="badge-sub">1000+ Reviews</div>
+                </div>
             </div>
         </div>
     </section>
