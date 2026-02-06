@@ -2035,7 +2035,8 @@
             .hero-services-row { flex-direction: column; gap: 10px; }
             .hero-service-card {
                 padding: 16px;
-                display: flex;
+                display: grid;
+                grid-template-columns: 56px 1fr;
                 align-items: center;
                 text-align: left;
                 gap: 14px;
@@ -2049,9 +2050,10 @@
                 box-shadow: none;
             }
             .hero-service-card::before { display: none !important; }
-            .hero-service-icon { width: 48px; height: 48px; margin: 0; font-size: 22px; flex-shrink: 0; border-radius: 10px; }
-            .hero-service-card h3 { font-size: 14px; margin-bottom: 2px; }
-            .hero-service-card p { font-size: 11px; color: var(--gray-500); }
+            .hero-service-icon { width: 56px; height: 56px; margin: 0; font-size: 24px; flex-shrink: 0; border-radius: 12px; }
+            .hero-service-card .service-text { display: flex; flex-direction: column; }
+            .hero-service-card h3 { font-size: 15px; margin-bottom: 2px; font-weight: 700; }
+            .hero-service-card p { font-size: 12px; color: var(--gray-500); margin: 0; }
             .hero-right { height: 180px; margin-top: 8px; }
             .hero-main-image { border-radius: 14px; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2); }
             .hero-main-content { padding: 20px; }
@@ -2540,18 +2542,24 @@
             <div class="hero-services-row">
                 <a href="cleaning-services-bangalore.html" class="hero-service-card">
                     <div class="hero-service-icon home">🏠</div>
-                    <h3>Home Cleaning</h3>
-                    <p>Deep & Regular</p>
+                    <div class="service-text">
+                        <h3>Home Cleaning</h3>
+                        <p>Deep & Regular</p>
+                    </div>
                 </a>
                 <a href="facility-management-bangalore.html" class="hero-service-card">
                     <div class="hero-service-icon facility">🏢</div>
-                    <h3>Facility Management</h3>
-                    <p>Office & Commercial</p>
+                    <div class="service-text">
+                        <h3>Facility Management</h3>
+                        <p>Office & Commercial</p>
+                    </div>
                 </a>
                 <a href="post-construction-cleaning-bangalore.html" class="hero-service-card">
                     <div class="hero-service-icon post">🏗️</div>
-                    <h3>Post Construction</h3>
-                    <p>Builder & Renovation</p>
+                    <div class="service-text">
+                        <h3>Post Construction</h3>
+                        <p>Builder & Renovation</p>
+                    </div>
                 </a>
             </div>
         </div>
