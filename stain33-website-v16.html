@@ -2031,24 +2031,22 @@
             .hero-desc { font-size: 13px; margin-bottom: 24px; line-height: 1.6; }
             .hero-services-label { font-size: 11px; margin-bottom: 12px; }
             .hero-services-row {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
-                flex-wrap: nowrap;
-                max-width: 100%;
             }
             .hero-service-card {
-                padding: 14px 16px;
+                padding: 12px 14px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 text-align: left;
-                gap: 14px;
-                border-radius: 14px;
+                gap: 10px;
+                border-radius: 50px;
                 border: 2px solid var(--gray-200);
                 box-shadow: none;
                 transition: all 0.25s ease;
-                width: 100%;
+                background: var(--white);
             }
             .hero-service-card:active {
                 border-color: var(--primary-purple) !important;
@@ -2056,10 +2054,10 @@
                 transform: scale(0.98);
                 box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
             }
-            .hero-service-icon { width: 50px; height: 50px; margin: 0; font-size: 22px; flex-shrink: 0; border-radius: 12px; }
-            .hero-service-card .service-text { display: flex; flex-direction: column; min-width: 0; }
-            .hero-service-card h3 { font-size: 15px; margin-bottom: 2px; font-weight: 700; white-space: nowrap; }
-            .hero-service-card p { font-size: 12px; color: var(--gray-500); margin: 0; white-space: nowrap; }
+            .hero-service-icon { width: 40px; height: 40px; margin: 0; font-size: 18px; flex-shrink: 0; border-radius: 50%; }
+            .hero-service-card .service-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+            .hero-service-card h3 { font-size: 12px; margin-bottom: 1px; font-weight: 700; white-space: nowrap; }
+            .hero-service-card p { font-size: 10px; color: var(--gray-500); margin: 0; white-space: nowrap; }
             .hero-right { height: 180px; margin-top: 8px; }
             .hero-main-image { border-radius: 14px; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2); }
             .hero-main-content { padding: 20px; }
