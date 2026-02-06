@@ -1852,22 +1852,25 @@
         }
 
         .registered-logos {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 50px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .registered-logo {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             transition: all 0.3s;
             background: #fff;
-            padding: 15px 20px;
-            border-radius: 10px;
+            padding: 24px 20px;
+            border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid var(--gray-100);
+            min-height: 120px;
         }
 
         .registered-logo:hover {
@@ -2172,21 +2175,13 @@
             .registered-section .section-title { font-size: 16px; margin-bottom: 24px; }
             .registered-logos {
                 gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-                display: grid;
                 grid-template-columns: repeat(2, 1fr);
             }
             .registered-logo {
                 padding: 16px 12px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                min-height: 90px;
+                min-height: 100px;
             }
-            .registered-logo span { font-size: 13px; }
+            .registered-logo span { font-size: 12px; }
             .registered-logo img { height: 35px; }
 
             /* Mobile Footer - improved alignment */
