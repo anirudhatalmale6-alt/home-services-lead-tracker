@@ -2036,18 +2036,19 @@
                 gap: 10px;
             }
             .hero-service-card {
-                padding: 12px 16px 12px 12px;
+                padding: 12px 14px 12px 12px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 text-align: left;
-                gap: 12px;
+                gap: 10px;
                 border-radius: 50px;
                 border: 1.5px solid var(--gray-200);
                 box-shadow: none;
                 transition: all 0.25s ease;
                 background: var(--white);
                 width: 100%;
+                overflow: hidden;
             }
             .hero-service-card:active {
                 border-color: var(--primary-purple) !important;
@@ -2055,10 +2056,10 @@
                 transform: scale(0.98);
                 box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
             }
-            .hero-service-icon { width: 44px; height: 44px; margin: 0; font-size: 20px; flex-shrink: 0; border-radius: 50%; }
-            .hero-service-card .service-text { display: flex; flex-direction: column; min-width: 0; }
-            .hero-service-card h3 { font-size: 13px; margin-bottom: 2px; font-weight: 700; white-space: nowrap; }
-            .hero-service-card p { font-size: 11px; color: var(--gray-500); margin: 0; white-space: nowrap; }
+            .hero-service-icon { width: 40px; height: 40px; min-width: 40px; margin: 0; font-size: 18px; flex-shrink: 0; border-radius: 50%; }
+            .hero-service-card .service-text { display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
+            .hero-service-card h3 { font-size: 12px; margin-bottom: 1px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+            .hero-service-card p { font-size: 10px; color: var(--gray-500); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
             .hero-right { height: 180px; margin-top: 8px; }
             .hero-main-image { border-radius: 14px; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2); }
             .hero-main-content { padding: 20px; }
