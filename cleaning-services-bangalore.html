@@ -975,17 +975,26 @@
     <div class="tab-content" id="tab-bathroom">
         <div class="service-packages">
             <div class="packages-grid">
+                <h3 class="tab-section-header">Bathroom Deep Cleaning</h3>
                 <div class="listing-card">
                     <div class="listing-info">
-                        <h3 class="listing-title">1 Bathroom Deep Cleaning</h3>
+                        <h3 class="listing-title">Bathroom Deep Cleaning</h3>
+                        <div class="bhk-filter">
+                            <label>Select Bathrooms:</label>
+                            <select class="bhk-select" onchange="updatePrice(this, 'bathroom')">
+                                <option value="1bathroom" data-price="699" selected>1 Bathroom</option>
+                                <option value="2bathroom" data-price="999">2 Bathrooms</option>
+                                <option value="3bathroom" data-price="1,700">3 Bathrooms</option>
+                            </select>
+                        </div>
                         <div class="listing-meta">
                             <span class="listing-rating">&#9733; 4.9</span>
                             <span class="listing-reviews">(3.2K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 1hr 30min</span>
+                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 2 hours</span>
                         </div>
                         <div class="listing-price">
                             <span class="starts-at">Starts from</span>
-                            <span class="current">&#8377;449</span>
+                            <span class="current" id="price-bathroom">&#8377;699</span>
                         </div>
                         <ul class="listing-details">
                             <li>Tile &amp; grout scrubbing</li>
@@ -1003,104 +1012,7 @@
                             <circle cx="26" cy="23" r="4" fill="#A78BFA"/>
                             <circle cx="40" cy="42" r="2" fill="#C4B5FD"/><circle cx="55" cy="40" r="1.5" fill="#C4B5FD"/><circle cx="65" cy="43" r="2.5" fill="#C4B5FD"/>
                         </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('bathroom-1')">Book</button>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    <div class="listing-info">
-                        <h3 class="listing-title">2 Bathroom Deep Cleaning</h3>
-                        <div class="listing-meta">
-                            <span class="listing-rating">&#9733; 4.8</span>
-                            <span class="listing-reviews">(2.5K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 2hr 45min</span>
-                        </div>
-                        <div class="listing-price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="current">&#8377;799</span>
-                        </div>
-                        <ul class="listing-details">
-                            <li>Both bathrooms deep cleaned</li>
-                            <li>Tile &amp; grout scrubbing</li>
-                            <li>All fixtures polished &amp; descaled</li>
-                            <li>Drain cleaning</li>
-                        </ul>
-                    </div>
-                    <div class="listing-image green-bg">
-                        <svg class="card-illustration" viewBox="0 0 100 100" fill="none">
-                            <circle cx="50" cy="50" r="42" fill="#D1FAE5"/>
-                            <rect x="20" y="45" width="60" height="25" rx="12" fill="#10B981"/>
-                            <rect x="25" y="50" width="50" height="15" rx="7" fill="#059669"/>
-                            <rect x="22" y="25" width="8" height="22" rx="3" fill="#10B981"/>
-                            <circle cx="26" cy="23" r="4" fill="#6EE7B7"/>
-                            <circle cx="40" cy="42" r="2" fill="#A7F3D0"/><circle cx="55" cy="40" r="1.5" fill="#A7F3D0"/><circle cx="65" cy="43" r="2.5" fill="#A7F3D0"/>
-                        </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('bathroom-2')">Book</button>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    <div class="listing-info">
-                        <h3 class="listing-title">3 Bathroom Deep Cleaning</h3>
-                        <div class="listing-meta">
-                            <span class="listing-rating">&#9733; 4.8</span>
-                            <span class="listing-reviews">(1.1K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 3hr 30min</span>
-                        </div>
-                        <div class="listing-price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="current">&#8377;1,099</span>
-                        </div>
-                        <ul class="listing-details">
-                            <li>All 3 bathrooms deep cleaned</li>
-                            <li>Heavy stain removal</li>
-                            <li>Fixture descaling</li>
-                            <li>Exhaust fan cleaning</li>
-                        </ul>
-                    </div>
-                    <div class="listing-image purple-bg">
-                        <svg class="card-illustration" viewBox="0 0 100 100" fill="none">
-                            <circle cx="50" cy="50" r="42" fill="#EDE9FE"/>
-                            <rect x="15" y="45" width="70" height="25" rx="12" fill="#7C3AED"/>
-                            <rect x="20" y="50" width="60" height="15" rx="7" fill="#9333EA"/>
-                            <rect x="18" y="25" width="8" height="22" rx="3" fill="#7C3AED"/>
-                            <circle cx="22" cy="23" r="4" fill="#A78BFA"/>
-                            <circle cx="45" cy="42" r="2" fill="#C4B5FD"/><circle cx="58" cy="40" r="1.5" fill="#C4B5FD"/><circle cx="70" cy="43" r="2.5" fill="#C4B5FD"/>
-                        </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('bathroom-3')">Book</button>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    <div class="listing-info">
-                        <span class="save-badge">SAVE 15%</span>
-                        <h3 class="listing-title">Bathroom + Kitchen Combo</h3>
-                        <div class="listing-meta">
-                            <span class="listing-rating">&#9733; 4.9</span>
-                            <span class="listing-reviews">(1.8K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 2hr 30min</span>
-                        </div>
-                        <div class="listing-price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="current">&#8377;849</span>
-                        </div>
-                        <ul class="listing-details">
-                            <li>1 Bathroom deep clean</li>
-                            <li>Kitchen deep clean</li>
-                            <li>All surfaces scrubbed</li>
-                            <li>Save 15% on combo</li>
-                        </ul>
-                    </div>
-                    <div class="listing-image green-bg">
-                        <svg class="card-illustration" viewBox="0 0 100 100" fill="none">
-                            <circle cx="50" cy="50" r="42" fill="#D1FAE5"/>
-                            <rect x="25" y="35" width="25" height="30" rx="3" fill="#10B981"/>
-                            <rect x="50" y="35" width="25" height="30" rx="3" fill="#059669"/>
-                            <rect x="28" y="40" width="8" height="8" rx="1" fill="#D1FAE5"/>
-                            <rect x="53" y="40" width="8" height="8" rx="1" fill="#D1FAE5"/>
-                            <circle cx="50" cy="30" r="5" fill="#FCD34D"/>
-                        </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('bathroom-kitchen-combo')">Book</button>
+                        <button class="btn-book-listing" onclick="openContactPopup('bathroom-cleaning')">Book Now</button>
                     </div>
                 </div>
             </div>
