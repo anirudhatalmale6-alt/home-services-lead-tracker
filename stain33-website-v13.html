@@ -1,0 +1,2380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stain-33 | Professional Cleaning Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #7C3AED;
+            --primary-purple-dark: #5B21B6;
+            --primary-green: #10B981;
+            --primary-green-dark: #059669;
+            --dark: #1F2937;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 1000;
+            padding: 0 24px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 28px;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary-purple);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--gray-700);
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-purple);
+        }
+
+        .nav-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s;
+        }
+
+        .nav-item:hover .nav-link svg {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+            padding: 16px;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-section {
+            margin-bottom: 16px;
+        }
+
+        .dropdown-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .dropdown-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding-left: 12px;
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 10px 12px;
+            font-size: 14px;
+            color: var(--gray-600);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .dropdown-link:hover {
+            background: var(--gray-50);
+            color: var(--gray-900);
+            padding-left: 16px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2.5px;
+            background: var(--gray-700);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger:hover span {
+            background: var(--primary-purple);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%);
+            min-height: 480px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 60px 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 550px;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.2);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #FCD34D;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 32px;
+            max-width: 420px;
+        }
+
+        .btn-book {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-book:hover {
+            background: var(--gray-800);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-book svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 80px;
+            bottom: 0;
+            width: 420px;
+            height: 420px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hero-person {
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450"><defs><linearGradient id="skin" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23D4A574"/><stop offset="100%25" style="stop-color:%23C4956A"/></linearGradient><linearGradient id="hair" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%231a1a1a"/><stop offset="100%25" style="stop-color:%232d2d2d"/></linearGradient></defs><ellipse cx="200" cy="120" rx="55" ry="65" fill="url(%23skin)"/><path d="M145 100 Q150 50 200 45 Q250 50 255 100 Q260 80 240 70 Q200 55 160 70 Q140 80 145 100" fill="url(%23hair)"/><ellipse cx="180" cy="110" rx="8" ry="5" fill="%231a1a1a"/><ellipse cx="220" cy="110" rx="8" ry="5" fill="%231a1a1a"/><ellipse cx="200" cy="130" rx="4" ry="6" fill="%23B8896A"/><path d="M185 150 Q200 160 215 150" stroke="%23C4956A" stroke-width="3" fill="none"/><rect x="170" y="180" width="60" height="120" rx="20" fill="%23FF6B6B"/><rect x="160" y="300" width="35" height="100" rx="10" fill="%23333"/><rect x="205" y="300" width="35" height="100" rx="10" fill="%23333"/><ellipse cx="130" cy="280" rx="15" ry="40" fill="url(%23skin)" transform="rotate(-30 130 280)"/><ellipse cx="270" cy="250" rx="15" ry="45" fill="url(%23skin)" transform="rotate(20 270 250)"/><rect x="250" y="200" width="80" height="30" rx="5" fill="%2310B981"/><rect x="260" y="180" width="60" height="25" rx="3" fill="%23059669"/><circle cx="320" cy="230" r="40" fill="%23E5E7EB" stroke="%23D1D5DB" stroke-width="3"/><path d="M300 230 L320 230 L340 230" stroke="%23059669" stroke-width="4"/><path d="M290 215 L350 245" stroke="%23059669" stroke-width="2" stroke-dasharray="5,5"/></svg>') center bottom / contain no-repeat;
+        }
+
+        .hero-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-nav-dot.active {
+            background: var(--white);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .hero-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+        }
+
+        .hero-arrow:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .hero-arrow.left { left: 24px; }
+        .hero-arrow.right { right: 24px; }
+
+        .hero-arrow svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gray-700);
+        }
+
+        /* ==================== RUNNING TICKER ==================== */
+        .ticker {
+            background: var(--primary-purple);
+            padding: 14px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 25s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            white-space: nowrap;
+            padding-right: 0;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ticker-item::before {
+            content: '›';
+            font-size: 24px;
+            margin: 0 20px;
+            opacity: 0.7;
+        }
+
+        /* ==================== SECTIONS COMMON ==================== */
+        .section {
+            padding: 70px 80px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 32px;
+        }
+
+        /* ==================== OFFERS & DISCOUNTS ==================== */
+        .offers-section {
+            background: var(--gray-50);
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .offer-card {
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .offer-card.gray {
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+        }
+
+        .offer-card.green {
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+        }
+
+        .offer-card.purple {
+            background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%);
+        }
+
+        .offer-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .offer-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        .offer-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+
+        .offer-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .offer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: var(--gray-900);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .offer-btn:hover {
+            background: var(--primary-purple);
+        }
+
+        .offer-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 80px;
+            opacity: 0.15;
+        }
+
+        /* ==================== WALL PANELS BANNER ==================== */
+        .wall-panels {
+            padding: 0 80px 70px;
+        }
+
+        .wall-panels-card {
+            background: linear-gradient(135deg, #F5F0E8 0%, #EBE4D8 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s;
+        }
+
+        .wall-panels-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .wall-panels-content {
+            flex: 1;
+            padding: 36px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .wall-panels-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .wall-panels-content p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+
+        .btn-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: fit-content;
+        }
+
+        .btn-green:hover {
+            background: var(--primary-green-dark);
+            transform: translateX(4px);
+        }
+
+        .wall-panels-image {
+            flex: 1.2;
+            min-height: 200px;
+            background: linear-gradient(180deg, #8B7355 0%, #6B5344 50%, #4A3728 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wall-panels-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(0,0,0,0.1) 60px, rgba(0,0,0,0.1) 62px),
+                repeating-linear-gradient(0deg, transparent 0px, transparent 15px, rgba(255,255,255,0.05) 15px, rgba(255,255,255,0.05) 16px);
+        }
+
+        .tv-frame {
+            width: 200px;
+            height: 130px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .tv-frame::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            border-radius: 4px;
+        }
+
+        .tv-frame::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 25px;
+            background: #2d2d2d;
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* ==================== SPECIAL OFFERS ==================== */
+        .special-offers {
+            background: var(--white);
+        }
+
+        .special-offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .special-card {
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            min-height: 160px;
+        }
+
+        .special-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .special-card.purple-gradient {
+            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
+            color: var(--white);
+        }
+
+        .special-card.white-bordered {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+        }
+
+        .special-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .special-card.white-bordered .special-tag {
+            background: var(--gray-100);
+            color: var(--gray-600);
+        }
+
+        .special-card h3 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .special-card.white-bordered h3 {
+            color: var(--gray-900);
+        }
+
+        .special-card p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .special-card.white-bordered p {
+            color: var(--gray-600);
+        }
+
+        .special-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .special-card.purple-gradient .special-btn {
+            background: var(--white);
+            color: var(--primary-purple);
+        }
+
+        .special-card.white-bordered .special-btn {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .special-btn:hover {
+            transform: translateX(4px);
+        }
+
+        /* ==================== BEST IN CLASS FEATURES ==================== */
+        .features-section {
+            background: var(--gray-50);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+            position: relative;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .feature-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* Filter visual */
+        .filter-visual {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .filter-visual .filter-body {
+            width: 60px;
+            height: 100px;
+            background: linear-gradient(180deg, #E5E7EB 0%, #D1D5DB 100%);
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            box-shadow: var(--shadow-md);
+        }
+
+        .filter-visual .water-drop {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 50px;
+            background: linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            animation: drip 2s ease-in-out infinite;
+        }
+
+        @keyframes drip {
+            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            50% { transform: translateX(-50%) translateY(10px); opacity: 0.7; }
+        }
+
+        /* Purifier visual */
+        .purifier-visual {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 10px;
+        }
+
+        .purifier-layer {
+            height: 10px;
+            border-radius: 3px;
+            animation: purify 3s ease-in-out infinite;
+        }
+
+        .purifier-layer:nth-child(1) { background: #EF4444; animation-delay: 0s; }
+        .purifier-layer:nth-child(2) { background: #F97316; animation-delay: 0.1s; }
+        .purifier-layer:nth-child(3) { background: #EAB308; animation-delay: 0.2s; }
+        .purifier-layer:nth-child(4) { background: #84CC16; animation-delay: 0.3s; }
+        .purifier-layer:nth-child(5) { background: #22C55E; animation-delay: 0.4s; }
+        .purifier-layer:nth-child(6) { background: #14B8A6; animation-delay: 0.5s; }
+        .purifier-layer:nth-child(7) { background: #06B6D4; animation-delay: 0.6s; }
+        .purifier-layer:nth-child(8) { background: #3B82F6; animation-delay: 0.7s; }
+        .purifier-layer:nth-child(9) { background: #8B5CF6; animation-delay: 0.8s; }
+        .purifier-layer:nth-child(10) { background: #A855F7; animation-delay: 0.9s; }
+
+        @keyframes purify {
+            0%, 100% { opacity: 0.6; transform: scaleX(0.9); }
+            50% { opacity: 1; transform: scaleX(1); }
+        }
+
+        /* Phone visual */
+        .phone-visual {
+            width: 70px;
+            height: 120px;
+            background: linear-gradient(180deg, #1F2937 0%, #111827 100%);
+            border-radius: 12px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .phone-visual::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 4px;
+            background: #374151;
+            border-radius: 2px;
+        }
+
+        .phone-screen {
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            right: 5px;
+            bottom: 10px;
+            background: linear-gradient(180deg, #10B981 0%, #059669 100%);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .tds-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .tds-label {
+            font-size: 8px;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+        }
+
+        /* ==================== EXPLORE BY SPACE ==================== */
+        .explore-section {
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .explore-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .explore-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .explore-scroll::-webkit-scrollbar-track {
+            background: var(--gray-100);
+            border-radius: 3px;
+        }
+
+        .explore-scroll::-webkit-scrollbar-thumb {
+            background: var(--gray-300);
+            border-radius: 3px;
+        }
+
+        .explore-card {
+            flex: 0 0 280px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            scroll-snap-align: start;
+            transition: all 0.4s;
+        }
+
+        .explore-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-purple);
+        }
+
+        .explore-image {
+            height: 160px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore-image svg {
+            width: 80px;
+            height: 80px;
+            color: var(--gray-400);
+        }
+
+        .explore-content {
+            padding: 20px;
+        }
+
+        .explore-tag {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .explore-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .explore-price {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .explore-price span {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .explore-price strong {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .explore-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            padding: 12px;
+            background: var(--gray-900);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .explore-btn:hover {
+            background: var(--primary-purple);
+        }
+
+        /* ==================== CATEGORY TICKER ==================== */
+        .category-ticker {
+            background: var(--gray-100);
+            padding: 20px 0;
+            overflow: hidden;
+        }
+
+        .category-track {
+            display: flex;
+            animation: categoryTicker 30s linear infinite;
+        }
+
+        @keyframes categoryTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .category-content {
+            display: flex;
+            gap: 16px;
+            padding-right: 16px;
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--white);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+            white-space: nowrap;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .category-badge:hover {
+            background: var(--primary-purple);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* ==================== OUR SERVICES ==================== */
+        .services-section {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-box {
+            background: var(--gray-50);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s;
+        }
+
+        .service-box:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .service-box-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #9333EA 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-box-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--white);
+        }
+
+        .service-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .service-box > p {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--gray-600);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.2s;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li:hover {
+            color: var(--primary-purple);
+            padding-left: 8px;
+        }
+
+        .service-list li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary-green);
+            flex-shrink: 0;
+        }
+
+        .see-all-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 200px;
+            margin: 40px auto 0;
+            padding: 16px 32px;
+            background: var(--primary-purple);
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .see-all-btn:hover {
+            background: var(--primary-purple-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ==================== PEST CONTROL ==================== */
+        .pest-section {
+            background: var(--gray-50);
+        }
+
+        .pest-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .pest-card {
+            flex: 0 0 160px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .pest-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--primary-purple);
+        }
+
+        .pest-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gray-100);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .pest-card:hover .pest-icon {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #9333EA 100%);
+        }
+
+        .pest-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--gray-600);
+            transition: all 0.3s;
+        }
+
+        .pest-card:hover .pest-icon svg {
+            color: var(--white);
+        }
+
+        .pest-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        /* ==================== HOW WE WORK ==================== */
+        .how-section {
+            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
+            padding: 80px;
+        }
+
+        .how-section .section-title {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .how-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .how-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .how-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -20px;
+            width: 40px;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .how-step:last-child::after {
+            display: none;
+        }
+
+        .how-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s;
+        }
+
+        .how-step:hover .how-icon {
+            background: var(--white);
+            transform: scale(1.1);
+        }
+
+        .how-icon svg {
+            width: 36px;
+            height: 36px;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .how-step:hover .how-icon svg {
+            color: var(--primary-purple);
+        }
+
+        .how-step h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .how-step p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ==================== WHY STAIN-33 ==================== */
+        .why-section {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .why-card {
+            background: var(--gray-50);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .why-card:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-icon.green { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+        .why-icon.blue { background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); }
+        .why-icon.purple { background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%); }
+        .why-icon.orange { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+
+        .why-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--white);
+        }
+
+        .why-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .why-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .why-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--gray-50);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .why-badge svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-green);
+        }
+
+        /* ==================== REGISTERED WITH ==================== */
+        .registered-section {
+            background: var(--white);
+            padding: 50px 80px;
+        }
+
+        .registered-section .section-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+        }
+
+        .registered-logos {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .registered-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .registered-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .registered-logo img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--gray-900);
+            padding: 60px 80px 30px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--gray-400);
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-700);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-800);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-purple);
+            transform: translateY(-2px);
+        }
+
+        .social-links svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gray-400);
+        }
+
+        .social-links a:hover svg {
+            color: var(--white);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .hero { padding: 40px; }
+            .hero h1 { font-size: 40px; }
+            .hero-image { right: 40px; width: 350px; height: 350px; }
+            .section { padding: 50px 40px; }
+            .wall-panels { padding: 0 40px 50px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .how-step::after { display: none; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .hero { flex-direction: column; padding: 30px 20px; min-height: auto; }
+            .hero-content { max-width: 100%; text-align: center; }
+            .hero h1 { font-size: 32px; }
+            .hero-image { position: relative; right: auto; width: 100%; height: 300px; }
+            .hero-arrow { display: none; }
+            .section { padding: 40px 20px; }
+            .wall-panels { padding: 0 20px 40px; }
+            .wall-panels-card { flex-direction: column; }
+            .offers-grid { grid-template-columns: 1fr; }
+            .special-offers-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .how-grid { grid-template-columns: 1fr; }
+            .how-section { padding: 40px 20px; }
+            .footer { padding: 40px 20px 20px; }
+            .footer-top { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+            .registered-logos { gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a href="#" class="logo">Stain-<span>33</span></a>
+        <nav class="nav">
+            <div class="nav-item">
+                <span class="nav-link">
+                    Our Services
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </span>
+                <div class="dropdown">
+                    <div class="dropdown-section">
+                        <div class="dropdown-title">Home Services</div>
+                        <a href="#" class="dropdown-link">Deep Home Cleaning</a>
+                        <a href="#" class="dropdown-link">Bathroom Cleaning</a>
+                        <a href="#" class="dropdown-link">Kitchen Cleaning</a>
+                        <a href="#" class="dropdown-link">Sofa & Carpet Cleaning</a>
+                        <a href="#" class="dropdown-link">Pest Control</a>
+                    </div>
+                    <div class="dropdown-section">
+                        <div class="dropdown-title">Facility Management</div>
+                        <a href="#" class="dropdown-link">Office Cleaning</a>
+                        <a href="#" class="dropdown-link">Commercial Spaces</a>
+                        <a href="#" class="dropdown-link">Regular Housekeeping</a>
+                        <a href="#" class="dropdown-link">Pantry Services</a>
+                    </div>
+                    <div class="dropdown-section">
+                        <div class="dropdown-title">Commercial & Post-Construction</div>
+                        <a href="#" class="dropdown-link">Bulk Apartment Cleaning</a>
+                        <a href="#" class="dropdown-link">Ready to Move Cleaning</a>
+                        <a href="#" class="dropdown-link">Post Construction Cleaning</a>
+                        <a href="#" class="dropdown-link">Project Handover</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Limited Offer</div>
+            <h1>Deep Home Cleaning at 20% OFF!</h1>
+            <p>Get your entire home professionally cleaned by our expert team. Valid for first-time customers.</p>
+            <a href="#" class="btn-book">
+                Book Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-person"></div>
+        </div>
+        <div class="hero-arrow left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 19l-7-7 7-7"/>
+            </svg>
+        </div>
+        <div class="hero-arrow right">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 5l7 7-7 7"/>
+            </svg>
+        </div>
+        <div class="hero-nav">
+            <div class="hero-nav-dot active"></div>
+            <div class="hero-nav-dot"></div>
+            <div class="hero-nav-dot"></div>
+        </div>
+    </section>
+
+    <!-- RUNNING TICKER -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <span class="ticker-item">Clean Ingredients</span>
+                <span class="ticker-item">Nutrient Packed</span>
+                <span class="ticker-item">Exotic Fruits</span>
+                <span class="ticker-item">Sustainably Sourced</span>
+                <span class="ticker-item">Eco Friendly</span>
+                <span class="ticker-item">Premium Quality</span>
+                <span class="ticker-item">Expert Team</span>
+                <span class="ticker-item">Affordable Rates</span>
+            </div>
+            <div class="ticker-content">
+                <span class="ticker-item">Clean Ingredients</span>
+                <span class="ticker-item">Nutrient Packed</span>
+                <span class="ticker-item">Exotic Fruits</span>
+                <span class="ticker-item">Sustainably Sourced</span>
+                <span class="ticker-item">Eco Friendly</span>
+                <span class="ticker-item">Premium Quality</span>
+                <span class="ticker-item">Expert Team</span>
+                <span class="ticker-item">Affordable Rates</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- OFFERS & DISCOUNTS -->
+    <section class="section offers-section">
+        <h2 class="section-title">Offers & discounts</h2>
+        <div class="offers-grid">
+            <div class="offer-card gray">
+                <span class="offer-tag">Transform</span>
+                <h3>Big transformations, zero stress.</h3>
+                <p>Complete home makeover services</p>
+                <a href="#" class="offer-btn">Explore</a>
+            </div>
+            <div class="offer-card green">
+                <span class="offer-tag">Bathroom</span>
+                <h3>Bathroom deep cleaning starting at</h3>
+                <div class="offer-price">₹449</div>
+                <a href="#" class="offer-btn">Book now</a>
+            </div>
+            <div class="offer-card purple">
+                <span class="offer-tag">Insta Help</span>
+                <h3>Trained house help when your maid is on leave</h3>
+                <p>Quick & reliable assistance</p>
+                <a href="#" class="offer-btn">Book now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WALL PANELS -->
+    <div class="wall-panels">
+        <div class="wall-panels-card">
+            <div class="wall-panels-content">
+                <h2>Wall Panels</h2>
+                <p>Level up your walls with premium designer panels. Transform any room into a stunning space.</p>
+                <a href="#" class="btn-green">
+                    Know more
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="wall-panels-image">
+                <div class="tv-frame"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SPECIAL OFFERS -->
+    <section class="section special-offers">
+        <h2 class="section-title">Special Offers</h2>
+        <div class="special-offers-grid">
+            <div class="special-card purple-gradient">
+                <span class="special-tag">New Customers</span>
+                <h3>First Order 25% OFF</h3>
+                <p>Get flat 25% discount on your first service booking</p>
+                <a href="#" class="special-btn">
+                    Claim Offer
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="special-card white-bordered">
+                <span class="special-tag">Monthly Pass</span>
+                <h3>Subscribe & Save 30%</h3>
+                <p>Monthly cleaning subscription with extra savings</p>
+                <a href="#" class="special-btn">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST IN CLASS FEATURES -->
+    <section class="section features-section">
+        <h2 class="section-title">Best-in-class features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <div class="filter-visual">
+                        <div class="filter-body"></div>
+                        <div class="water-drop"></div>
+                    </div>
+                </div>
+                <h3>Filters</h3>
+                <h4>Superior filters that really last for 2 years</h4>
+                <p>High-quality filtration for cleaner results</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <div class="purifier-visual">
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                    </div>
+                </div>
+                <h3>Purification</h3>
+                <h4>10-stage purifier</h4>
+                <p>Advanced cleaning technology for best results</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <div class="phone-visual">
+                        <div class="phone-screen">
+                            <span class="tds-value">84</span>
+                            <span class="tds-label">TDS Level</span>
+                        </div>
+                    </div>
+                </div>
+                <h3>Smart app</h3>
+                <h4>Monitor everything with the UC app</h4>
+                <p>Track and manage your services easily</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLORE BY SPACE -->
+    <section class="section explore-section">
+        <h2 class="section-title">Explore by space</h2>
+        <div class="explore-scroll">
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Home Cleaning</div>
+                    <h3>Deep Cleaning Service</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹1,999</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+                        <path d="M8 10h8M8 14h8M8 18h4"/>
+                        <circle cx="17" cy="17" r="3"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Bathroom</div>
+                    <h3>Bathroom Deep Clean</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹449</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                        <circle cx="12" cy="14" r="3"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Kitchen</div>
+                    <h3>Kitchen Deep Clean</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹499</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="11" width="18" height="10" rx="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Furniture</div>
+                    <h3>Sofa & Carpet Cleaning</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹599</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Office</div>
+                    <h3>Office Cleaning</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹2,499</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY TICKER -->
+    <div class="category-ticker">
+        <div class="category-track">
+            <div class="category-content">
+                <span class="category-badge">🏠 Deep Cleaning</span>
+                <span class="category-badge">🚿 Bathroom</span>
+                <span class="category-badge">🍳 Kitchen</span>
+                <span class="category-badge">🛋️ Sofa Cleaning</span>
+                <span class="category-badge">🐜 Pest Control</span>
+                <span class="category-badge">🏢 Office</span>
+                <span class="category-badge">🧹 Housekeeping</span>
+                <span class="category-badge">✨ Post Construction</span>
+            </div>
+            <div class="category-content">
+                <span class="category-badge">🏠 Deep Cleaning</span>
+                <span class="category-badge">🚿 Bathroom</span>
+                <span class="category-badge">🍳 Kitchen</span>
+                <span class="category-badge">🛋️ Sofa Cleaning</span>
+                <span class="category-badge">🐜 Pest Control</span>
+                <span class="category-badge">🏢 Office</span>
+                <span class="category-badge">🧹 Housekeeping</span>
+                <span class="category-badge">✨ Post Construction</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- OUR SERVICES -->
+    <section class="section services-section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <div class="service-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <h3>Home Services</h3>
+                <p>Complete home cleaning solutions for spotless living spaces</p>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Deep Home Cleaning
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Kitchen & Bathroom
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Sofa & Carpet
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Pest Control
+                    </li>
+                </ul>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                    </svg>
+                </div>
+                <h3>Facility Management</h3>
+                <p>Professional cleaning for offices and commercial spaces</p>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Office Cleaning
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Commercial Spaces
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Regular Housekeeping
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Pantry Services
+                    </li>
+                </ul>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 20h20M5 20V10l7-7 7 7v10"/>
+                        <path d="M9 20v-6h6v6"/>
+                    </svg>
+                </div>
+                <h3>Project Services</h3>
+                <p>Bulk cleaning for apartments and project handovers</p>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Flat Apartment
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Ready to Move
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Post Construction
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Project Handover
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="see-all-btn">
+            SEE ALL
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- PEST CONTROL -->
+    <section class="section pest-section">
+        <h2 class="section-title">Pest Control</h2>
+        <div class="pest-grid">
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h4>General Pest Control</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h4>Termite</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <ellipse cx="12" cy="12" rx="8" ry="5"/>
+                        <path d="M4 12v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2"/>
+                    </svg>
+                </div>
+                <h4>Bed Bugs</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    </svg>
+                </div>
+                <h4>Combo: Best Value For Money</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <h4>Mosquito</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="how-section">
+        <p class="how-subtitle">Our Process</p>
+        <h2 class="section-title">This is How We Work</h2>
+        <div class="how-grid">
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                        <path d="M16 2v4M8 2v4M3 10h18"/>
+                    </svg>
+                </div>
+                <h4>Choose Your Service</h4>
+                <p>Select the cleaning or pest control service you need</p>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h4>Choose Date</h4>
+                <p>Pick your contact information and preferred schedule</p>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <path d="M22 4L12 14.01l-3-3"/>
+                    </svg>
+                </div>
+                <h4>Confirm Your Booking</h4>
+                <p>Relax at a convenient date after confirming</p>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <h4>Service at Your Doorstep</h4>
+                <p>Our trained professionals arrive on time at your doorstep</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY STAIN-33 -->
+    <section class="section why-section">
+        <h2 class="section-title">Why Stain-33?</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h4>Verified Staff</h4>
+                <p>Background checked professionals</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h4>Eco-Friendly</h4>
+                <p>Safe, non-toxic products</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon purple">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <h4>Fair Pricing</h4>
+                <p>No hidden charges</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon orange">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                        <line x1="4" y1="22" x2="4" y2="15"/>
+                    </svg>
+                </div>
+                <h4>Re-Clean Promise</h4>
+                <p>Free redo if not satisfied</p>
+            </div>
+        </div>
+        <div class="why-badges">
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Experienced & Certified
+            </div>
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Police Verified
+            </div>
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Covid Ready
+            </div>
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Punctual & Reliable
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTERED WITH -->
+    <section class="registered-section">
+        <h2 class="section-title">Registered With</h2>
+        <div class="registered-logos">
+            <!-- Skill India Logo -->
+            <div class="registered-logo">
+                <svg width="120" height="60" viewBox="0 0 120 60">
+                    <!-- Computer/Screen Icon -->
+                    <rect x="5" y="8" width="28" height="22" rx="2" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+                    <rect x="8" y="11" width="22" height="14" fill="#4FC3F7"/>
+                    <rect x="13" y="30" width="12" height="4" fill="#1a1a1a"/>
+                    <rect x="10" y="34" width="18" height="2" fill="#1a1a1a"/>
+                    <!-- Person icon inside screen -->
+                    <circle cx="19" cy="17" r="3" fill="#fff"/>
+                    <path d="M14 24 Q19 20 24 24" fill="#fff"/>
+                    <!-- Gear icon -->
+                    <circle cx="30" cy="12" r="5" fill="none" stroke="#FF9933" stroke-width="1.5"/>
+                    <circle cx="30" cy="12" r="2" fill="#FF9933"/>
+                    <!-- Text -->
+                    <text x="40" y="18" font-family="Arial Black, sans-serif" font-size="11" font-weight="900" fill="#1a1a1a">Sk<tspan fill="#138808">i</tspan>ll</text>
+                    <text x="40" y="32" font-family="Arial Black, sans-serif" font-size="11" font-weight="900" fill="#FF9933">I</text>
+                    <text x="46" y="32" font-family="Arial Black, sans-serif" font-size="11" font-weight="900" fill="#1a1a1a">nd<tspan fill="#138808">i</tspan>a</text>
+                    <!-- Hindi text -->
+                    <text x="5" y="52" font-family="Arial, sans-serif" font-size="7" fill="#1a1a1a">कौशल भारत-कुशल भारत</text>
+                </svg>
+            </div>
+
+            <!-- Startup India Logo -->
+            <div class="registered-logo">
+                <svg width="110" height="60" viewBox="0 0 110 60">
+                    <!-- Ashoka Lions -->
+                    <g transform="translate(10, 5) scale(0.45)">
+                        <circle cx="35" cy="35" r="30" fill="none" stroke="#FF6B35" stroke-width="2"/>
+                        <path d="M35 10 L35 60 M15 25 Q35 15 55 25 M15 45 Q35 55 55 45" stroke="#FF6B35" stroke-width="1.5" fill="none"/>
+                        <circle cx="35" cy="35" r="8" fill="#FF6B35"/>
+                    </g>
+                    <!-- Text -->
+                    <text x="45" y="25" font-family="Arial, sans-serif" font-size="9" fill="#1a1a1a">#</text>
+                    <text x="52" y="25" font-family="Arial Black, sans-serif" font-size="10" font-weight="900" fill="#FF6B35">startup</text>
+                    <text x="52" y="38" font-family="Arial Black, sans-serif" font-size="10" font-weight="900" fill="#FF6B35">india</text>
+                </svg>
+            </div>
+
+            <!-- Ministry of Labour Logo -->
+            <div class="registered-logo">
+                <svg width="140" height="65" viewBox="0 0 140 65">
+                    <!-- Ashoka Emblem -->
+                    <g transform="translate(50, 2) scale(0.35)">
+                        <!-- Lions capital simplified -->
+                        <ellipse cx="55" cy="75" rx="40" ry="8" fill="#C4A35A"/>
+                        <rect x="25" y="30" width="60" height="45" rx="5" fill="#C4A35A"/>
+                        <circle cx="40" cy="45" r="8" fill="#8B7355"/>
+                        <circle cx="70" cy="45" r="8" fill="#8B7355"/>
+                        <path d="M35 20 Q55 0 75 20" fill="#C4A35A"/>
+                        <rect x="50" y="5" width="10" height="15" fill="#C4A35A"/>
+                    </g>
+                    <!-- Text -->
+                    <text x="70" y="42" font-family="Arial, sans-serif" font-size="5" fill="#1a1a1a" text-anchor="middle">सत्यमेव जयते</text>
+                    <text x="70" y="52" font-family="Arial, sans-serif" font-size="6" fill="#1a1a1a" text-anchor="middle">MINISTRY OF LABOUR AND EMPLOYMENT</text>
+                    <text x="70" y="60" font-family="Arial, sans-serif" font-size="6" fill="#1a1a1a" text-anchor="middle">GOVERNMENT OF INDIA</text>
+                </svg>
+            </div>
+
+            <!-- MSME Logo -->
+            <div class="registered-logo">
+                <svg width="90" height="60" viewBox="0 0 90 60">
+                    <!-- Ashoka Emblem small -->
+                    <g transform="translate(5, 5) scale(0.25)">
+                        <ellipse cx="55" cy="75" rx="40" ry="8" fill="#C4A35A"/>
+                        <rect x="25" y="30" width="60" height="45" rx="5" fill="#C4A35A"/>
+                        <circle cx="40" cy="45" r="8" fill="#8B7355"/>
+                        <circle cx="70" cy="45" r="8" fill="#8B7355"/>
+                        <path d="M35 20 Q55 0 75 20" fill="#C4A35A"/>
+                    </g>
+                    <!-- MSME Text stylized -->
+                    <text x="35" y="22" font-family="Arial Black, sans-serif" font-size="18" font-weight="900" letter-spacing="1">
+                        <tspan fill="#138808">M</tspan><tspan fill="#FF9933">S</tspan><tspan fill="#000080">M</tspan><tspan fill="#138808">E</tspan>
+                    </text>
+                    <text x="5" y="38" font-family="Arial, sans-serif" font-size="5" fill="#1a1a1a">MICRO, SMALL & MEDIUM ENTERPRISES</text>
+                    <text x="5" y="48" font-family="Arial, sans-serif" font-size="5" fill="#666">सूक्ष्म, लघु एवं मध्यम उद्यम मंत्रालय</text>
+                </svg>
+            </div>
+
+            <!-- DWSSC Logo -->
+            <div class="registered-logo">
+                <svg width="80" height="70" viewBox="0 0 80 70">
+                    <!-- Circular border with text -->
+                    <circle cx="40" cy="35" r="32" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+                    <!-- House icon -->
+                    <path d="M40 12 L20 28 L20 50 L60 50 L60 28 Z" fill="none" stroke="#E53935" stroke-width="2"/>
+                    <path d="M40 12 L15 30" stroke="#E53935" stroke-width="2"/>
+                    <path d="M40 12 L65 30" stroke="#E53935" stroke-width="2"/>
+                    <!-- Window -->
+                    <rect x="32" y="32" width="16" height="14" fill="none" stroke="#E53935" stroke-width="1.5"/>
+                    <line x1="40" y1="32" x2="40" y2="46" stroke="#E53935" stroke-width="1"/>
+                    <line x1="32" y1="39" x2="48" y2="39" stroke="#E53935" stroke-width="1"/>
+                    <!-- Person silhouette -->
+                    <circle cx="40" cy="25" r="4" fill="#E53935"/>
+                    <!-- Curved text top -->
+                    <path id="topArc" d="M 10 35 A 30 30 0 0 1 70 35" fill="none"/>
+                    <text font-family="Arial, sans-serif" font-size="5" fill="#1a1a1a">
+                        <textPath href="#topArc" startOffset="15%">Domestic Workers Sector Skill Council</textPath>
+                    </text>
+                    <!-- DWSSC text -->
+                    <text x="40" y="62" font-family="Arial Black, sans-serif" font-size="9" font-weight="900" fill="#1a1a1a" text-anchor="middle">DWSSC</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="logo">Stain-<span>33</span></a>
+                <p>Professional cleaning services trusted by thousands across Bangalore. Your satisfaction is our priority.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home Cleaning</a></li>
+                    <li><a href="#">Bathroom Cleaning</a></li>
+                    <li><a href="#">Pest Control</a></li>
+                    <li><a href="#">Facility Management</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stain-33. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
+            }
+        });
+
+        // Hero slider dots
+        const dots = document.querySelectorAll('.hero-nav-dot');
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+
+        // Auto-slide hero
+        let currentSlide = 0;
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }, 5000);
+    </script>
+</body>
+</html>

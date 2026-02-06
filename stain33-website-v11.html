@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stain-33 | Professional Cleaning Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --green: #22C55E;
+            --dark: #111827;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            padding: 14px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        .logo span { color: var(--primary); }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-dropdown { position: relative; }
+
+        .nav-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--gray-600);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .nav-dropdown-arrow {
+            font-size: 8px;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            min-width: 260px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.2s;
+            padding: 8px 0;
+            margin-top: 8px;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-category {
+            padding: 12px 16px 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px 10px 36px;
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: var(--gray-50);
+            color: var(--primary);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--gray-100);
+            margin: 8px 0;
+        }
+
+        .nav-contact {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 20px;
+            height: 2px;
+            background: var(--dark);
+        }
+
+        /* ===== HERO SLIDER ===== */
+        .hero { padding-top: 70px; }
+
+        .hero-slider {
+            margin: 16px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-slide {
+            display: flex;
+            align-items: center;
+            min-height: 280px;
+            padding: 36px 40px;
+            background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+            position: relative;
+        }
+
+        .hero-content { max-width: 380px; z-index: 2; }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 20px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--dark);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 180px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 120px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 40px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+        }
+        .slider-dot.active {
+            background: var(--white);
+            width: 20px;
+            border-radius: 4px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .slider-nav.prev { left: 12px; }
+        .slider-nav.next { right: 12px; }
+
+        /* ===== RUNNING TICKER - PITAYA STYLE ===== */
+        .ticker {
+            background: var(--primary);
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 0 20px;
+        }
+
+        .ticker-item::before {
+            content: '>';
+            margin-right: 14px;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+
+        /* ===== OFFERS SECTION ===== */
+        .section { padding: 40px 0 24px; }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .offer-card {
+            padding: 18px;
+            border-radius: 14px;
+            position: relative;
+            min-height: 140px;
+        }
+
+        .offer-card.gray { background: var(--gray-100); }
+        .offer-card.green { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); }
+        .offer-card.purple { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); }
+
+        .offer-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .offer-tag.purple { background: var(--primary); color: white; }
+        .offer-tag.green { background: var(--green); color: white; }
+
+        .offer-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .offer-btn {
+            display: inline-block;
+            padding: 7px 14px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+            color: var(--dark);
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .offer-emoji {
+            position: absolute;
+            right: 14px;
+            top: 14px;
+            font-size: 32px;
+            opacity: 0.6;
+        }
+
+        /* ===== WALL PANELS BANNER ===== */
+        .wall-banner {
+            margin: 20px 16px;
+            border-radius: 16px;
+            background: #FAF5F0;
+            display: flex;
+            overflow: hidden;
+            min-height: 200px;
+        }
+
+        .wall-banner-content {
+            flex: 0 0 40%;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .wall-banner h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .wall-banner p {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .wall-banner-btn {
+            display: inline-block;
+            width: fit-content;
+            padding: 12px 24px;
+            background: #8B6914;
+            color: var(--white);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .wall-banner-image {
+            flex: 1;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"><defs><linearGradient id="wood" x1="0%25" y1="0%25" x2="0%25" y2="100%25"><stop offset="0%25" style="stop-color:%23C4A574"/><stop offset="50%25" style="stop-color:%23A68B5B"/><stop offset="100%25" style="stop-color:%23C4A574"/></linearGradient></defs><rect fill="%23F5EDE0" width="400" height="250"/><rect x="120" y="20" width="260" height="210" fill="url(%23wood)" rx="4"/><g stroke="%2396784A" stroke-width="1" opacity="0.5"><line x1="140" y1="20" x2="140" y2="230"/><line x1="160" y1="20" x2="160" y2="230"/><line x1="180" y1="20" x2="180" y2="230"/><line x1="200" y1="20" x2="200" y2="230"/><line x1="220" y1="20" x2="220" y2="230"/><line x1="240" y1="20" x2="240" y2="230"/><line x1="260" y1="20" x2="260" y2="230"/><line x1="280" y1="20" x2="280" y2="230"/><line x1="300" y1="20" x2="300" y2="230"/><line x1="320" y1="20" x2="320" y2="230"/><line x1="340" y1="20" x2="340" y2="230"/><line x1="360" y1="20" x2="360" y2="230"/></g><rect x="180" y="60" width="160" height="90" fill="%231F2937" rx="4"/><rect x="185" y="65" width="150" height="80" fill="%23111827" rx="2"/><rect x="140" y="170" width="200" height="50" fill="%231F2937" rx="2"/><ellipse cx="80" cy="200" rx="30" ry="40" fill="%2322C55E" opacity="0.7"/><ellipse cx="90" cy="190" rx="20" ry="30" fill="%2316A34A" opacity="0.8"/></svg>') center/cover no-repeat;
+            position: relative;
+        }
+
+        /* ===== SPECIAL OFFERS ===== */
+        .special-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .special-card {
+            padding: 24px;
+            border-radius: 14px;
+            position: relative;
+        }
+
+        .special-card.purple {
+            background: linear-gradient(135deg, #7C3AED, #A855F7);
+            color: var(--white);
+        }
+        .special-card.white {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+        }
+
+        .special-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .special-card.purple .special-tag { background: rgba(255,255,255,0.2); }
+        .special-card.white .special-tag { background: var(--dark); color: white; }
+
+        .special-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .special-card p {
+            font-size: 12px;
+            opacity: 0.85;
+            margin-bottom: 14px;
+        }
+
+        .special-btn {
+            display: inline-block;
+            padding: 9px 18px;
+            background: var(--white);
+            color: var(--dark);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .special-card.white .special-btn { border: 1px solid var(--gray-200); }
+
+        .special-emoji {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            opacity: 0.2;
+        }
+
+        /* ===== FEATURES ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 14px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--gray-50);
+        }
+
+        /* Filter SVG */
+        .feature-card:nth-child(1) .feature-image {
+            background: linear-gradient(180deg, #DBEAFE 0%, #BFDBFE 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-svg {
+            width: 60px;
+            height: 120px;
+        }
+
+        /* Purification layers */
+        .feature-card:nth-child(2) .feature-image {
+            background: #F9FAFB;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .purify-layer {
+            width: 100%;
+            height: 12px;
+            border-radius: 2px;
+        }
+        .purify-layer:nth-child(1) { background: #D1D5DB; }
+        .purify-layer:nth-child(2) { background: #9CA3AF; }
+        .purify-layer:nth-child(3) { background: #6B7280; height: 16px; }
+        .purify-layer:nth-child(4) { background: #10B981; }
+        .purify-layer:nth-child(5) { background: #F97316; }
+        .purify-layer:nth-child(6) { background: #B45309; }
+        .purify-layer:nth-child(7) { background: #78716C; }
+        .purify-layer:nth-child(8) { background: #A855F7; height: 16px; }
+
+        /* Phone mockup */
+        .feature-card:nth-child(3) .feature-image {
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-mock {
+            width: 80px;
+            height: 130px;
+            background: var(--dark);
+            border-radius: 14px;
+            padding: 6px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 8px;
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phone-notif {
+            background: var(--gray-100);
+            border-radius: 4px;
+            padding: 4px 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 6px;
+        }
+
+        .phone-notif-icon {
+            width: 14px;
+            height: 14px;
+            background: var(--dark);
+            border-radius: 3px;
+            color: white;
+            font-size: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .phone-notif-text {
+            font-size: 5px;
+            color: var(--dark);
+        }
+
+        .phone-reading {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-reading-label { font-size: 5px; color: var(--gray-400); }
+        .phone-reading-value { font-size: 22px; font-weight: 700; color: var(--dark); }
+        .phone-reading-status { font-size: 6px; color: var(--green); font-weight: 600; }
+
+        .feature-card h4 {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .feature-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.35;
+        }
+
+        /* ===== EXPLORE BY SPACE ===== */
+        .explore-scroll {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+        }
+        .explore-scroll::-webkit-scrollbar { display: none; }
+
+        .explore-card {
+            min-width: 200px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 16px;
+        }
+
+        .explore-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .explore-tag {
+            font-size: 9px;
+            font-weight: 600;
+            color: var(--gray-400);
+            text-transform: uppercase;
+        }
+
+        .explore-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .explore-price {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-bottom: 10px;
+        }
+        .explore-price strong { color: var(--primary); font-size: 14px; }
+
+        .explore-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 12px;
+        }
+
+        .rating-badge {
+            background: var(--green);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .rating-count { font-size: 10px; color: var(--gray-400); }
+
+        .explore-btn {
+            display: block;
+            padding: 9px;
+            background: var(--dark);
+            color: white;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /* ===== CATEGORY TICKER ===== */
+        .category-ticker {
+            background: var(--gray-100);
+            padding: 16px 0;
+            overflow: hidden;
+        }
+
+        .category-track {
+            display: flex;
+            gap: 10px;
+            animation: ticker 30s linear infinite;
+        }
+
+        .category-badge {
+            background: var(--white);
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--dark);
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        /* ===== OUR SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .service-box {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .service-box-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        .service-box:nth-child(1) .service-box-icon { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); }
+        .service-box:nth-child(2) .service-box-icon { background: linear-gradient(135deg, #CCFBF1, #99F6E4); }
+        .service-box:nth-child(3) .service-box-icon { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+
+        .service-box h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .service-box > p {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .service-list { list-style: none; }
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 0;
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+        .service-list li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        .see-all-btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 11px 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* ===== PEST CONTROL ===== */
+        .pest-section {
+            padding: 40px 0;
+            background: var(--gray-50);
+        }
+
+        .pest-grid {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+        }
+
+        .pest-card {
+            min-width: 110px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .pest-card:hover { border-color: var(--primary); }
+
+        .pest-icon { font-size: 28px; margin-bottom: 6px; }
+        .pest-card h4 { font-size: 11px; font-weight: 600; color: var(--dark); }
+
+        /* ===== HOW WE WORK ===== */
+        .how-section {
+            padding: 48px 0;
+            background: var(--primary);
+        }
+
+        .how-section .section-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .how-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 11px;
+            margin-bottom: 28px;
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .how-card {
+            text-align: center;
+            color: white;
+            padding: 18px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 14px;
+        }
+
+        .how-icon {
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 10px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .how-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+        .how-card p { font-size: 11px; opacity: 0.8; }
+
+        /* ===== WHY STAIN-33 ===== */
+        .why-section { padding: 48px 0; }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .why-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .why-card:nth-child(1) .why-icon { background: linear-gradient(135deg, #CCFBF1, #99F6E4); }
+        .why-card:nth-child(2) .why-icon { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+        .why-card:nth-child(3) .why-icon { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+        .why-card:nth-child(4) .why-icon { background: linear-gradient(135deg, #FCE7F3, #FBCFE8); }
+
+        .why-card h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+        .why-card p { font-size: 11px; color: var(--gray-500); }
+
+        .why-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .why-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+        .why-badge::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+        /* ===== REGISTERED WITH ===== */
+        .registered-section { padding: 40px 0; }
+        .registered-section .section-title { text-align: center; margin-bottom: 24px; }
+
+        .registered-logos {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            flex-wrap: wrap;
+        }
+
+        .reg-logo-box {
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .skill-india .reg-logo-box { background: linear-gradient(90deg, #FF9933, #FFF, #138808); color: #000080; border: 2px solid #000080; }
+        .startup-india .reg-logo-box { background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; }
+        .msme .reg-logo-box { background: #138808; color: white; }
+        .dwssc .reg-logo-box { background: linear-gradient(135deg, #003366, #0066CC); color: white; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 16px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+
+        .footer-brand .logo { color: white; margin-bottom: 10px; display: inline-block; }
+        .footer-brand p { color: var(--gray-400); font-size: 12px; }
+
+        .footer-column h4 { font-size: 13px; font-weight: 600; margin-bottom: 14px; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 8px; }
+        .footer-column ul a { color: var(--gray-400); text-decoration: none; font-size: 12px; }
+        .footer-column ul a:hover { color: white; }
+
+        .footer-bottom {
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p { color: var(--gray-400); font-size: 11px; }
+
+        .social-links { display: flex; gap: 8px; }
+        .social-links a {
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .social-links a:hover { background: var(--primary); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .offers-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid, .why-grid, .how-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-image { display: none; }
+            .wall-banner-image { display: none; }
+            .wall-banner-content { flex: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-center, .nav-contact { display: none; }
+            .hero-slide { padding: 28px 20px; min-height: 240px; }
+            .hero-content h1 { font-size: 26px; }
+            .offers-grid, .special-grid, .services-grid, .features-grid, .why-grid, .how-grid { grid-template-columns: 1fr; }
+            .wall-banner { margin: 12px; }
+            .wall-banner-content { padding: 24px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Stain<span>-33</span></a>
+            <div class="nav-center">
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn">
+                        Our Services <span class="nav-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <div class="dropdown-category">🏠 Home Services</div>
+                        <a href="#services">🧹 Deep Home Cleaning</a>
+                        <a href="#services">🚿 Bathroom Cleaning</a>
+                        <a href="#services">🍳 Kitchen Cleaning</a>
+                        <a href="#services">🛋️ Sofa & Carpet</a>
+                        <a href="#services">🐜 Pest Control</a>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-category">🏢 Facility Management</div>
+                        <a href="#services">🏢 Office Cleaning</a>
+                        <a href="#services">🏬 Commercial Spaces</a>
+                        <a href="#services">🧽 Regular Housekeeping</a>
+                        <a href="#services">☕ Pantry Services</a>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-category">🏗️ Commercial & Post-Construction</div>
+                        <a href="#services">🏘️ Bulk Apartment</a>
+                        <a href="#services">🔑 Ready to Move</a>
+                        <a href="#services">🏗️ Post Construction</a>
+                        <a href="#services">📋 Project Handover</a>
+                    </div>
+                </div>
+                <a href="#contact" class="nav-contact">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SLIDER -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <div class="hero-tag">Limited Offer</div>
+                    <h1>Deep Home Cleaning<br>at 20% OFF!</h1>
+                    <p>Get your entire home professionally cleaned by our expert team. Valid for first-time customers.</p>
+                    <a href="#contact" class="hero-btn">Book Now →</a>
+                </div>
+                <div class="hero-image">👩</div>
+            </div>
+            <button class="slider-nav prev">❮</button>
+            <button class="slider-nav next">❯</button>
+            <div class="slider-dots">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RUNNING TICKER - PITAYA STYLE -->
+    <section class="ticker">
+        <div class="ticker-track">
+            <div class="ticker-item">CLEAN INGREDIENTS</div>
+            <div class="ticker-item">NUTRIENT PACKED</div>
+            <div class="ticker-item">EXOTIC FRUITS</div>
+            <div class="ticker-item">SUSTAINABLY SOURCED</div>
+            <div class="ticker-item">CLEAN INGREDIENTS</div>
+            <div class="ticker-item">NUTRIENT PACKED</div>
+            <div class="ticker-item">EXOTIC FRUITS</div>
+            <div class="ticker-item">SUSTAINABLY SOURCED</div>
+            <div class="ticker-item">CLEAN INGREDIENTS</div>
+            <div class="ticker-item">NUTRIENT PACKED</div>
+            <div class="ticker-item">EXOTIC FRUITS</div>
+            <div class="ticker-item">SUSTAINABLY SOURCED</div>
+        </div>
+    </section>
+
+    <!-- OFFERS & DISCOUNTS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Offers & discounts</h2>
+            <div class="offers-grid">
+                <div class="offer-card gray">
+                    <div class="offer-tag purple">Revamp</div>
+                    <h3>Big transformations,<br>zero stress.</h3>
+                    <a href="#contact" class="offer-btn">Explore</a>
+                    <div class="offer-emoji">🛋️</div>
+                </div>
+                <div class="offer-card green">
+                    <div class="offer-tag green">Bathroom</div>
+                    <h3>Bathroom deep<br>cleaning starting<br>at ₹449</h3>
+                    <a href="#contact" class="offer-btn">Book now</a>
+                    <div class="offer-emoji">🚿</div>
+                </div>
+                <div class="offer-card purple">
+                    <div class="offer-tag green">Insta Help</div>
+                    <h3>Trained house help<br>when your maid<br>is on leave</h3>
+                    <a href="#contact" class="offer-btn">Book now</a>
+                    <div class="offer-emoji">👩‍🔧</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WALL PANELS BANNER -->
+    <div class="wall-banner">
+        <div class="wall-banner-content">
+            <h3>Wall Panels</h3>
+            <p>Level up your walls</p>
+            <a href="#contact" class="wall-banner-btn">Know more</a>
+        </div>
+        <div class="wall-banner-image"></div>
+    </div>
+
+    <!-- SPECIAL OFFERS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="special-grid">
+                <div class="special-card purple">
+                    <div class="special-tag">New Customers</div>
+                    <h3>First Order 25% OFF</h3>
+                    <p>Get flat 25% discount on your first service booking</p>
+                    <a href="#contact" class="special-btn">Claim Offer →</a>
+                    <div class="special-emoji">🎁</div>
+                </div>
+                <div class="special-card white">
+                    <div class="special-tag">Monthly Pack</div>
+                    <h3>Subscribe & Save 30%</h3>
+                    <p>Monthly cleaning subscription with extra benefits</p>
+                    <a href="#contact" class="special-btn">Learn More →</a>
+                    <div class="special-emoji">💎</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST FEATURES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Best-in-class features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <svg class="filter-svg" viewBox="0 0 60 120">
+                            <rect x="10" y="30" width="40" height="90" rx="4" fill="#374151"/>
+                            <rect x="15" y="40" width="30" height="70" rx="2" fill="#4B5563"/>
+                            <g>
+                                <rect x="17" y="45" width="26" height="8" rx="1" fill="#6B7280"/>
+                                <rect x="17" y="55" width="26" height="8" rx="1" fill="#9CA3AF"/>
+                                <rect x="17" y="65" width="26" height="8" rx="1" fill="#6B7280"/>
+                                <rect x="17" y="75" width="26" height="8" rx="1" fill="#9CA3AF"/>
+                                <rect x="17" y="85" width="26" height="8" rx="1" fill="#6B7280"/>
+                                <rect x="17" y="95" width="26" height="8" rx="1" fill="#9CA3AF"/>
+                            </g>
+                            <path d="M25 5 L35 5 L35 30 L25 30 Z" fill="#60A5FA"/>
+                            <ellipse cx="30" cy="5" rx="8" ry="5" fill="#93C5FD"/>
+                        </svg>
+                    </div>
+                    <h4>Filters</h4>
+                    <h3>Superior filters that really last for 2 years</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <div class="purify-layer"></div>
+                        <div class="purify-layer"></div>
+                        <div class="purify-layer"></div>
+                        <div class="purify-layer"></div>
+                        <div class="purify-layer"></div>
+                        <div class="purify-layer"></div>
+                        <div class="purify-layer"></div>
+                        <div class="purify-layer"></div>
+                    </div>
+                    <h4>Purification</h4>
+                    <h3>10-stage purifier</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <div class="phone-mock">
+                            <div class="phone-screen">
+                                <div class="phone-notif">
+                                    <div class="phone-notif-icon">UC</div>
+                                    <div class="phone-notif-text">Your RO filters need change<br>Tap to schedule a service</div>
+                                </div>
+                                <div class="phone-reading">
+                                    <div class="phone-reading-label">TDS (ppm)</div>
+                                    <div class="phone-reading-value">84</div>
+                                    <div class="phone-reading-status">Excellent</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Smart App</h4>
+                    <h3>Monitor everything with the UC app</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLORE BY SPACE -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Explore by space</h2>
+            <div class="explore-scroll">
+                <div class="explore-card">
+                    <div class="explore-header">🏠 <span class="explore-tag">Home Cleaning</span></div>
+                    <h3>Deep Cleaning Service</h3>
+                    <div class="explore-price">Starting at <strong>₹1,999</strong></div>
+                    <div class="explore-rating"><span class="rating-badge">4.84 ★</span><span class="rating-count">1M+ bookings</span></div>
+                    <a href="#contact" class="explore-btn">Book Now</a>
+                </div>
+                <div class="explore-card">
+                    <div class="explore-header">🚿 <span class="explore-tag">Bathroom</span></div>
+                    <h3>Bathroom Deep Clean</h3>
+                    <div class="explore-price">Starting at <strong>₹449</strong></div>
+                    <div class="explore-rating"><span class="rating-badge">4.82 ★</span><span class="rating-count">500K+ bookings</span></div>
+                    <a href="#contact" class="explore-btn">Book Now</a>
+                </div>
+                <div class="explore-card">
+                    <div class="explore-header">🍳 <span class="explore-tag">Kitchen</span></div>
+                    <h3>Kitchen Deep Clean</h3>
+                    <div class="explore-price">Starting at <strong>₹499</strong></div>
+                    <div class="explore-rating"><span class="rating-badge">4.80 ★</span><span class="rating-count">300K+ bookings</span></div>
+                    <a href="#contact" class="explore-btn">Book Now</a>
+                </div>
+                <div class="explore-card">
+                    <div class="explore-header">🛋️ <span class="explore-tag">Furniture</span></div>
+                    <h3>Sofa Cleaning</h3>
+                    <div class="explore-price">Starting at <strong>₹599</strong></div>
+                    <div class="explore-rating"><span class="rating-badge">4.85 ★</span><span class="rating-count">400K+ bookings</span></div>
+                    <a href="#contact" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY TICKER -->
+    <section class="category-ticker">
+        <div class="category-track">
+            <div class="category-badge">FRUITS</div>
+            <div class="category-badge">SUSTAINABLY SOURCED</div>
+            <div class="category-badge">CLEAN INGREDIENTS</div>
+            <div class="category-badge">NUTRIENT-PACKED</div>
+            <div class="category-badge">EXOTIC FRUITS</div>
+            <div class="category-badge">SUSTAINABLY SOURCED</div>
+            <div class="category-badge">FRUITS</div>
+            <div class="category-badge">SUSTAINABLY SOURCED</div>
+            <div class="category-badge">CLEAN INGREDIENTS</div>
+            <div class="category-badge">NUTRIENT-PACKED</div>
+            <div class="category-badge">EXOTIC FRUITS</div>
+            <div class="category-badge">SUSTAINABLY SOURCED</div>
+        </div>
+    </section>
+
+    <!-- OUR SERVICES -->
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <div class="service-box-icon">🏠</div>
+                    <h3>Home Services</h3>
+                    <p>Complete home cleaning solutions for spotless living spaces.</p>
+                    <ul class="service-list">
+                        <li>Deep Home Cleaning</li>
+                        <li>Kitchen & Bathroom</li>
+                        <li>Sofa & Carpet</li>
+                        <li>Pest Control</li>
+                    </ul>
+                </div>
+                <div class="service-box">
+                    <div class="service-box-icon">🏢</div>
+                    <h3>Facility Management</h3>
+                    <p>Professional cleaning for offices and commercial spaces.</p>
+                    <ul class="service-list">
+                        <li>Office Cleaning</li>
+                        <li>Commercial Spaces</li>
+                        <li>Regular Housekeeping</li>
+                        <li>Pantry Services</li>
+                    </ul>
+                </div>
+                <div class="service-box">
+                    <div class="service-box-icon">🏗️</div>
+                    <h3>Project Services</h3>
+                    <p>Bulk cleaning for apartments and project handovers.</p>
+                    <ul class="service-list">
+                        <li>Bulk Apartment</li>
+                        <li>Ready to Move</li>
+                        <li>Post Construction</li>
+                        <li>Project Handover</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#contact" class="see-all-btn">SEE ALL</a>
+        </div>
+    </section>
+
+    <!-- PEST CONTROL -->
+    <section class="pest-section">
+        <div class="container">
+            <h2 class="section-title">Pest Control</h2>
+            <div class="pest-grid">
+                <div class="pest-card"><div class="pest-icon">🪲</div><h4>General Pest Control</h4></div>
+                <div class="pest-card"><div class="pest-icon">🐜</div><h4>Termite</h4></div>
+                <div class="pest-card"><div class="pest-icon">🐛</div><h4>Bed Bugs</h4></div>
+                <div class="pest-card"><div class="pest-icon">💰</div><h4>Combo: Best Value</h4></div>
+                <div class="pest-card"><div class="pest-icon">🦟</div><h4>Mosquito</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="how-section">
+        <div class="container">
+            <div class="how-subtitle">Our Process</div>
+            <h2 class="section-title">This is How We Work</h2>
+            <div class="how-grid">
+                <div class="how-card"><div class="how-icon">📋</div><h4>Choose Your Service</h4><p>Select the cleaning or pest control service you need</p></div>
+                <div class="how-card"><div class="how-icon">📅</div><h4>Choose Date</h4><p>Pick your preferred date and time slot</p></div>
+                <div class="how-card"><div class="how-icon">✅</div><h4>Confirm Booking</h4><p>Review and confirm your booking details</p></div>
+                <div class="how-card"><div class="how-icon">🏠</div><h4>Service at Doorstep</h4><p>Our trained professionals arrive on time</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY STAIN-33 -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">Why Stain-33?</h2>
+            <div class="why-grid">
+                <div class="why-card"><div class="why-icon">✅</div><h4>Verified Staff</h4><p>Background checked professionals</p></div>
+                <div class="why-card"><div class="why-icon">🌿</div><h4>Eco-Friendly</h4><p>Safe, non-toxic products</p></div>
+                <div class="why-card"><div class="why-icon">💰</div><h4>Fair Pricing</h4><p>No hidden charges</p></div>
+                <div class="why-card"><div class="why-icon">🔄</div><h4>Re-Clean Promise</h4><p>Free redo if not satisfied</p></div>
+            </div>
+            <div class="why-badges">
+                <div class="why-badge">Experienced & Certified</div>
+                <div class="why-badge">Police Verified</div>
+                <div class="why-badge">Covid Ready</div>
+                <div class="why-badge">Punctual & Reliable</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTERED WITH -->
+    <section class="registered-section">
+        <div class="container">
+            <h2 class="section-title">Registered With</h2>
+            <div class="registered-logos">
+                <div class="reg-logo skill-india"><div class="reg-logo-box">🇮🇳 Skill India</div></div>
+                <div class="reg-logo startup-india"><div class="reg-logo-box">🚀 Startup India</div></div>
+                <div class="reg-logo msme"><div class="reg-logo-box">🏛️ MSME</div></div>
+                <div class="reg-logo dwssc"><div class="reg-logo-box">🏅 DWSSC</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Stain<span>-33</span></a>
+                    <p>Professional cleaning services trusted by thousands across Bangalore.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Home Cleaning</a></li>
+                        <li><a href="#">Deep Cleaning</a></li>
+                        <li><a href="#">Pest Control</a></li>
+                        <li><a href="#">Facility Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Refunds</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Stain-33. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">f</a>
+                    <a href="#">📷</a>
+                    <a href="#">💬</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function updateDots() {
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+        }
+
+        document.querySelector('.slider-nav.next')?.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % 3;
+            updateDots();
+        });
+
+        document.querySelector('.slider-nav.prev')?.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + 3) % 3;
+            updateDots();
+        });
+
+        dots.forEach((dot, i) => dot.addEventListener('click', () => { currentSlide = i; updateDots(); }));
+
+        setInterval(() => { currentSlide = (currentSlide + 1) % 3; updateDots(); }, 5000);
+    </script>
+</body>
+</html>

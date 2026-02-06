@@ -1,7 +1,21 @@
 #!/usr/bin/env python3
 """
-Home Services Lead Tracker - Complete Excel Generator
+Home Services Lead Tracker - Complete Excel Generator (v3 - Original Column Order)
 Generates: Home_Services_Lead_Tracker.xlsx
+
+Column Layout (Original):
+  A=S.No (auto), B=Timestamp, C=Order ID (auto), D=Customer Name, E=Phone Number,
+  F=WhatsApp Number, G=Alternate Phone, H=Email,
+  I=City, J=Area/Locality, K=Full Address, L=BHK, M=SQFT,
+  N=Service 1, O=Price 1, P=Service 2, Q=Price 2, R=Service 3, S=Price 3,
+  T=Service 4, U=Price 4,
+  V=Total Value (auto), W=Discount Amount, X=Discounted Total (auto),
+  Y=Preferred Date, Z=Slot Time, AA=Order Source, AB=Order Status, AC=Reason/Notes,
+  AD=Vendor Name, AE=Vendor Contact, AF=Vendor Alternate No.,
+  AG=Order Scheduled Date, AH=Scheduled Time, AI=Order Completed Date,
+  AJ=Advance Amount, AK=Advance Status, AL=Pending Balance (auto),
+  AM=Payment Value, AN=Payment Status, AO=Payment Mode, AP=Refund Amount,
+  AQ=Invoice Number (auto), AR=Transaction Ref. No.
 """
 
 import os
@@ -77,7 +91,7 @@ SOURCE_LIST = "Website,Instagram,JustDial,Google,Referral,WhatsApp,Walk-in,Other
 SOURCES = [s.strip() for s in SOURCE_LIST.split(",")]
 STATUS_LIST = "Confirmed,Pending,Cancelled,Scheduled,Completed,Refunded"
 ADV_STATUS_LIST = "Received,NIL,Cleared"
-PAY_STATUS_LIST = "Received,Pending"
+PAY_STATUS_LIST = "Received,Pending,Refund Completed"
 PAY_MODE_LIST = "Cash,UPI,Debit Card,Payment Gateway,Bank Transfer,Other"
 
 AREAS = [
@@ -86,51 +100,52 @@ AREAS = [
 ]
 
 # ── Column headers for Lead Tracker (A-AR = 44 columns) ────────────────────
+# ORIGINAL column order
 HEADERS = [
-    "S.No",              # A  (1)
-    "Timestamp",          # B  (2)
-    "Order ID",           # C  (3)
-    "Customer Name",      # D  (4)
-    "Phone Number",       # E  (5)
-    "WhatsApp Number",    # F  (6)
-    "Alternate Phone",    # G  (7)
-    "Email",              # H  (8)
-    "City",               # I  (9)
-    "Area / Locality",    # J  (10)
-    "Full Address",       # K  (11)
-    "BHK",                # L  (12)
-    "SQFT",               # M  (13)
-    "Service 1",          # N  (14)
-    "Price 1",            # O  (15)
-    "Service 2",          # P  (16)
-    "Price 2",            # Q  (17)
-    "Service 3",          # R  (18)
-    "Price 3",            # S  (19)
-    "Service 4",          # T  (20)
-    "Price 4",            # U  (21)
-    "Total Value",        # V  (22)
-    "Discount Amount",    # W  (23)
-    "Discounted Total",   # X  (24)
-    "Preferred Date",     # Y  (25)
-    "Slot Time",          # Z  (26)
-    "Order Source",       # AA (27)
-    "Order Status",       # AB (28)
-    "Reason / Notes",     # AC (29)
-    "Vendor Name",        # AD (30)
-    "Vendor Contact",     # AE (31)
-    "Vendor Alternate No.", # AF (32)
-    "Order Scheduled Date", # AG (33)
-    "Scheduled Time",    # AH (34)
-    "Order Completed Date", # AI (35)
-    "Advance Amount",    # AJ (36)
-    "Advance Status",    # AK (37)
-    "Pending Balance",   # AL (38)
-    "Payment Value",     # AM (39)
-    "Payment Status",    # AN (40)
-    "Payment Mode",      # AO (41)
-    "Refund Amount",     # AP (42)
-    "Invoice Number",    # AQ (43)
-    "Transaction Ref. No." # AR (44)
+    "S.No",                   # A  (1)  auto
+    "Timestamp",              # B  (2)
+    "Order ID",               # C  (3)  auto
+    "Customer Name",          # D  (4)
+    "Phone Number",           # E  (5)
+    "WhatsApp Number",        # F  (6)
+    "Alternate Phone",        # G  (7)
+    "Email",                  # H  (8)
+    "City",                   # I  (9)
+    "Area / Locality",        # J  (10)
+    "Full Address",           # K  (11)
+    "BHK",                    # L  (12)
+    "SQFT",                   # M  (13)
+    "Service 1",              # N  (14)
+    "Price 1",                # O  (15)
+    "Service 2",              # P  (16)
+    "Price 2",                # Q  (17)
+    "Service 3",              # R  (18)
+    "Price 3",                # S  (19)
+    "Service 4",              # T  (20)
+    "Price 4",                # U  (21)
+    "Total Value",            # V  (22) auto
+    "Discount Amount",        # W  (23)
+    "Discounted Total",       # X  (24) auto
+    "Preferred Date",         # Y  (25)
+    "Slot Time",              # Z  (26)
+    "Order Source",           # AA (27)
+    "Order Status",           # AB (28)
+    "Reason / Notes",         # AC (29)
+    "Vendor Name",            # AD (30)
+    "Vendor Contact",         # AE (31)
+    "Vendor Alternate No.",   # AF (32)
+    "Order Scheduled Date",   # AG (33)
+    "Scheduled Time",         # AH (34)
+    "Order Completed Date",   # AI (35)
+    "Advance Amount",         # AJ (36)
+    "Advance Status",         # AK (37)
+    "Pending Balance",        # AL (38) auto
+    "Payment Value",          # AM (39)
+    "Payment Status",         # AN (40)
+    "Payment Mode",           # AO (41)
+    "Refund Amount",          # AP (42)
+    "Invoice Number",         # AQ (43) auto
+    "Transaction Ref. No."    # AR (44)
 ]
 
 COL_WIDTHS = {
@@ -140,8 +155,8 @@ COL_WIDTHS = {
     "V": 14, "W": 14, "X": 14,
     "Y": 16, "Z": 22, "AA": 16, "AB": 16, "AC": 25,
     "AD": 18, "AE": 16, "AF": 18, "AG": 16, "AH": 22, "AI": 16,
-    "AJ": 14, "AK": 14, "AL": 14, "AM": 16, "AN": 14, "AO": 16,
-    "AP": 14, "AQ": 14, "AR": 18,
+    "AJ": 14, "AK": 14, "AL": 14, "AM": 14, "AN": 14, "AO": 18, "AP": 14,
+    "AQ": 16, "AR": 18,
 }
 
 CURRENCY_FMT = '₹#,##0'
@@ -187,30 +202,34 @@ instructions = [
      "Upload this file to Google Drive (drive.google.com). "
      "Right-click the file > Open with > Google Sheets. "
      "All formulas, dropdowns, and conditional formatting will work automatically."),
-    ("2. ENABLE FILTERS",
+    ("2. DATA ENTRY",
+     "Enter data starting from row 4. S.No (A), Order ID (C), Total Value (V), "
+     "Discounted Total (X), Pending Balance (AL) and Invoice Number (AQ) are "
+     "auto-calculated — do NOT type in those columns. "
+     "Timestamp (B) triggers all auto-formulas: enter the date/time of the lead."),
+    ("3. ENABLE FILTERS",
      "Go to Data > Create a filter. This adds filter arrows to every column header "
      "so you can sort and filter by status, service, area, date, etc."),
-    ("3. COLOR CODES EXPLAINED",
+    ("4. COLOR CODES EXPLAINED",
      "GREEN = Confirmed / Payment Received  |  YELLOW = Pending / Advance NIL  |  "
      "RED = Cancelled / Payment Pending  |  BLUE = Scheduled  |  PURPLE tint = Completed  |  "
-     "ORANGE = Refunded"),
-    ("4. USING THE LEAD TRACKER",
-     "Start entering data from Row 4. The S.No, Order ID, Total Value, Discounted Total, "
-     "Pending Balance, and Invoice Number columns auto-calculate via formulas. "
-     "Use dropdowns for City, BHK, Services, Status, Payment, and Source fields."),
-    ("5. CALENDAR / DATE PICKERS",
+     "ORANGE = Refunded / Refund Completed"),
+    ("5. USING THE LEAD TRACKER",
+     "Enter Timestamp (B), Customer Name (D), Phone (E), WhatsApp (F), "
+     "Email (H), City (I), Area (J), Address (K), BHK (L), SQFT (M). "
+     "Select Service 1 (N) and enter Price 1 (O). Add up to 3 more services (P-U). "
+     "Set Preferred Date (Y), Slot Time (Z), Order Source (AA), Order Status (AB). "
+     "Fill vendor details (AD-AF), scheduling (AG-AH), completion (AI), "
+     "and payment info (AJ-AR) as the order progresses."),
+    ("6. CALENDAR / DATE PICKERS",
      "In Google Sheets, click any date cell (Preferred Date, Scheduled Date, Completed Date) "
      "and a calendar picker appears automatically. Dates are formatted DD-MMM-YYYY."),
-    ("6. DASHBOARD TAB",
+    ("7. DASHBOARD TAB",
      "The Dashboard sheet auto-updates with order statistics, payment summary, "
      "service-wise breakdown, area-wise distribution, order source tracking, "
      "and a date-wise report with calendar inputs. Charts visualise the data."),
-    ("7. LINKING A GOOGLE FORM",
-     "Create a Google Form with fields listed in the 'Form Fields Reference' tab. "
-     "Link the form response sheet, then copy-paste or IMPORTRANGE the data into "
-     "the Lead Tracker. The Order ID and Invoice formulas populate automatically."),
     ("8. TIPS",
-     "Keep the first 4 columns (A-D) visible — they are frozen. "
+     "Columns A through D (S.No, Timestamp, Order ID, Customer Name) are frozen for easy scrolling. "
      "Use Order Source to track your best marketing channels. "
      "Regularly review the Dashboard for business insights. "
      "Back up your sheet weekly."),
@@ -282,37 +301,35 @@ def add_dropdown(ws, col_letter, formula1, start_row=4, end_row=1000):
     dv.add(f"{col_letter}{start_row}:{col_letter}{end_row}")
     return dv
 
-add_dropdown(ws1, "I", CITY_LIST)
-# Area / Locality dropdown (column J)
-AREA_LIST = ",".join(AREAS)
-add_dropdown(ws1, "J", AREA_LIST)
-add_dropdown(ws1, "L", BHK_LIST)
-add_dropdown(ws1, "N", SERVICE_LIST)
-add_dropdown(ws1, "P", SERVICE_LIST)
-add_dropdown(ws1, "R", SERVICE_LIST)
-add_dropdown(ws1, "T", SERVICE_LIST)
-add_dropdown(ws1, "Z", SLOT_LIST)
-add_dropdown(ws1, "AA", SOURCE_LIST)
-add_dropdown(ws1, "AB", STATUS_LIST)
-add_dropdown(ws1, "AH", SLOT_LIST)
-add_dropdown(ws1, "AK", ADV_STATUS_LIST)
-add_dropdown(ws1, "AN", PAY_STATUS_LIST)
-add_dropdown(ws1, "AO", PAY_MODE_LIST)
+# Original column dropdowns
+add_dropdown(ws1, "I", CITY_LIST)           # City
+add_dropdown(ws1, "J", ",".join(AREAS))     # Area / Locality
+add_dropdown(ws1, "L", BHK_LIST)            # BHK
+add_dropdown(ws1, "N", SERVICE_LIST)        # Service 1
+add_dropdown(ws1, "P", SERVICE_LIST)        # Service 2
+add_dropdown(ws1, "R", SERVICE_LIST)        # Service 3
+add_dropdown(ws1, "T", SERVICE_LIST)        # Service 4
+add_dropdown(ws1, "Z", SLOT_LIST)           # Slot Time
+add_dropdown(ws1, "AA", SOURCE_LIST)        # Order Source
+add_dropdown(ws1, "AB", STATUS_LIST)        # Order Status
+add_dropdown(ws1, "AH", SLOT_LIST)          # Scheduled Time
+add_dropdown(ws1, "AK", ADV_STATUS_LIST)    # Advance Status
+add_dropdown(ws1, "AN", PAY_STATUS_LIST)    # Payment Status
+add_dropdown(ws1, "AO", PAY_MODE_LIST)      # Payment Mode
 
-# Date columns — apply date format only (no DataValidation which can cause errors in Google Sheets).
+# No DataValidation on date fields (causes errors in Google Sheets).
 # Google Sheets shows calendar picker automatically when a cell has date format.
-# The date number format (DATE_FMT) is already applied in the pre-format loop above.
 
 # ── Pre-format rows 4-100: formulas, styles ─────────────────────────────
 data_font = Font(name="Calibri", size=10)
 data_al = Alignment(horizontal="center", vertical="center", wrap_text=True)
 left_data_al = Alignment(horizontal="left", vertical="center", wrap_text=True)
 
-# Columns that get currency format
+# Currency columns: O, Q, S, U, V, W, X, AJ, AL, AM, AP
 currency_cols = ["O", "Q", "S", "U", "V", "W", "X", "AJ", "AL", "AM", "AP"]
-# Columns that get date format
+# Date columns: Y, AG, AI
 date_cols = ["Y", "AG", "AI"]
-# Timestamp column
+# Timestamp column: B
 ts_col = "B"
 
 for row in range(4, 101):
@@ -332,24 +349,25 @@ for row in range(4, 101):
             cell.number_format = '#,##0'
 
         # Left-align text-heavy columns
-        if col_l in ["D", "H", "J", "K", "AC"]:
+        # D=CustomerName, K=FullAddress, J=Area/Locality, AC=Reason/Notes
+        if col_l in ["D", "J", "K", "AC"]:
             cell.alignment = left_data_al
 
-    # Formulas
+    # Formulas (original column references)
     r = row
-    # A: S.No
+    # A: S.No (auto: check if Timestamp in B is not blank)
     ws1[f"A{r}"] = f'=IF(B{r}<>"",ROW()-3,"")'
     ws1[f"A{r}"].number_format = '0'
-    # C: Order ID
+    # C: Order ID (auto)
     ws1[f"C{r}"] = f'=IF(B{r}<>"","ST-"&TEXT(ROW()-3,"0000"),"")'
     ws1[f"C{r}"].font = Font(name="Calibri", size=10, bold=True, color=MEDIUM_BLUE)
-    # V: Total Value
+    # V: Total Value (auto: sum of prices if Service 1 exists)
     ws1[f"V{r}"] = f'=IF(COUNTA(N{r})>0,SUM(O{r},Q{r},S{r},U{r}),"")'
-    # X: Discounted Total
+    # X: Discounted Total (auto)
     ws1[f"X{r}"] = f'=IF(V{r}<>"",V{r}-IF(W{r}<>"",W{r},0),"")'
     # AL: Pending Balance (0 when payment received OR advance cleared, otherwise Discounted Total - Advance)
-    ws1[f"AL{r}"] = f'=IF(X{r}="","",IF(OR(AN{r}="Received",AK{r}="Cleared"),0,X{r}-IF(AJ{r}<>"",AJ{r},0)))'
-    # AQ: Invoice Number
+    ws1[f"AL{r}"] = f'=IF(X{r}="","",IF(OR(AN{r}="Received",AK{r}="Cleared",AN{r}="Refund Completed"),0,X{r}-IF(AJ{r}<>"",AJ{r},0)))'
+    # AQ: Invoice Number (auto)
     ws1[f"AQ{r}"] = f'=IF(B{r}<>"","INV-"&TEXT(ROW()-3,"0000"),"")'
 
 # ── Conditional Formatting ───────────────────────────────────────────────
@@ -388,6 +406,10 @@ ws1.conditional_formatting.add(
     "AN4:AN1000",
     CellIsRule(operator="equal", formula=['"Pending"'],
               fill=make_fill(RED_BG), font=Font(color=RED_FONT, bold=True)))
+ws1.conditional_formatting.add(
+    "AN4:AN1000",
+    CellIsRule(operator="equal", formula=['"Refund Completed"'],
+              fill=make_fill(REFUND_BG), font=Font(color=REFUND_FONT, bold=True)))
 
 # Advance Status column AK (col 37)
 ws1.conditional_formatting.add(
@@ -403,7 +425,7 @@ ws1.conditional_formatting.add(
     CellIsRule(operator="equal", formula=['"Cleared"'],
               fill=make_fill("A9D18E"), font=Font(color="375623", bold=True)))
 
-# Row-level conditional formatting based on $AB column
+# Row-level conditional formatting based on $AB column (Order Status)
 row_range = f"A4:{last_col_letter}1000"
 ws1.conditional_formatting.add(
     row_range,
@@ -438,60 +460,71 @@ formula_cols = {"A", "C", "V", "X", "AL", "AQ"}
 samples = [
     {   # Row 4 - Rajesh Kumar, Confirmed
         "B": now - timedelta(days=5),
-        "D": "Rajesh Kumar", "E": "9876543210", "F": "9876543210", "G": "",
+        "D": "Rajesh Kumar", "E": "9876543210", "F": "9876543210",
+        "G": "",
         "H": "rajesh.k@email.com", "I": "Bangalore", "J": "Indiranagar",
         "K": "123, 12th Main, Indiranagar, Bangalore - 560038",
         "L": "2BHK", "M": 1200,
-        "N": "Bathroom Cleaning", "O": 2000, "P": "Pest Control", "Q": 3500,
+        "N": "Bathroom Cleaning",
+        "O": 2000, "P": "Pest Control", "Q": 3500,
         "W": 500,
         "Y": now + timedelta(days=2), "Z": "Morning 10-12",
-        "AA": "Website", "AB": "Confirmed", "AC": "",
+        "AA": "Website",
+        "AB": "Confirmed", "AC": "",
         "AD": "Suresh", "AE": "9988776655",
         "AG": now + timedelta(days=2), "AH": "Morning 10-12",
         "AJ": 500, "AK": "Received",
     },
     {   # Row 5 - Priya Sharma, Pending
         "B": now - timedelta(days=3),
-        "D": "Priya Sharma", "E": "8765432109", "F": "", "G": "",
+        "D": "Priya Sharma", "E": "8765432109", "F": "",
         "H": "priya.s@email.com", "I": "Bangalore", "J": "HSR Layout",
         "K": "45, Sector 2, HSR Layout, Bangalore - 560102",
         "L": "3BHK", "M": 1800,
-        "N": "Full Home Cleaning", "O": 4500,
+        "N": "Full Home Cleaning",
+        "O": 4500,
         "Y": now + timedelta(days=5), "Z": "Afternoon 2-4",
-        "AA": "Instagram", "AB": "Pending",
+        "AA": "Instagram",
+        "AB": "Pending",
     },
     {   # Row 6 - Amit Patel, Cancelled
         "B": now - timedelta(days=7),
-        "D": "Amit Patel", "E": "7654321098", "F": "", "G": "",
+        "D": "Amit Patel", "E": "7654321098", "F": "",
         "H": "amit.p@email.com", "I": "Bangalore", "J": "Whitefield",
         "K": "78, ITPL Road, Whitefield, Bangalore - 560066",
         "L": "2BHK", "M": 1100,
-        "N": "Painting", "O": 15000, "P": "Plumbing", "Q": 2000,
+        "N": "Painting",
+        "O": 15000, "P": "Plumbing", "Q": 2000,
         "W": 2000,
-        "AA": "Google", "AB": "Cancelled", "AC": "Price too high",
+        "AA": "Google",
+        "AB": "Cancelled", "AC": "Price too high",
     },
     {   # Row 7 - Meera Reddy, Scheduled
         "B": now - timedelta(days=2),
-        "D": "Meera Reddy", "E": "6543210987", "F": "6543210987", "G": "",
+        "D": "Meera Reddy", "E": "6543210987", "F": "6543210987",
         "H": "meera.r@email.com", "I": "Bangalore", "J": "Koramangala",
         "K": "22, 5th Block, Koramangala, Bangalore - 560095",
         "L": "3BHK", "M": 1600,
-        "N": "Full Home Cleaning", "O": 4500,
+        "N": "Full Home Cleaning",
+        "O": 4500,
         "Y": now + timedelta(days=3), "Z": "Morning 8-10",
-        "AA": "JustDial", "AB": "Scheduled",
+        "AA": "JustDial",
+        "AB": "Scheduled",
         "AD": "Ramesh", "AE": "9876501234",
         "AG": now + timedelta(days=3), "AH": "Morning 8-10",
         "AJ": 1000, "AK": "Received",
     },
     {   # Row 8 - Karthik Nair, Completed
         "B": now - timedelta(days=10),
-        "D": "Karthik Nair", "E": "5432109876", "F": "", "G": "",
+        "D": "Karthik Nair", "E": "5432109876", "F": "",
         "H": "karthik.n@email.com", "I": "Bangalore", "J": "JP Nagar",
         "K": "56, 6th Phase, JP Nagar, Bangalore - 560078",
         "L": "1BHK", "M": 650,
-        "N": "Plumbing", "O": 1500,
+        "N": "Plumbing",
+        "O": 1500,
         "Y": now - timedelta(days=8), "Z": "Evening 4-6",
-        "AA": "Website", "AB": "Completed",
+        "AA": "Website",
+        "AB": "Completed",
         "AD": "Vijay", "AE": "9123456780",
         "AG": now - timedelta(days=8), "AH": "Evening 4-6",
         "AI": now - timedelta(days=8),
@@ -510,6 +543,7 @@ for s_idx, sample in enumerate(samples):
         cell.value = value
 
 # ── Freeze panes & auto filter ──────────────────────────────────────────
+# Freeze at E4: keeps header rows 1-3 frozen, and columns A-D (S.No, Timestamp, Order ID, Customer Name) visible
 ws1.freeze_panes = "E4"
 ws1.auto_filter.ref = f"A3:{last_col_letter}1000"
 
@@ -577,6 +611,8 @@ stat_headers = ["Total Orders", "Confirmed", "Pending", "Cancelled", "Scheduled"
 stat_colors = [LIGHT_BLUE, GREEN_BG, YELLOW_BG, RED_BG, BLUE_BG, COMPLETED_BG, REFUND_BG]
 stat_font_colors = [DARK_BLUE, GREEN_FONT, YELLOW_FONT, RED_FONT, BLUE_FONT, COMPLETED_FONT_CLR, REFUND_FONT]
 
+# Total Orders: COUNTIF on Order ID (C) for "ST-*" pattern
+# Status counts: COUNTIF on Order Status (AB)
 stat_formulas = [
     f'=COUNTIF({LT}!C4:C1000,"ST-*")',
     f'=COUNTIF({LT}!AB4:AB1000,"Confirmed")',
@@ -604,13 +640,16 @@ ws2.row_dimensions[sec1_data_row].height = 50
 
 # ── SECTION 2: PAYMENT SUMMARY ──────────────────────────────────────────
 R_PS = sec1_data_row + 2  # row 10
-ws2.merge_cells(f"A{R_PS}:H{R_PS}")
+ws2.merge_cells(f"A{R_PS}:I{R_PS}")
 ws2[f"A{R_PS}"].value = "PAYMENT SUMMARY"
 apply_cell(ws2[f"A{R_PS}"], font=Font(name="Calibri", bold=True, size=12, color=WHITE),
            fill=make_fill(DARK_BLUE), alignment=center_al)
 
 pay_headers = ["Total Quoted", "Total Received", "Total Pending", "Cash Received",
-               "UPI Received", "Card / Gateway", "Total Advance", "Total Refunds"]
+               "UPI Received", "Card / Gateway", "Total Advance", "Total Refunds", "Refund Completed"]
+# Original column references:
+#   Discounted Total = X, Payment Value = AM, Payment Status = AN,
+#   Payment Mode = AO, Advance Status = AK, Advance Amount = AJ, Refund Amount = AP
 pay_formulas = [
     # Total Quoted: sum of Discounted Total (X) where not blank
     f'=SUMPRODUCT(({LT}!X4:X1000<>"")*({LT}!X4:X1000))',
@@ -626,8 +665,10 @@ pay_formulas = [
     f'=SUMPRODUCT((({LT}!AO4:AO1000="Debit Card")+({LT}!AO4:AO1000="Payment Gateway"))*({LT}!AN4:AN1000="Received")*({LT}!AM4:AM1000))',
     # Total Advance where AK=Received
     f'=SUMPRODUCT(({LT}!AK4:AK1000="Received")*({LT}!AJ4:AJ1000))',
-    # Total Refunds
+    # Total Refunds (sum of refund amounts)
     f'=SUM({LT}!AP4:AP1000)',
+    # Refund Completed: count where Payment Status = "Refund Completed"
+    f'=COUNTIF({LT}!AN4:AN1000,"Refund Completed")',
 ]
 
 r_pay_hdr = R_PS + 1
@@ -640,9 +681,10 @@ for i, (hdr, formula) in enumerate(zip(pay_headers, pay_formulas)):
                fill=make_fill(MEDIUM_BLUE), alignment=center_al, border=thin_border)
     cell = ws2[f"{col_l}{r_pay_data}"]
     cell.value = formula
+    fmt = '0' if hdr == "Refund Completed" else CURRENCY_FMT
     apply_cell(cell, font=Font(name="Calibri", bold=True, size=14, color=DARK_BLUE),
                fill=make_fill(LIGHT_BLUE), alignment=center_al, border=thin_border,
-               number_format=CURRENCY_FMT)
+               number_format=fmt)
 
 ws2.row_dimensions[r_pay_data].height = 40
 
@@ -653,6 +695,7 @@ ws2[f"A{R_DS}"].value = "DISCOUNT SUMMARY"
 apply_cell(ws2[f"A{R_DS}"], font=Font(name="Calibri", bold=True, size=12, color=WHITE),
            fill=make_fill(DARK_BLUE), alignment=center_al)
 
+# Discount Amount = W (original)
 disc_headers = ["Orders with Discount", "Total Discount Given", "Avg Discount"]
 disc_formulas = [
     f'=COUNTIF({LT}!W4:W1000,">"&0)',
@@ -693,6 +736,7 @@ for i, hdr in enumerate(src_col_headers):
     apply_cell(cell, font=Font(name="Calibri", bold=True, size=10, color=WHITE),
                fill=make_fill(MEDIUM_BLUE), alignment=center_al, border=thin_border)
 
+# Order Source = AA, Order Status = AB, Payment Status = AN, Payment Value = AM
 r_src_start = r_src_hdr + 1
 for s_idx, source in enumerate(SOURCES):
     r = r_src_start + s_idx
@@ -745,6 +789,9 @@ for i, hdr in enumerate(svc_col_headers):
     apply_cell(cell, font=Font(name="Calibri", bold=True, size=10, color=WHITE),
                fill=make_fill(MEDIUM_BLUE), alignment=center_al, border=thin_border)
 
+# Service columns: N=Service1, P=Service2, R=Service3, T=Service4 (original)
+# Price columns:   O=Price1, Q=Price2, S=Price3, U=Price4 (original)
+# Order Status: AB, Payment Status: AN
 r_svc_start = r_svc_hdr + 1
 for s_idx, svc in enumerate(SERVICES):
     r = r_svc_start + s_idx
@@ -752,14 +799,14 @@ for s_idx, svc in enumerate(SERVICES):
     apply_cell(ws2[f"A{r}"], font=Font(name="Calibri", bold=True, size=10),
                alignment=left_al, border=thin_border, fill=make_fill(LIGHT_GRAY))
 
-    # Total Orders across 4 service columns
+    # Total Orders across 4 service columns (N, P, R, T)
     ws2[f"B{r}"].value = (
         f'=COUNTIF({LT}!N4:N1000,A{r})+COUNTIF({LT}!P4:P1000,A{r})'
         f'+COUNTIF({LT}!R4:R1000,A{r})+COUNTIF({LT}!T4:T1000,A{r})'
     )
     apply_cell(ws2[f"B{r}"], font=data_font, alignment=center_al, border=thin_border)
 
-    # Status-wise counts across all 4 service columns
+    # Status-wise counts across all 4 service columns (N, P, R, T)
     for si, (status_name, col_l) in enumerate(
             [("Confirmed", "C"), ("Scheduled", "D"), ("Completed", "E"),
              ("Pending", "F"), ("Cancelled", "G")]):
@@ -772,6 +819,7 @@ for s_idx, svc in enumerate(SERVICES):
         apply_cell(ws2[f"{col_l}{r}"], font=data_font, alignment=center_al, border=thin_border)
 
     # Revenue: SUMPRODUCT matching service in each col * price where AN=Received
+    # Service N * Price O, Service P * Price Q, Service R * Price S, Service T * Price U
     ws2[f"H{r}"].value = (
         f'=SUMPRODUCT(({LT}!N4:N1000=A{r})*({LT}!AN4:AN1000="Received")*({LT}!O4:O1000))'
         f'+SUMPRODUCT(({LT}!P4:P1000=A{r})*({LT}!AN4:AN1000="Received")*({LT}!Q4:Q1000))'
@@ -810,6 +858,7 @@ for i, hdr in enumerate(area_col_headers):
     apply_cell(cell, font=Font(name="Calibri", bold=True, size=10, color=WHITE),
                fill=make_fill(MEDIUM_BLUE), alignment=center_al, border=thin_border)
 
+# Area/Locality = J (original), Order Status = AB, Payment Status = AN, Payment Value = AM
 r_area_start = r_area_hdr + 1
 for a_idx, area in enumerate(AREAS):
     r = r_area_start + a_idx
@@ -866,7 +915,6 @@ ws2[f"A{r_date_input}"].value = "From Date"
 apply_cell(ws2[f"A{r_date_input}"], font=Font(name="Calibri", bold=True, size=11, color=DARK_BLUE),
            alignment=center_al, border=thin_border)
 # Pre-fill From/To with actual date objects so Google Sheets recognizes the cells as dates.
-# User can clear and type new dates — the cell stays in date mode.
 from datetime import date as date_cls
 ws2[f"B{r_date_input}"].value = date_cls(2026, 1, 17)
 apply_cell(ws2[f"B{r_date_input}"], font=Font(name="Calibri", bold=True, size=12, color=DARK_BLUE),
@@ -907,7 +955,7 @@ from_cell = f"B{r_date_input}"
 to_cell = f"D{r_date_input}"
 
 # Date-wise formulas use INT() to strip time from Timestamp (col B) for reliable date comparison
-# INT(datetime) returns just the date part in Google Sheets/Excel
+# Timestamp is column B (original)
 
 # Orders in Range
 ws2[f"A{r_date_data}"].value = (
@@ -1061,25 +1109,21 @@ ws3.column_dimensions["A"].width = 22
 ws3.column_dimensions["B"].width = 18
 ws3.column_dimensions["C"].width = 55
 
+# Form fields reference with original column mapping
 form_fields = [
-    ("Customer Name", "Short Answer", "Required. Full name of the customer."),
-    ("Phone Number", "Short Answer", "Required. Primary contact number (10 digits)."),
-    ("WhatsApp Number", "Short Answer", "Optional. WhatsApp contact if different from phone."),
-    ("Alternate Phone", "Short Answer", "Optional. Secondary contact number."),
-    ("Email", "Short Answer", "Optional. Customer email for invoices/updates."),
-    ("City", "Dropdown", CITY_LIST),
-    ("Area / Locality", "Short Answer", "e.g. Indiranagar, Koramangala, HSR Layout, Whitefield, JP Nagar"),
-    ("Full Address", "Paragraph", "Complete address with landmark and pincode."),
-    ("BHK", "Dropdown", BHK_LIST),
-    ("SQFT (Approx)", "Short Answer", "Approximate area in square feet."),
-    ("Service 1", "Dropdown", SERVICE_LIST),
-    ("Service 2", "Dropdown", f"Optional. {SERVICE_LIST}"),
-    ("Service 3", "Dropdown", f"Optional. {SERVICE_LIST}"),
-    ("Service 4", "Dropdown", f"Optional. {SERVICE_LIST}"),
-    ("Preferred Date", "Date", "Customer's preferred service date."),
-    ("Time Slot", "Dropdown", SLOT_LIST),
-    ("Order Source", "Dropdown", SOURCE_LIST),
-    ("Special Instructions", "Paragraph", "Any special requirements or notes from the customer."),
+    ("Customer Name", "Short Answer", "Required. Full name of the customer. (Maps to Lead Tracker column D)"),
+    ("Phone Number", "Short Answer", "Required. Primary contact number (10 digits). (Maps to column E)"),
+    ("WhatsApp Number", "Short Answer", "Optional. WhatsApp contact if different from phone. (Maps to column F)"),
+    ("Email", "Short Answer", "Optional. Customer email for invoices/updates. (Maps to column H)"),
+    ("City", "Dropdown", f"{CITY_LIST} (Maps to column I)"),
+    ("Area / Locality", "Short Answer", f"e.g. Indiranagar, Koramangala, HSR Layout, Whitefield, JP Nagar (Maps to column J)"),
+    ("Full Address", "Paragraph", "Complete address with landmark and pincode. (Maps to column K)"),
+    ("BHK", "Dropdown", f"{BHK_LIST} (Maps to column L)"),
+    ("SQFT (Approx)", "Short Answer", "Approximate area in square feet. (Maps to column M)"),
+    ("Service 1", "Dropdown", f"{SERVICE_LIST} (Maps to column N)"),
+    ("Preferred Date", "Date", "Customer's preferred service date. (Maps to column Y)"),
+    ("Time Slot", "Dropdown", f"{SLOT_LIST} (Maps to column Z)"),
+    ("Order Source", "Dropdown", f"{SOURCE_LIST} (Maps to column AA)"),
 ]
 
 for i, (field, ftype, notes) in enumerate(form_fields):
@@ -1105,14 +1149,46 @@ apply_cell(ws3[f"A{r_inst}"], font=Font(name="Calibri", bold=True, size=12, colo
            fill=make_fill(DARK_BLUE), alignment=center_al)
 
 link_instructions = [
-    "1. Create a new Google Form at forms.google.com with the fields listed above.",
-    "2. Go to Responses tab in the Form > Click the Google Sheets icon to link responses.",
-    "3. A new response sheet is created automatically in Google Sheets.",
-    "4. In the Lead Tracker sheet, use IMPORTRANGE or copy-paste data from the response sheet.",
-    '5. Example: =IMPORTRANGE("spreadsheet_url", "Form Responses 1!A2:R100")',
-    "6. Map the form fields to the correct Lead Tracker columns (D, E, F, G, H, I, J, K, L, M, N, P, R, T, Y, Z, AA).",
-    "7. The Order ID (C), S.No (A), Total Value (V), Discounted Total (X), Pending Balance (AL), and Invoice (AQ) auto-populate.",
-    "8. Manually update: Order Status (AB), Vendor details (AD-AF), Payment info (AJ-AO), etc.",
+    "1. Create a Google Form at forms.google.com with the fields listed above (in the same order).",
+    "2. Go to Responses tab in the Form > Click the Google Sheets icon > Select 'Select existing spreadsheet'.",
+    "3. Choose your Lead Tracker spreadsheet and select the 'Lead Tracker' sheet.",
+    "4. Google Forms will write responses starting from column B (Timestamp) in the Lead Tracker sheet.",
+    "5. Column A = S.No (auto), Column B = Timestamp (auto from Form), Column C = Order ID (auto).",
+    "",
+    "COLUMN MAPPING (Original Layout):",
+    "Column A: S.No (auto-calculated)",
+    "Column B: Timestamp",
+    "Column C: Order ID (auto-calculated)",
+    "Column D: Customer Name",
+    "Column E: Phone Number",
+    "Column F: WhatsApp Number",
+    "Column G: Alternate Phone",
+    "Column H: Email",
+    "Column I: City",
+    "Column J: Area / Locality",
+    "Column K: Full Address",
+    "Column L: BHK",
+    "Column M: SQFT",
+    "Column N-U: Services 1-4 & Prices 1-4",
+    "Column V: Total Value (auto)",
+    "Column W: Discount Amount",
+    "Column X: Discounted Total (auto)",
+    "Column Y: Preferred Date",
+    "Column Z: Slot Time",
+    "Column AA: Order Source",
+    "Column AB: Order Status",
+    "Column AC-AI: Notes, Vendor, Scheduling, Completion",
+    "Column AJ-AR: Payment, Balance, Invoice, Transaction",
+    "",
+    "Auto-calculated columns (S.No=A, Order ID=C, Total Value=V, Discounted Total=X,",
+    "Pending Balance=AL, Invoice Number=AQ) will populate automatically when Timestamp data arrives.",
+    "",
+    "Staff manually fills: Price 1 (O), Services 2-4 & Prices (P-U), Discount (W),",
+    "Order Status (AB), Vendor details (AD-AF), Payment info (AJ-AR), etc.",
+    "",
+    "ALTERNATIVE: If using a SEPARATE response sheet, use IMPORTRANGE formulas to pull data.",
+    "",
+    "IMPORTANT: When you paste the first IMPORTRANGE, Google Sheets will ask 'Allow access?' - click ALLOW.",
 ]
 
 for li, text in enumerate(link_instructions):
@@ -1133,6 +1209,7 @@ wb.save(output_file)
 print(f"Successfully created: {output_file}")
 print(f"Sheets: {wb.sheetnames}")
 print(f"Lead Tracker columns: {num_cols} (A to {last_col_letter})")
+print(f"Column layout: A=S.No, B=Timestamp, C=Order ID, D=Customer Name ... AR=Transaction Ref (ORIGINAL ORDER)")
 print(f"Dashboard sections: Order Stats, Payment Summary, Discount Summary, "
       f"Source Tracking, Service Breakdown, Area Distribution, Date-wise Report + 3 Charts")
 print("Done!")

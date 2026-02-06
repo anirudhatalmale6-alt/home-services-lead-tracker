@@ -1,0 +1,2864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stain-33 | Professional Cleaning Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #7C3AED;
+            --primary-purple-dark: #5B21B6;
+            --primary-green: #10B981;
+            --primary-green-dark: #059669;
+            --dark: #1F2937;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 1000;
+            padding: 0 24px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 28px;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary-purple);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--gray-700);
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-purple);
+        }
+
+        .nav-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s;
+        }
+
+        .nav-item:hover .nav-link svg {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+            padding: 16px;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-section {
+            margin-bottom: 16px;
+        }
+
+        .dropdown-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .dropdown-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding-left: 12px;
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 10px 12px;
+            font-size: 14px;
+            color: var(--gray-600);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .dropdown-link:hover {
+            background: var(--gray-50);
+            color: var(--gray-900);
+            padding-left: 16px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2.5px;
+            background: var(--gray-700);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger:hover span {
+            background: var(--primary-purple);
+        }
+
+        /* Compact dropdown for individual service menus */
+        .dropdown-compact {
+            min-width: 220px;
+        }
+
+        /* Contact Button */
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--primary-purple);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-purple-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Contact Popup */
+        .contact-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-popup.active {
+            display: flex;
+        }
+
+        .popup-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .popup-content {
+            position: relative;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: var(--shadow-xl);
+            animation: popupIn 0.3s ease;
+        }
+
+        @keyframes popupIn {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            color: var(--gray-500);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .popup-close:hover {
+            background: var(--gray-200);
+            color: var(--gray-700);
+        }
+
+        .popup-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .popup-content > p {
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .popup-form input,
+        .popup-form select,
+        .popup-form textarea {
+            padding: 14px 16px;
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .popup-form input:focus,
+        .popup-form select:focus,
+        .popup-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .popup-submit {
+            padding: 16px;
+            background: var(--primary-purple);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .popup-submit:hover {
+            background: var(--primary-purple-dark);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%);
+            min-height: 480px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 60px 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 550px;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.2);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #FCD34D;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 32px;
+            max-width: 420px;
+        }
+
+        .btn-book {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-book:hover {
+            background: var(--gray-800);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-book svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 80px;
+            bottom: 0;
+            width: 420px;
+            height: 420px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hero-person {
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450"><defs><linearGradient id="skin" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23D4A574"/><stop offset="100%25" style="stop-color:%23C4956A"/></linearGradient><linearGradient id="hair" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%231a1a1a"/><stop offset="100%25" style="stop-color:%232d2d2d"/></linearGradient></defs><ellipse cx="200" cy="120" rx="55" ry="65" fill="url(%23skin)"/><path d="M145 100 Q150 50 200 45 Q250 50 255 100 Q260 80 240 70 Q200 55 160 70 Q140 80 145 100" fill="url(%23hair)"/><ellipse cx="180" cy="110" rx="8" ry="5" fill="%231a1a1a"/><ellipse cx="220" cy="110" rx="8" ry="5" fill="%231a1a1a"/><ellipse cx="200" cy="130" rx="4" ry="6" fill="%23B8896A"/><path d="M185 150 Q200 160 215 150" stroke="%23C4956A" stroke-width="3" fill="none"/><rect x="170" y="180" width="60" height="120" rx="20" fill="%23FF6B6B"/><rect x="160" y="300" width="35" height="100" rx="10" fill="%23333"/><rect x="205" y="300" width="35" height="100" rx="10" fill="%23333"/><ellipse cx="130" cy="280" rx="15" ry="40" fill="url(%23skin)" transform="rotate(-30 130 280)"/><ellipse cx="270" cy="250" rx="15" ry="45" fill="url(%23skin)" transform="rotate(20 270 250)"/><rect x="250" y="200" width="80" height="30" rx="5" fill="%2310B981"/><rect x="260" y="180" width="60" height="25" rx="3" fill="%23059669"/><circle cx="320" cy="230" r="40" fill="%23E5E7EB" stroke="%23D1D5DB" stroke-width="3"/><path d="M300 230 L320 230 L340 230" stroke="%23059669" stroke-width="4"/><path d="M290 215 L350 245" stroke="%23059669" stroke-width="2" stroke-dasharray="5,5"/></svg>') center bottom / contain no-repeat;
+        }
+
+        .hero-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-nav-dot.active {
+            background: var(--white);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .hero-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+        }
+
+        .hero-arrow:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .hero-arrow.left { left: 24px; }
+        .hero-arrow.right { right: 24px; }
+
+        .hero-arrow svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gray-700);
+        }
+
+        /* ==================== RUNNING TICKER ==================== */
+        .ticker {
+            background: var(--gray-900);
+            padding: 14px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 25s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            white-space: nowrap;
+            padding-right: 0;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ticker-item::before {
+            content: '›';
+            font-size: 24px;
+            margin: 0 20px;
+            opacity: 0.7;
+        }
+
+        /* ==================== SECTIONS COMMON ==================== */
+        .section {
+            padding: 50px 80px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+        }
+
+        /* ==================== OFFERS & DISCOUNTS ==================== */
+        .offers-section {
+            background: var(--gray-50);
+        }
+
+        .offers-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .offers-grid {
+            display: flex;
+            gap: 20px;
+            animation: offersSlide 20s linear infinite;
+            width: max-content;
+        }
+
+        .offers-grid:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes offersSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .offer-card {
+            flex: 0 0 340px;
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .offer-card.gray {
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+        }
+
+        .offer-card.green {
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+        }
+
+        .offer-card.purple {
+            background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%);
+        }
+
+        .offer-card.blue {
+            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+        }
+
+        .offer-card.orange {
+            background: linear-gradient(135deg, #FED7AA 0%, #FDBA74 100%);
+        }
+
+        .offer-card.pink {
+            background: linear-gradient(135deg, #FBCFE8 0%, #F9A8D4 100%);
+        }
+
+        .offer-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .offer-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        .offer-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+
+        .offer-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .offer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: var(--gray-900);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .offer-btn:hover {
+            background: var(--primary-purple);
+        }
+
+        .offer-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 80px;
+            opacity: 0.15;
+        }
+
+        /* ==================== PROMOTIONAL BANNERS ==================== */
+        .promo-banners-section {
+            padding: 0 80px 40px;
+        }
+
+        .promo-banners-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .promo-banner {
+            border-radius: 16px;
+            padding: 28px 32px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 140px;
+            transition: all 0.4s;
+        }
+
+        .promo-banner:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .promo-banner.pest-promo {
+            background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+            color: var(--white);
+        }
+
+        .promo-banner.office-promo {
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+            color: var(--gray-900);
+        }
+
+        .promo-content {
+            flex: 1;
+        }
+
+        .promo-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .office-promo .promo-badge {
+            background: var(--gray-200);
+            color: var(--gray-600);
+        }
+
+        .promo-banner h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .promo-banner p {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .office-promo p {
+            color: var(--gray-600);
+        }
+
+        .promo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: var(--white);
+            color: var(--primary-green);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .promo-btn:hover {
+            transform: translateX(4px);
+        }
+
+        .promo-btn.dark {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .promo-icon {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+        }
+
+        .promo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .promo-banners-section { padding: 0 20px 30px; }
+            .promo-banners-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ==================== WALL PANELS BANNER ==================== */
+        .wall-panels {
+            padding: 0 80px 40px;
+        }
+
+        .wall-panels-card {
+            background: linear-gradient(135deg, #F5F0E8 0%, #EBE4D8 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s;
+        }
+
+        .wall-panels-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .wall-panels-content {
+            flex: 1;
+            padding: 36px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .wall-panels-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .wall-panels-content p {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+
+        .btn-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: fit-content;
+        }
+
+        .btn-green:hover {
+            background: var(--primary-green-dark);
+            transform: translateX(4px);
+        }
+
+        .wall-panels-image {
+            flex: 1.2;
+            min-height: 200px;
+            background: linear-gradient(180deg, #8B7355 0%, #6B5344 50%, #4A3728 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wall-panels-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(0,0,0,0.1) 60px, rgba(0,0,0,0.1) 62px),
+                repeating-linear-gradient(0deg, transparent 0px, transparent 15px, rgba(255,255,255,0.05) 15px, rgba(255,255,255,0.05) 16px);
+        }
+
+        .tv-frame {
+            width: 200px;
+            height: 130px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .tv-frame::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            border-radius: 4px;
+        }
+
+        .tv-frame::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 25px;
+            background: #2d2d2d;
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* ==================== SPECIAL OFFERS ==================== */
+        .special-offers {
+            background: var(--white);
+        }
+
+        .special-offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .special-card {
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            min-height: 160px;
+        }
+
+        .special-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .special-card.purple-gradient {
+            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
+            color: var(--white);
+        }
+
+        .special-card.white-bordered {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+        }
+
+        .special-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .special-card.white-bordered .special-tag {
+            background: var(--gray-100);
+            color: var(--gray-600);
+        }
+
+        .special-card h3 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .special-card.white-bordered h3 {
+            color: var(--gray-900);
+        }
+
+        .special-card p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .special-card.white-bordered p {
+            color: var(--gray-600);
+        }
+
+        .special-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .special-card.purple-gradient .special-btn {
+            background: var(--white);
+            color: var(--primary-purple);
+        }
+
+        .special-card.white-bordered .special-btn {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .special-btn:hover {
+            transform: translateX(4px);
+        }
+
+        /* ==================== BEST IN CLASS FEATURES ==================== */
+        .features-section {
+            background: var(--gray-50);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+            position: relative;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .feature-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        /* Filter visual */
+        .filter-visual {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .filter-visual .filter-body {
+            width: 60px;
+            height: 100px;
+            background: linear-gradient(180deg, #E5E7EB 0%, #D1D5DB 100%);
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            box-shadow: var(--shadow-md);
+        }
+
+        .filter-visual .water-drop {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 50px;
+            background: linear-gradient(180deg, #3B82F6 0%, #1D4ED8 100%);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            animation: drip 2s ease-in-out infinite;
+        }
+
+        @keyframes drip {
+            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            50% { transform: translateX(-50%) translateY(10px); opacity: 0.7; }
+        }
+
+        /* Purifier visual */
+        .purifier-visual {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 10px;
+        }
+
+        .purifier-layer {
+            height: 10px;
+            border-radius: 3px;
+            animation: purify 3s ease-in-out infinite;
+        }
+
+        .purifier-layer:nth-child(1) { background: #EF4444; animation-delay: 0s; }
+        .purifier-layer:nth-child(2) { background: #F97316; animation-delay: 0.1s; }
+        .purifier-layer:nth-child(3) { background: #EAB308; animation-delay: 0.2s; }
+        .purifier-layer:nth-child(4) { background: #84CC16; animation-delay: 0.3s; }
+        .purifier-layer:nth-child(5) { background: #22C55E; animation-delay: 0.4s; }
+        .purifier-layer:nth-child(6) { background: #14B8A6; animation-delay: 0.5s; }
+        .purifier-layer:nth-child(7) { background: #06B6D4; animation-delay: 0.6s; }
+        .purifier-layer:nth-child(8) { background: #3B82F6; animation-delay: 0.7s; }
+        .purifier-layer:nth-child(9) { background: #8B5CF6; animation-delay: 0.8s; }
+        .purifier-layer:nth-child(10) { background: #A855F7; animation-delay: 0.9s; }
+
+        @keyframes purify {
+            0%, 100% { opacity: 0.6; transform: scaleX(0.9); }
+            50% { opacity: 1; transform: scaleX(1); }
+        }
+
+        /* Phone visual */
+        .phone-visual {
+            width: 70px;
+            height: 120px;
+            background: linear-gradient(180deg, #1F2937 0%, #111827 100%);
+            border-radius: 12px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .phone-visual::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 4px;
+            background: #374151;
+            border-radius: 2px;
+        }
+
+        .phone-screen {
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            right: 5px;
+            bottom: 10px;
+            background: linear-gradient(180deg, #10B981 0%, #059669 100%);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .tds-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .tds-label {
+            font-size: 8px;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+        }
+
+        /* ==================== EXPLORE BY SPACE ==================== */
+        .explore-section {
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .explore-wrapper {
+            position: relative;
+        }
+
+        .explore-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .explore-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .explore-scroll::-webkit-scrollbar-track {
+            background: var(--gray-100);
+            border-radius: 3px;
+        }
+
+        .explore-scroll::-webkit-scrollbar-thumb {
+            background: var(--gray-300);
+            border-radius: 3px;
+        }
+
+        .explore-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .explore-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .explore-nav.prev {
+            left: -25px;
+        }
+
+        .explore-nav.next {
+            right: -25px;
+        }
+
+        .explore-nav svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gray-700);
+        }
+
+        .explore-card {
+            flex: 0 0 280px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            scroll-snap-align: start;
+            transition: all 0.4s;
+        }
+
+        .explore-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-purple);
+        }
+
+        .explore-image {
+            height: 160px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore-image svg {
+            width: 80px;
+            height: 80px;
+            color: var(--gray-400);
+        }
+
+        .explore-content {
+            padding: 20px;
+        }
+
+        .explore-tag {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .explore-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .explore-price {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .explore-price span {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .explore-price strong {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .explore-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            padding: 12px;
+            background: var(--gray-900);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .explore-btn:hover {
+            background: var(--primary-purple);
+        }
+
+        /* ==================== CATEGORY TICKER ==================== */
+        .category-ticker {
+            background: var(--gray-100);
+            padding: 20px 0;
+            overflow: hidden;
+        }
+
+        .category-track {
+            display: flex;
+            animation: categoryTicker 30s linear infinite;
+        }
+
+        @keyframes categoryTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .category-content {
+            display: flex;
+            gap: 16px;
+            padding-right: 16px;
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--white);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+            white-space: nowrap;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .category-badge:hover {
+            background: var(--primary-purple);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* ==================== OUR SERVICES ==================== */
+        .services-section {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-box {
+            background: var(--gray-50);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s;
+        }
+
+        .service-box:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .service-box-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #9333EA 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-box-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--white);
+        }
+
+        .service-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .service-box > p {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--gray-600);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.2s;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li:hover {
+            color: var(--primary-purple);
+            padding-left: 8px;
+        }
+
+        .service-list li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary-green);
+            flex-shrink: 0;
+        }
+
+        .see-all-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 200px;
+            margin: 40px auto 0;
+            padding: 16px 32px;
+            background: var(--primary-purple);
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .see-all-btn:hover {
+            background: var(--primary-purple-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ==================== PEST CONTROL ==================== */
+        .pest-section {
+            background: var(--gray-50);
+        }
+
+        .pest-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .pest-card {
+            flex: 0 0 160px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .pest-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--primary-purple);
+        }
+
+        .pest-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gray-100);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .pest-card:hover .pest-icon {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #9333EA 100%);
+        }
+
+        .pest-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--gray-600);
+            transition: all 0.3s;
+        }
+
+        .pest-card:hover .pest-icon svg {
+            color: var(--white);
+        }
+
+        .pest-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        /* ==================== HOW WE WORK ==================== */
+        .how-section {
+            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
+            padding: 80px;
+        }
+
+        .how-section .section-title {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .how-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .how-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .how-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -20px;
+            width: 40px;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .how-step:last-child::after {
+            display: none;
+        }
+
+        .how-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s;
+        }
+
+        .how-step:hover .how-icon {
+            background: var(--white);
+            transform: scale(1.1);
+        }
+
+        .how-icon svg {
+            width: 36px;
+            height: 36px;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .how-step:hover .how-icon svg {
+            color: var(--primary-purple);
+        }
+
+        .how-step h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .how-step p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ==================== WHY STAIN-33 ==================== */
+        .why-section {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .why-card {
+            background: var(--gray-50);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .why-card:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-icon.green { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+        .why-icon.blue { background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); }
+        .why-icon.purple { background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%); }
+        .why-icon.orange { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+
+        .why-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--white);
+        }
+
+        .why-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .why-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .why-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--gray-50);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .why-badge svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-green);
+        }
+
+        /* ==================== REGISTERED WITH ==================== */
+        .registered-section {
+            background: var(--white);
+            padding: 50px 80px;
+        }
+
+        .registered-section .section-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+        }
+
+        .registered-logos {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .registered-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .registered-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .registered-logo img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--gray-900);
+            padding: 60px 80px 30px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--gray-400);
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-700);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-800);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-purple);
+            transform: translateY(-2px);
+        }
+
+        .social-links svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gray-400);
+        }
+
+        .social-links a:hover svg {
+            color: var(--white);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .hero { padding: 40px; }
+            .hero h1 { font-size: 40px; }
+            .hero-image { right: 40px; width: 350px; height: 350px; }
+            .section { padding: 40px 40px; }
+            .wall-panels { padding: 0 40px 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .how-step::after { display: none; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .hero { flex-direction: column; padding: 30px 20px; min-height: auto; }
+            .hero-content { max-width: 100%; text-align: center; }
+            .hero h1 { font-size: 32px; }
+            .hero-image { position: relative; right: auto; width: 100%; height: 300px; }
+            .hero-arrow { display: none; }
+            .section { padding: 30px 20px; }
+            .wall-panels { padding: 0 20px 25px; }
+            .wall-panels-card { flex-direction: column; }
+            .offer-card { flex: 0 0 280px; }
+            .special-offers-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .how-grid { grid-template-columns: 1fr; }
+            .how-section { padding: 40px 20px; }
+            .footer { padding: 40px 20px 20px; }
+            .footer-top { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+            .registered-logos { gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a href="#" class="logo">Stain-<span>33</span></a>
+        <nav class="nav">
+            <!-- Home Services Dropdown -->
+            <div class="nav-item">
+                <span class="nav-link">
+                    Home Services
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </span>
+                <div class="dropdown dropdown-compact">
+                    <a href="#" class="dropdown-link">Deep Home Cleaning</a>
+                    <a href="#" class="dropdown-link">Bathroom Cleaning</a>
+                    <a href="#" class="dropdown-link">Kitchen Cleaning</a>
+                    <a href="#" class="dropdown-link">Sofa & Carpet Cleaning</a>
+                    <a href="#" class="dropdown-link">Pest Control</a>
+                    <a href="#" class="dropdown-link">Rental Painting</a>
+                </div>
+            </div>
+            <!-- Facility Management Dropdown -->
+            <div class="nav-item">
+                <span class="nav-link">
+                    Facility Management
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </span>
+                <div class="dropdown dropdown-compact">
+                    <a href="#" class="dropdown-link">Office Cleaning</a>
+                    <a href="#" class="dropdown-link">Commercial Spaces</a>
+                    <a href="#" class="dropdown-link">Regular Housekeeping</a>
+                    <a href="#" class="dropdown-link">Pantry Services</a>
+                </div>
+            </div>
+            <!-- Commercial & Post-Construction Dropdown -->
+            <div class="nav-item">
+                <span class="nav-link">
+                    Commercial & Post-Construction
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </span>
+                <div class="dropdown dropdown-compact">
+                    <a href="#" class="dropdown-link">Bulk Apartment Cleaning</a>
+                    <a href="#" class="dropdown-link">Ready to Move Cleaning</a>
+                    <a href="#" class="dropdown-link">Post Construction Cleaning</a>
+                    <a href="#" class="dropdown-link">Project Handover</a>
+                </div>
+            </div>
+            <!-- Contact Popup Button -->
+            <button class="contact-btn" onclick="openContactPopup()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Contact
+            </button>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Contact Popup Modal -->
+    <div class="contact-popup" id="contactPopup">
+        <div class="popup-overlay" onclick="closeContactPopup()"></div>
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeContactPopup()">&times;</button>
+            <h3>Contact Us</h3>
+            <p>Get in touch with our team</p>
+            <form class="popup-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address">
+                <select>
+                    <option value="">Select Service</option>
+                    <option value="home">Home Services</option>
+                    <option value="facility">Facility Management</option>
+                    <option value="commercial">Commercial & Post-Construction</option>
+                </select>
+                <textarea placeholder="Your Message" rows="3"></textarea>
+                <button type="submit" class="popup-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Limited Offer</div>
+            <h1>Deep Home Cleaning at 20% OFF!</h1>
+            <p>Get your entire home professionally cleaned by our expert team. Valid for first-time customers.</p>
+            <a href="#" class="btn-book">
+                Book Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-person"></div>
+        </div>
+        <div class="hero-arrow left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 19l-7-7 7-7"/>
+            </svg>
+        </div>
+        <div class="hero-arrow right">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 5l7 7-7 7"/>
+            </svg>
+        </div>
+        <div class="hero-nav">
+            <div class="hero-nav-dot active"></div>
+            <div class="hero-nav-dot"></div>
+            <div class="hero-nav-dot"></div>
+        </div>
+    </section>
+
+    <!-- RUNNING TICKER -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <span class="ticker-item">Clean Ingredients</span>
+                <span class="ticker-item">Nutrient Packed</span>
+                <span class="ticker-item">Exotic Fruits</span>
+                <span class="ticker-item">Sustainably Sourced</span>
+                <span class="ticker-item">Eco Friendly</span>
+                <span class="ticker-item">Premium Quality</span>
+                <span class="ticker-item">Expert Team</span>
+                <span class="ticker-item">Affordable Rates</span>
+            </div>
+            <div class="ticker-content">
+                <span class="ticker-item">Clean Ingredients</span>
+                <span class="ticker-item">Nutrient Packed</span>
+                <span class="ticker-item">Exotic Fruits</span>
+                <span class="ticker-item">Sustainably Sourced</span>
+                <span class="ticker-item">Eco Friendly</span>
+                <span class="ticker-item">Premium Quality</span>
+                <span class="ticker-item">Expert Team</span>
+                <span class="ticker-item">Affordable Rates</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- OFFERS & DISCOUNTS -->
+    <section class="section offers-section">
+        <h2 class="section-title">Offers & discounts</h2>
+        <div class="offers-wrapper">
+            <div class="offers-grid">
+                <!-- First set of cards -->
+                <div class="offer-card gray">
+                    <span class="offer-tag">Transform</span>
+                    <h3>Big transformations, zero stress.</h3>
+                    <p>Complete home makeover services</p>
+                    <a href="#" class="offer-btn">Explore</a>
+                </div>
+                <div class="offer-card green">
+                    <span class="offer-tag">Bathroom</span>
+                    <h3>Bathroom deep cleaning starting at</h3>
+                    <div class="offer-price">₹449</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card purple">
+                    <span class="offer-tag">Insta Help</span>
+                    <h3>Trained house help when your maid is on leave</h3>
+                    <p>Quick & reliable assistance</p>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card blue">
+                    <span class="offer-tag">Kitchen</span>
+                    <h3>Kitchen deep cleaning starting at</h3>
+                    <div class="offer-price">₹499</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card orange">
+                    <span class="offer-tag">Pest Control</span>
+                    <h3>Complete pest control services</h3>
+                    <div class="offer-price">₹799</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card pink">
+                    <span class="offer-tag">Sofa & Carpet</span>
+                    <h3>Professional sofa & carpet cleaning</h3>
+                    <div class="offer-price">₹599</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="offer-card gray">
+                    <span class="offer-tag">Transform</span>
+                    <h3>Big transformations, zero stress.</h3>
+                    <p>Complete home makeover services</p>
+                    <a href="#" class="offer-btn">Explore</a>
+                </div>
+                <div class="offer-card green">
+                    <span class="offer-tag">Bathroom</span>
+                    <h3>Bathroom deep cleaning starting at</h3>
+                    <div class="offer-price">₹449</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card purple">
+                    <span class="offer-tag">Insta Help</span>
+                    <h3>Trained house help when your maid is on leave</h3>
+                    <p>Quick & reliable assistance</p>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card blue">
+                    <span class="offer-tag">Kitchen</span>
+                    <h3>Kitchen deep cleaning starting at</h3>
+                    <div class="offer-price">₹499</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card orange">
+                    <span class="offer-tag">Pest Control</span>
+                    <h3>Complete pest control services</h3>
+                    <div class="offer-price">₹799</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+                <div class="offer-card pink">
+                    <span class="offer-tag">Sofa & Carpet</span>
+                    <h3>Professional sofa & carpet cleaning</h3>
+                    <div class="offer-price">₹599</div>
+                    <a href="#" class="offer-btn">Book now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITIONAL PROMOTIONAL BANNERS -->
+    <section class="section promo-banners-section">
+        <div class="promo-banners-grid">
+            <!-- Promo Banner 1 - Pest Control -->
+            <div class="promo-banner pest-promo">
+                <div class="promo-content">
+                    <span class="promo-badge">Popular Service</span>
+                    <h3>Pest Control Starting at ₹799</h3>
+                    <p>Complete protection from cockroaches, ants, bedbugs & more</p>
+                    <a href="#" class="promo-btn">Get Quote</a>
+                </div>
+                <div class="promo-icon">
+                    <svg viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.2)"/>
+                        <path d="M40 20 L50 35 L65 35 L55 50 L60 65 L40 55 L20 65 L25 50 L15 35 L30 35 Z" fill="#fff" opacity="0.9"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Promo Banner 2 - Office Cleaning -->
+            <div class="promo-banner office-promo">
+                <div class="promo-content">
+                    <span class="promo-badge">Business</span>
+                    <h3>Office & Commercial Cleaning</h3>
+                    <p>Professional cleaning solutions for your workspace</p>
+                    <a href="#" class="promo-btn dark">Contact Us</a>
+                </div>
+                <div class="promo-icon">
+                    <svg viewBox="0 0 80 80" fill="none">
+                        <rect x="15" y="25" width="50" height="40" rx="4" fill="rgba(0,0,0,0.15)"/>
+                        <rect x="20" y="30" width="20" height="15" rx="2" fill="rgba(0,0,0,0.1)"/>
+                        <rect x="45" y="30" width="15" height="8" rx="2" fill="rgba(0,0,0,0.1)"/>
+                        <rect x="45" y="42" width="15" height="8" rx="2" fill="rgba(0,0,0,0.1)"/>
+                        <rect x="20" y="50" width="40" height="10" rx="2" fill="rgba(0,0,0,0.1)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WALL PANELS -->
+    <div class="wall-panels">
+        <div class="wall-panels-card">
+            <div class="wall-panels-content">
+                <h2>Wall Panels</h2>
+                <p>Level up your walls with premium designer panels. Transform any room into a stunning space.</p>
+                <a href="#" class="btn-green">
+                    Know more
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="wall-panels-image">
+                <div class="tv-frame"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SPECIAL OFFERS -->
+    <section class="section special-offers">
+        <h2 class="section-title">Special Offers</h2>
+        <div class="special-offers-grid">
+            <div class="special-card purple-gradient">
+                <span class="special-tag">New Customers</span>
+                <h3>First Order 25% OFF</h3>
+                <p>Get flat 25% discount on your first service booking</p>
+                <a href="#" class="special-btn">
+                    Claim Offer
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="special-card white-bordered">
+                <span class="special-tag">Monthly Pass</span>
+                <h3>Subscribe & Save 30%</h3>
+                <p>Monthly cleaning subscription with extra savings</p>
+                <a href="#" class="special-btn">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LARGE BANNER 2 - Pest Control (After Special Offers) -->
+    <div class="wall-panels">
+        <div class="wall-panels-card" style="background: linear-gradient(135deg, #DCFCE7 0%, #BBF7D0 100%);">
+            <div class="wall-panels-content">
+                <h2>Pest Control Services</h2>
+                <p>Complete pest management solutions. Say goodbye to cockroaches, termites, bed bugs & mosquitoes.</p>
+                <a href="#" class="btn-green">
+                    Book Now
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="wall-panels-image" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%);">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1;">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.2)"/>
+                        <path d="M40 20c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm0 36c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z" fill="white"/>
+                        <path d="M40 28c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12-5.4-12-12-12zm0 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" fill="white"/>
+                        <circle cx="40" cy="40" r="4" fill="white"/>
+                    </svg>
+                    <span style="color: white; font-weight: 700; font-size: 18px;">Starting ₹799</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BEST IN CLASS FEATURES -->
+    <section class="section features-section">
+        <h2 class="section-title">Best-in-class features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <div class="filter-visual">
+                        <div class="filter-body"></div>
+                        <div class="water-drop"></div>
+                    </div>
+                </div>
+                <h3>Filters</h3>
+                <h4>Superior filters that really last for 2 years</h4>
+                <p>High-quality filtration for cleaner results</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <div class="purifier-visual">
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                        <div class="purifier-layer"></div>
+                    </div>
+                </div>
+                <h3>Purification</h3>
+                <h4>10-stage purifier</h4>
+                <p>Advanced cleaning technology for best results</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <div class="phone-visual">
+                        <div class="phone-screen">
+                            <span class="tds-value">84</span>
+                            <span class="tds-label">TDS Level</span>
+                        </div>
+                    </div>
+                </div>
+                <h3>Smart app</h3>
+                <h4>Monitor everything with the UC app</h4>
+                <p>Track and manage your services easily</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LARGE BANNER 3 - Deep Cleaning (After Best-in-class features) -->
+    <div class="wall-panels">
+        <div class="wall-panels-card" style="background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%);">
+            <div class="wall-panels-content">
+                <h2>Deep Home Cleaning</h2>
+                <p>Professional deep cleaning for your entire home. Spotless floors, sparkling bathrooms & fresh spaces.</p>
+                <a href="#" class="btn-green" style="background: var(--primary-purple);">
+                    Get Quote
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="wall-panels-image" style="background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1;">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="35" fill="rgba(255,255,255,0.2)"/>
+                        <path d="M25 55h30v-5H25v5zm0-10h30v-5H25v5zm5-15v5h20v-5c0-5.5-4.5-10-10-10s-10 4.5-10 10z" fill="white"/>
+                        <rect x="38" y="20" width="4" height="10" fill="white"/>
+                    </svg>
+                    <span style="color: white; font-weight: 700; font-size: 18px;">From ₹1,999</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPLORE BY SPACE -->
+    <section class="section explore-section">
+        <h2 class="section-title">Explore by space</h2>
+        <div class="explore-wrapper">
+            <button class="explore-nav prev" onclick="scrollExplore(-1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <button class="explore-nav next" onclick="scrollExplore(1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+            <div class="explore-scroll" id="exploreScroll">
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Home Cleaning</div>
+                    <h3>Deep Cleaning Service</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹1,999</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+                        <path d="M8 10h8M8 14h8M8 18h4"/>
+                        <circle cx="17" cy="17" r="3"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Bathroom</div>
+                    <h3>Bathroom Deep Clean</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹449</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                        <circle cx="12" cy="14" r="3"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Kitchen</div>
+                    <h3>Kitchen Deep Clean</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹499</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="11" width="18" height="10" rx="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Furniture</div>
+                    <h3>Sofa & Carpet Cleaning</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹599</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            <div class="explore-card">
+                <div class="explore-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="explore-content">
+                    <div class="explore-tag">Office</div>
+                    <h3>Office Cleaning</h3>
+                    <div class="explore-price">
+                        <span>Starting at</span>
+                        <strong>₹2,499</strong>
+                    </div>
+                    <a href="#" class="explore-btn">Book Now</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY TICKER -->
+    <div class="category-ticker">
+        <div class="category-track">
+            <div class="category-content">
+                <span class="category-badge">🏠 Deep Cleaning</span>
+                <span class="category-badge">🚿 Bathroom</span>
+                <span class="category-badge">🍳 Kitchen</span>
+                <span class="category-badge">🛋️ Sofa Cleaning</span>
+                <span class="category-badge">🐜 Pest Control</span>
+                <span class="category-badge">🏢 Office</span>
+                <span class="category-badge">🧹 Housekeeping</span>
+                <span class="category-badge">✨ Post Construction</span>
+            </div>
+            <div class="category-content">
+                <span class="category-badge">🏠 Deep Cleaning</span>
+                <span class="category-badge">🚿 Bathroom</span>
+                <span class="category-badge">🍳 Kitchen</span>
+                <span class="category-badge">🛋️ Sofa Cleaning</span>
+                <span class="category-badge">🐜 Pest Control</span>
+                <span class="category-badge">🏢 Office</span>
+                <span class="category-badge">🧹 Housekeeping</span>
+                <span class="category-badge">✨ Post Construction</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- OUR SERVICES -->
+    <section class="section services-section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <div class="service-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <h3>Home Services</h3>
+                <p>Complete home cleaning solutions for spotless living spaces</p>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Deep Home Cleaning
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Kitchen & Bathroom
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Sofa & Carpet
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Pest Control
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Rental Painting
+                    </li>
+                </ul>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                    </svg>
+                </div>
+                <h3>Facility Management</h3>
+                <p>Professional cleaning for offices and commercial spaces</p>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Office Cleaning
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Commercial Spaces
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Regular Housekeeping
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Pantry Services
+                    </li>
+                </ul>
+            </div>
+            <div class="service-box">
+                <div class="service-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 20h20M5 20V10l7-7 7 7v10"/>
+                        <path d="M9 20v-6h6v6"/>
+                    </svg>
+                </div>
+                <h3>Project Services</h3>
+                <p>Bulk cleaning for apartments and project handovers</p>
+                <ul class="service-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Flat Apartment
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Ready to Move
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Post Construction
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        Project Handover
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="see-all-btn">
+            SEE ALL
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- PEST CONTROL -->
+    <section class="section pest-section">
+        <h2 class="section-title">Pest Control</h2>
+        <div class="pest-grid">
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h4>General Pest Control</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h4>Termite</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <ellipse cx="12" cy="12" rx="8" ry="5"/>
+                        <path d="M4 12v2c0 2.76 3.58 5 8 5s8-2.24 8-5v-2"/>
+                    </svg>
+                </div>
+                <h4>Bed Bugs</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    </svg>
+                </div>
+                <h4>Combo: Best Value For Money</h4>
+            </div>
+            <div class="pest-card">
+                <div class="pest-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <h4>Mosquito</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="how-section">
+        <p class="how-subtitle">Our Process</p>
+        <h2 class="section-title">This is How We Work</h2>
+        <div class="how-grid">
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                        <path d="M16 2v4M8 2v4M3 10h18"/>
+                    </svg>
+                </div>
+                <h4>Choose Your Service</h4>
+                <p>Select the cleaning or pest control service you need</p>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h4>Choose Date</h4>
+                <p>Pick your contact information and preferred schedule</p>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <path d="M22 4L12 14.01l-3-3"/>
+                    </svg>
+                </div>
+                <h4>Confirm Your Booking</h4>
+                <p>Relax at a convenient date after confirming</p>
+            </div>
+            <div class="how-step">
+                <div class="how-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <h4>Service at Your Doorstep</h4>
+                <p>Our trained professionals arrive on time at your doorstep</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY STAIN-33 -->
+    <section class="section why-section">
+        <h2 class="section-title">Why Stain-33?</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h4>Verified Staff</h4>
+                <p>Background checked professionals</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h4>Eco-Friendly</h4>
+                <p>Safe, non-toxic products</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon purple">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <h4>Fair Pricing</h4>
+                <p>No hidden charges</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon orange">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                        <line x1="4" y1="22" x2="4" y2="15"/>
+                    </svg>
+                </div>
+                <h4>Re-Clean Promise</h4>
+                <p>Free redo if not satisfied</p>
+            </div>
+        </div>
+        <div class="why-badges">
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Experienced & Certified
+            </div>
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Police Verified
+            </div>
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Covid Ready
+            </div>
+            <div class="why-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                Punctual & Reliable
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTERED WITH -->
+    <section class="registered-section">
+        <h2 class="section-title">Registered With</h2>
+        <div class="registered-logos">
+            <!-- Skill India Logo -->
+            <div class="registered-logo">
+                <img src="data:image/png;base64,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" alt="Skill India" style="height: 70px; object-fit: contain;">
+            </div>
+
+            <!-- Startup India Logo -->
+            <div class="registered-logo">
+                <img src="data:image/png;base64,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" alt="Startup India" style="height: 70px; object-fit: contain;">
+            </div>
+
+            <!-- MSME Logo -->
+            <div class="registered-logo">
+                <img src="data:image/png;base64,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" alt="MSME" style="height: 70px; object-fit: contain;">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="logo">Stain-<span>33</span></a>
+                <p>Professional cleaning services trusted by thousands across Bangalore. Your satisfaction is our priority.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home Cleaning</a></li>
+                    <li><a href="#">Bathroom Cleaning</a></li>
+                    <li><a href="#">Pest Control</a></li>
+                    <li><a href="#">Facility Management</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stain-33. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
+            }
+        });
+
+        // Hero slider dots
+        const dots = document.querySelectorAll('.hero-nav-dot');
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+
+        // Auto-slide hero
+        let currentSlide = 0;
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }, 5000);
+
+        // Contact Popup Functions
+        function openContactPopup() {
+            document.getElementById('contactPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactPopup() {
+            document.getElementById('contactPopup').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close popup on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeContactPopup();
+            }
+        });
+
+        // Form submission handler
+        document.querySelector('.popup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! We will contact you shortly.');
+            closeContactPopup();
+        });
+
+        // Explore by Space scroll navigation
+        function scrollExplore(direction) {
+            const container = document.getElementById('exploreScroll');
+            const cardWidth = 300; // card width + gap
+            container.scrollBy({
+                left: direction * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

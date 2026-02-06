@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cleaning Tips & Guides Blog | Stain-33 Bangalore</title>
+    <meta name="description" content="Expert cleaning tips, guides, and industry insights from Stain-33. Learn home cleaning hacks, office maintenance tips, and professional cleaning techniques.">
+    <meta name="keywords" content="cleaning tips blog, home cleaning guide Bangalore, office cleaning tips, deep cleaning guide, cleaning hacks India">
+    <link rel="canonical" href="https://stain-33.com/blog">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Blog Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Stain-33 Cleaning Blog",
+        "description": "Expert cleaning tips, guides, and industry insights",
+        "url": "https://stain-33.com/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Stain-33 Cleaning Services",
+            "logo": "https://stain-33.com/logo.png"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-purple: #7C3AED;
+            --primary-purple-dark: #5B21B6;
+            --primary-green: #10B981;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-800); background: var(--gray-50); line-height: 1.6; }
+
+        /* HEADER */
+        .header { position: fixed; top: 0; left: 0; right: 0; background: var(--white); z-index: 1000; padding: 0 24px; height: 70px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); }
+        .header-left { display: flex; align-items: center; }
+        .back-home { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: var(--gray-100); margin-right: 12px; text-decoration: none; transition: all 0.2s; }
+        .back-home:hover { background: var(--gray-200); }
+        .back-home svg { width: 20px; height: 20px; color: var(--gray-600); }
+        .logo { font-family: 'Permanent Marker', cursive; font-size: 28px; color: var(--gray-900); text-decoration: none; }
+        .logo span { color: var(--primary-purple); }
+        .header-btn { padding: 10px 20px; background: var(--primary-purple); color: var(--white); border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .header-btn:hover { background: var(--primary-purple-dark); }
+
+        /* HERO */
+        .hero { margin-top: 70px; background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%); padding: 60px 80px; text-align: center; }
+        .hero h1 { font-size: 42px; font-weight: 800; color: var(--white); margin-bottom: 16px; }
+        .hero p { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto; }
+
+        /* CATEGORIES */
+        .categories { padding: 30px 80px; background: var(--white); border-bottom: 1px solid var(--gray-200); display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .cat-btn { padding: 10px 20px; border: 1px solid var(--gray-200); border-radius: 50px; font-size: 14px; font-weight: 500; color: var(--gray-600); background: var(--white); cursor: pointer; transition: all 0.3s; }
+        .cat-btn:hover, .cat-btn.active { background: var(--primary-purple); color: var(--white); border-color: var(--primary-purple); }
+
+        /* BLOG GRID */
+        .blog-section { padding: 50px 80px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .blog-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .blog-image { height: 200px; position: relative; overflow: hidden; }
+        .blog-image-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+        .blog-image-placeholder.home { background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%); }
+        .blog-image-placeholder.office { background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); }
+        .blog-image-placeholder.tips { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+        .blog-image-placeholder.industry { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
+        .blog-image-placeholder.diy { background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%); }
+        .blog-category { position: absolute; top: 16px; left: 16px; padding: 6px 14px; background: var(--white); border-radius: 50px; font-size: 12px; font-weight: 600; color: var(--primary-purple); }
+        .blog-content { padding: 24px; }
+        .blog-date { font-size: 13px; color: var(--gray-400); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .blog-date svg { width: 14px; height: 14px; }
+        .blog-title { font-size: 18px; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .blog-excerpt { font-size: 14px; color: var(--gray-500); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 16px; }
+        .blog-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--primary-purple); text-decoration: none; transition: gap 0.2s; }
+        .blog-link:hover { gap: 10px; }
+        .blog-link svg { width: 16px; height: 16px; }
+
+        /* FEATURED POST */
+        .featured { padding: 50px 80px; background: var(--white); }
+        .featured-title { font-size: 28px; font-weight: 700; color: var(--gray-900); margin-bottom: 30px; }
+        .featured-card { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--gray-50); border-radius: 20px; overflow: hidden; }
+        .featured-image { height: 400px; background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%); display: flex; align-items: center; justify-content: center; font-size: 80px; }
+        .featured-content { padding: 40px 40px 40px 0; display: flex; flex-direction: column; justify-content: center; }
+        .featured-content .blog-category { position: static; display: inline-block; width: fit-content; margin-bottom: 16px; background: #EDE9FE; }
+        .featured-content .blog-title { font-size: 28px; margin-bottom: 16px; -webkit-line-clamp: unset; }
+        .featured-content .blog-excerpt { -webkit-line-clamp: 4; margin-bottom: 24px; }
+
+        /* NEWSLETTER */
+        .newsletter { padding: 60px 80px; background: linear-gradient(135deg, #1F2937 0%, #374151 100%); text-align: center; }
+        .newsletter h2 { font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+        .newsletter p { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 30px; }
+        .newsletter-form { display: flex; gap: 12px; max-width: 500px; margin: 0 auto; }
+        .newsletter-form input { flex: 1; padding: 14px 20px; border: none; border-radius: 10px; font-size: 15px; }
+        .newsletter-form button { padding: 14px 28px; background: var(--primary-purple); color: var(--white); border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
+        .newsletter-form button:hover { background: var(--primary-purple-dark); }
+
+        /* FOOTER */
+        .footer { background: var(--gray-900); padding: 40px 80px; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px; }
+        .footer .logo { color: var(--white); display: inline-block; margin-bottom: 12px; }
+        .footer-brand p { color: var(--gray-400); font-size: 14px; line-height: 1.6; }
+        .footer-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: var(--gray-400); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; }
+        .footer-bottom p { color: var(--gray-500); font-size: 13px; }
+
+        /* MOBILE */
+        @media (max-width: 1024px) {
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .header { padding: 0 16px; height: 60px; }
+            .logo { font-size: 22px; }
+            .hero { margin-top: 60px; padding: 40px 16px; }
+            .hero h1 { font-size: 28px; }
+            .categories { padding: 20px 16px; }
+            .blog-section { padding: 30px 16px; }
+            .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+            .featured { padding: 30px 16px; }
+            .featured-card { grid-template-columns: 1fr; }
+            .featured-image { height: 250px; }
+            .featured-content { padding: 24px; }
+            .featured-content .blog-title { font-size: 22px; }
+            .newsletter { padding: 40px 16px; }
+            .newsletter h2 { font-size: 24px; }
+            .newsletter-form { flex-direction: column; }
+            .footer { padding: 30px 16px; }
+            .footer-top { grid-template-columns: 1fr; gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <a href="stain33-website-v16.html" class="back-home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </a>
+            <a href="stain33-website-v16.html" class="logo">Stain-<span>33</span></a>
+        </div>
+        <a href="contact-cleaning-services-bangalore.html" class="header-btn">Contact Us</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Cleaning Tips & Expert Guides</h1>
+        <p>Discover professional cleaning hacks, industry insights, and maintenance tips from Bangalore's trusted cleaning experts</p>
+    </section>
+
+    <!-- CATEGORIES -->
+    <div class="categories">
+        <button class="cat-btn active" data-filter="all">All Posts</button>
+        <button class="cat-btn" data-filter="home">Home Cleaning</button>
+        <button class="cat-btn" data-filter="office">Office & Commercial</button>
+        <button class="cat-btn" data-filter="deep">Deep Cleaning</button>
+        <button class="cat-btn" data-filter="diy">DIY Tips</button>
+        <button class="cat-btn" data-filter="industry">Industry News</button>
+    </div>
+
+    <!-- FEATURED POST -->
+    <section class="featured">
+        <h2 class="featured-title">Featured Article</h2>
+        <div class="featured-card">
+            <div class="featured-image">🏠</div>
+            <div class="featured-content">
+                <span class="blog-category">Home Cleaning</span>
+                <h3 class="blog-title">The Complete Guide to Deep Cleaning Your Home in Bangalore</h3>
+                <p class="blog-excerpt">A comprehensive step-by-step guide to thoroughly deep clean every room in your home. From kitchen degreasing to bathroom sanitization, learn the professional techniques used by Stain-33 experts to achieve spotless results.</p>
+                <a href="#" class="blog-link">Read Full Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG GRID -->
+    <section class="blog-section">
+        <div class="blog-grid">
+            <!-- Blog 1 -->
+            <article class="blog-card" data-category="home">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder home">🧹</div>
+                    <span class="blog-category">Home Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> January 15, 2025</div>
+                    <h3 class="blog-title">10 Kitchen Cleaning Hacks Every Bangalore Homeowner Should Know</h3>
+                    <p class="blog-excerpt">Discover professional kitchen cleaning secrets that will transform your cooking space. From removing stubborn grease to sanitizing countertops effectively.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 2 -->
+            <article class="blog-card" data-category="office">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder office">🏢</div>
+                    <span class="blog-category">Office Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> January 12, 2025</div>
+                    <h3 class="blog-title">Why Regular Office Cleaning Boosts Employee Productivity</h3>
+                    <p class="blog-excerpt">Research shows that clean workspaces significantly impact employee health and productivity. Learn why investing in professional office cleaning pays dividends.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 3 -->
+            <article class="blog-card" data-category="deep">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder tips">✨</div>
+                    <span class="blog-category">Deep Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> January 10, 2025</div>
+                    <h3 class="blog-title">Bathroom Deep Cleaning: A Step-by-Step Professional Guide</h3>
+                    <p class="blog-excerpt">Transform your bathroom from grimy to gleaming with our comprehensive deep cleaning guide. Includes tips for tackling mold, limescale, and stubborn stains.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 4 -->
+            <article class="blog-card" data-category="industry">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder industry">🏗️</div>
+                    <span class="blog-category">Post Construction</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> January 8, 2025</div>
+                    <h3 class="blog-title">Post Construction Cleaning Checklist for New Apartments in Bangalore</h3>
+                    <p class="blog-excerpt">Moving into a newly constructed apartment? Here's everything you need to know about post-construction cleaning and why professional help matters.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 5 -->
+            <article class="blog-card" data-category="diy">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder diy">🧴</div>
+                    <span class="blog-category">DIY Tips</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> January 5, 2025</div>
+                    <h3 class="blog-title">5 Natural Cleaning Solutions You Can Make at Home</h3>
+                    <p class="blog-excerpt">Eco-friendly cleaning doesn't have to be expensive. Learn how to create effective, natural cleaning solutions using ingredients from your kitchen.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 6 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder home">🛋️</div>
+                    <span class="blog-category">Home Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> January 3, 2025</div>
+                    <h3 class="blog-title">How to Clean and Maintain Your Sofa Like a Pro</h3>
+                    <p class="blog-excerpt">Your sofa is a significant investment. Learn professional techniques to keep it looking new, remove stains, and extend its lifespan significantly.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 7 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder office">🖥️</div>
+                    <span class="blog-category">Office Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 28, 2024</div>
+                    <h3 class="blog-title">IT Park Cleaning Standards: What Bangalore Tech Companies Expect</h3>
+                    <p class="blog-excerpt">Discover the cleaning standards and protocols required by Bangalore's top IT parks and tech companies for maintaining healthy work environments.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 8 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder tips">🪟</div>
+                    <span class="blog-category">Deep Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 25, 2024</div>
+                    <h3 class="blog-title">Window Cleaning Tips for High-Rise Apartments in Bangalore</h3>
+                    <p class="blog-excerpt">Living in a high-rise? Learn safe and effective window cleaning techniques, and when it's best to call professional cleaners for the job.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 9 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder industry">📊</div>
+                    <span class="blog-category">Industry News</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 22, 2024</div>
+                    <h3 class="blog-title">The Growing Demand for Professional Cleaning Services in Bangalore</h3>
+                    <p class="blog-excerpt">Explore the trends driving the cleaning industry in Bangalore, from busy professionals to health-conscious families seeking expert cleaning help.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 10 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder diy">🌿</div>
+                    <span class="blog-category">DIY Tips</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 20, 2024</div>
+                    <h3 class="blog-title">Eco-Friendly Cleaning: How to Go Green Without Compromising Results</h3>
+                    <p class="blog-excerpt">Sustainability meets cleanliness. Learn how to adopt eco-friendly cleaning practices that are good for your home and the environment.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 11 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder home">🛏️</div>
+                    <span class="blog-category">Home Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 18, 2024</div>
+                    <h3 class="blog-title">Mattress Cleaning: Why It Matters for Your Health</h3>
+                    <p class="blog-excerpt">Your mattress harbors dust mites, allergens, and bacteria. Learn why regular mattress cleaning is essential and how professionals do it right.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 12 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder office">🏥</div>
+                    <span class="blog-category">Commercial</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 15, 2024</div>
+                    <h3 class="blog-title">Hospital-Grade Cleaning: What Makes Healthcare Facilities Different</h3>
+                    <p class="blog-excerpt">Healthcare facilities require specialized cleaning protocols. Understand the rigorous standards and techniques used in medical facility cleaning.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 13 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder tips">🚿</div>
+                    <span class="blog-category">Deep Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 12, 2024</div>
+                    <h3 class="blog-title">How to Remove Hard Water Stains from Bathroom Fixtures</h3>
+                    <p class="blog-excerpt">Bangalore's hard water leaves stubborn mineral deposits. Learn effective techniques to remove and prevent hard water stains on taps and showers.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 14 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder industry">🏠</div>
+                    <span class="blog-category">Move In/Out</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 10, 2024</div>
+                    <h3 class="blog-title">Move-Out Cleaning Checklist for Renters in Bangalore</h3>
+                    <p class="blog-excerpt">Moving out? Ensure you get your full deposit back with our comprehensive move-out cleaning checklist tailored for Bangalore rental properties.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 15 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder diy">🧽</div>
+                    <span class="blog-category">DIY Tips</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 8, 2024</div>
+                    <h3 class="blog-title">Essential Cleaning Tools Every Home Should Have</h3>
+                    <p class="blog-excerpt">Build your cleaning arsenal with these must-have tools and supplies recommended by professional cleaners for effective home maintenance.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 16 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder home">🍳</div>
+                    <span class="blog-category">Kitchen</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 5, 2024</div>
+                    <h3 class="blog-title">Chimney and Exhaust Cleaning: Why It's Essential for Indian Kitchens</h3>
+                    <p class="blog-excerpt">Indian cooking produces heavy grease buildup. Learn why regular chimney cleaning is crucial and how to maintain your kitchen exhaust system.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 17 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder office">🏬</div>
+                    <span class="blog-category">Commercial</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 3, 2024</div>
+                    <h3 class="blog-title">Retail Store Cleaning: Creating a Welcoming Shopping Environment</h3>
+                    <p class="blog-excerpt">First impressions matter in retail. Discover how professional cleaning enhances customer experience and drives sales in your store.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 18 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder tips">🧼</div>
+                    <span class="blog-category">Deep Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 1, 2024</div>
+                    <h3 class="blog-title">Carpet Deep Cleaning: Methods, Frequency, and Professional Tips</h3>
+                    <p class="blog-excerpt">Carpets trap dirt, allergens, and bacteria. Learn about different carpet cleaning methods and how often you should deep clean your carpets.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 19 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder industry">🔧</div>
+                    <span class="blog-category">Facility Management</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 28, 2024</div>
+                    <h3 class="blog-title">Facility Management vs Regular Cleaning: What's the Difference?</h3>
+                    <p class="blog-excerpt">Understanding the scope of facility management services and how they differ from standard cleaning contracts for commercial properties.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 20 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder diy">💡</div>
+                    <span class="blog-category">DIY Tips</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 25, 2024</div>
+                    <h3 class="blog-title">Organizing Your Cleaning Supplies: A Marie Kondo Approach</h3>
+                    <p class="blog-excerpt">Declutter and organize your cleaning supplies efficiently. Tips for storing products safely and creating an effective cleaning station at home.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 21 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder home">🚪</div>
+                    <span class="blog-category">Home Cleaning</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 22, 2024</div>
+                    <h3 class="blog-title">Entryway Cleaning: Making a Great First Impression</h3>
+                    <p class="blog-excerpt">Your entryway sets the tone for your entire home. Learn how to keep this high-traffic area clean, organized, and welcoming.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 22 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder office">🏫</div>
+                    <span class="blog-category">Commercial</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 20, 2024</div>
+                    <h3 class="blog-title">School and College Cleaning: Keeping Educational Spaces Safe</h3>
+                    <p class="blog-excerpt">Educational institutions require special attention to hygiene. Learn about cleaning protocols that protect students and staff from illness.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 23 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder tips">🌙</div>
+                    <span class="blog-category">Tips</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 18, 2024</div>
+                    <h3 class="blog-title">Night-Time Cleaning Routines for a Tidier Morning</h3>
+                    <p class="blog-excerpt">Simple evening cleaning habits that take just 15 minutes but make a huge difference to how you start your day. Build sustainable routines.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 24 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder industry">🏗️</div>
+                    <span class="blog-category">Post Construction</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 15, 2024</div>
+                    <h3 class="blog-title">Removing Cement and Paint Stains After Renovation</h3>
+                    <p class="blog-excerpt">Renovation leaves behind tough stains. Professional techniques for removing cement splashes, paint drops, and construction debris safely.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 25 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder diy">🌸</div>
+                    <span class="blog-category">Seasonal</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 12, 2024</div>
+                    <h3 class="blog-title">Festival Season Cleaning Guide for Indian Homes</h3>
+                    <p class="blog-excerpt">Prepare your home for Diwali, Dussehra, and other festivals with our comprehensive cleaning guide. Traditional tips meet modern techniques.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 26 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder home">🚰</div>
+                    <span class="blog-category">Plumbing</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 10, 2024</div>
+                    <h3 class="blog-title">Drain Cleaning: Preventing Clogs and Bad Odors</h3>
+                    <p class="blog-excerpt">Keep your drains flowing freely and smelling fresh. Tips for maintaining clean drains and when to call a professional plumber.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 27 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder office">🏨</div>
+                    <span class="blog-category">Hospitality</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 8, 2024</div>
+                    <h3 class="blog-title">Hotel-Level Housekeeping Standards for Your Home</h3>
+                    <p class="blog-excerpt">Transform your home with hospitality-industry cleaning techniques. Professional tricks that five-star hotels use to maintain spotless rooms.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 28 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder tips">🐕</div>
+                    <span class="blog-category">Pet Owners</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 5, 2024</div>
+                    <h3 class="blog-title">Cleaning Tips for Pet Owners: Tackling Hair, Odors, and Stains</h3>
+                    <p class="blog-excerpt">Love your pets but hate the mess? Essential cleaning strategies for homes with dogs, cats, and other furry companions.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 29 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder industry">📱</div>
+                    <span class="blog-category">Technology</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 3, 2024</div>
+                    <h3 class="blog-title">Smart Home Devices That Help Keep Your Home Clean</h3>
+                    <p class="blog-excerpt">From robot vacuums to air purifiers, discover the latest technology that makes maintaining a clean home easier than ever before.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+
+            <!-- Blog 30 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-image-placeholder diy">⏰</div>
+                    <span class="blog-category">Productivity</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> November 1, 2024</div>
+                    <h3 class="blog-title">The 20-Minute Clean: Quick Cleaning for Busy Professionals</h3>
+                    <p class="blog-excerpt">No time for deep cleaning? These speed-cleaning techniques help busy Bangalore professionals maintain a tidy home with minimal effort.</p>
+                    <a href="#" class="blog-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <h2>Get Cleaning Tips in Your Inbox</h2>
+        <p>Subscribe to our newsletter for weekly cleaning hacks, industry updates, and exclusive offers</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="stain33-website-v16.html" class="logo">Stain-<span>33</span></a>
+                <p>Bangalore's trusted professional cleaning company. Expert home, office, and commercial cleaning services.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="cleaning-services-bangalore.html">Home Cleaning</a></li>
+                    <li><a href="facility-management-bangalore.html">Facility Management</a></li>
+                    <li><a href="post-construction-cleaning-bangalore.html">Post Construction</a></li>
+                    <li><a href="rental-painting-services-bangalore.html">Painting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="contact-cleaning-services-bangalore.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Location</h4>
+                <ul class="footer-links">
+                    <li><a href="cleaning-services-bangalore-location.html">Bangalore</a></li>
+                    <li><a href="tel:+918904747555">8904747555</a></li>
+                    <li><a href="mailto:care@stain-33.com">care@stain-33.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stain-33. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Stain-33 - Professional Cleaning Services in Bangalore">
+    <title>Stain-33 | Cleaning Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6E42E5;
+            --primary-light: #8B6CEF;
+            --primary-bg: #F3EFFF;
+            --black: #212121;
+            --gray-900: #333333;
+            --gray-700: #555555;
+            --gray-500: #888888;
+            --gray-300: #CCCCCC;
+            --gray-200: #E8E8E8;
+            --gray-100: #F5F5F5;
+            --white: #FFFFFF;
+            --green: #0D8F6F;
+            --green-bg: #E6F7F2;
+            --orange: #FF6B00;
+            --orange-bg: #FFF4EC;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-100);
+            color: var(--black);
+            line-height: 1.5;
+            font-size: 14px;
+            padding-bottom: 70px;
+        }
+
+        /* Header - Fixed Top */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--white);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .header-location {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--gray-700);
+            background: var(--gray-100);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+
+        .header-location svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 60px;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+            padding: 24px 16px;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .hero-content h1 {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .hero-content p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .hero-stat-label {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* Search Bar */
+        .search-section {
+            padding: 16px;
+            background: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gray-100);
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+        }
+
+        .search-bar svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gray-500);
+            flex-shrink: 0;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-size: 14px;
+            color: var(--black);
+            outline: none;
+        }
+
+        .search-bar input::placeholder {
+            color: var(--gray-500);
+        }
+
+        /* Service Categories */
+        .categories-section {
+            padding: 20px 16px;
+            background: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .category-card {
+            text-align: center;
+            padding: 16px 8px;
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--black);
+            transition: all 0.2s ease;
+        }
+
+        .category-card:active {
+            transform: scale(0.96);
+            background: var(--gray-200);
+        }
+
+        .category-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 10px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .category-card:nth-child(1) .category-icon { background: linear-gradient(135deg, #E0E7FF, #C7D2FE); }
+        .category-card:nth-child(2) .category-icon { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+        .category-card:nth-child(3) .category-icon { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+
+        .category-name {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Services List */
+        .services-section {
+            padding: 20px 16px;
+            background: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--black);
+            transition: all 0.2s ease;
+        }
+
+        .service-item:active {
+            background: var(--gray-200);
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+
+        .service-item:nth-child(odd) .service-icon { background: var(--primary-bg); }
+        .service-item:nth-child(even) .service-icon { background: var(--green-bg); }
+
+        .service-info {
+            flex: 1;
+        }
+
+        .service-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .service-desc {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .service-price {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .service-arrow {
+            width: 20px;
+            height: 20px;
+            color: var(--gray-300);
+        }
+
+        /* Why Choose Us */
+        .why-section {
+            padding: 20px 16px;
+            background: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .why-card {
+            padding: 16px;
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 10px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .why-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .why-desc {
+            font-size: 11px;
+            color: var(--gray-500);
+            line-height: 1.4;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 20px 16px;
+            background: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .review-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rating-badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--green);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .rating-count {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .reviews-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .reviews-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            min-width: 280px;
+            padding: 16px;
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+        }
+
+        .review-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .review-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .review-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .review-date {
+            font-size: 11px;
+            color: var(--gray-500);
+        }
+
+        .review-stars {
+            color: #FFB800;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .review-text {
+            font-size: 13px;
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            padding: 20px 16px;
+            background: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+            border-radius: var(--radius-lg);
+            padding: 24px 20px;
+            color: var(--white);
+        }
+
+        .contact-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .contact-card > p {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 14px;
+            background: rgba(255,255,255,0.95);
+            color: var(--black);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-500);
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        footer {
+            padding: 24px 16px;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: var(--primary-light);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--gray-300);
+            text-decoration: none;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: var(--gray-500);
+            font-size: 10px;
+            font-weight: 500;
+            padding: 4px 16px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+        }
+
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Call Button - Floating */
+        .call-btn {
+            position: fixed;
+            bottom: 80px;
+            right: 16px;
+            width: 56px;
+            height: 56px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            z-index: 99;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(13, 143, 111, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(13, 143, 111, 0); }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+
+            .bottom-nav {
+                display: none;
+            }
+
+            .call-btn {
+                bottom: 24px;
+            }
+
+            main {
+                max-width: 480px;
+                margin: 60px auto 0;
+            }
+
+            header {
+                max-width: 480px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Stain<span>-33</span></a>
+        <div class="header-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Bangalore
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <div class="hero-badge">✨ Trusted by 5000+ Customers</div>
+                <h1>Professional Cleaning at Your Doorstep</h1>
+                <p>Book trained professionals for all your cleaning needs</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">4.9⭐</div>
+                        <div class="hero-stat-label">Rating</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">50+</div>
+                        <div class="hero-stat-label">Experts</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">6+ Yrs</div>
+                        <div class="hero-stat-label">Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="search-section">
+            <div class="search-bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Search for services...">
+            </div>
+        </section>
+
+        <!-- Service Categories -->
+        <section class="categories-section">
+            <h2 class="section-title">Our Services</h2>
+            <div class="categories-grid">
+                <a href="#home-services" class="category-card">
+                    <div class="category-icon">🏠</div>
+                    <div class="category-name">Home Services</div>
+                </a>
+                <a href="#facility" class="category-card">
+                    <div class="category-icon">🏢</div>
+                    <div class="category-name">Facility Management</div>
+                </a>
+                <a href="#projects" class="category-card">
+                    <div class="category-icon">🏗️</div>
+                    <div class="category-name">Project Services</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Home Services List -->
+        <section class="services-section" id="home-services">
+            <h2 class="section-title">Home Cleaning</h2>
+            <div class="services-list">
+                <a href="#contact" class="service-item">
+                    <div class="service-icon">🧹</div>
+                    <div class="service-info">
+                        <div class="service-name">Deep Home Cleaning</div>
+                        <div class="service-desc">Complete home deep clean</div>
+                    </div>
+                    <div class="service-price">₹2,499</div>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="service-item">
+                    <div class="service-icon">🚿</div>
+                    <div class="service-info">
+                        <div class="service-name">Bathroom Cleaning</div>
+                        <div class="service-desc">Scrubbing, tiles, fixtures</div>
+                    </div>
+                    <div class="service-price">₹499</div>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="service-item">
+                    <div class="service-icon">🍳</div>
+                    <div class="service-info">
+                        <div class="service-name">Kitchen Cleaning</div>
+                        <div class="service-desc">Chimney, cabinets, appliances</div>
+                    </div>
+                    <div class="service-price">₹899</div>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="service-item">
+                    <div class="service-icon">🛋️</div>
+                    <div class="service-info">
+                        <div class="service-name">Sofa Cleaning</div>
+                        <div class="service-desc">Steam clean & sanitize</div>
+                    </div>
+                    <div class="service-price">₹699</div>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="service-item">
+                    <div class="service-icon">🐜</div>
+                    <div class="service-info">
+                        <div class="service-name">Pest Control</div>
+                        <div class="service-desc">Cockroach, ants, mosquitoes</div>
+                    </div>
+                    <div class="service-price">₹799</div>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-section">
+            <h2 class="section-title">Why Stain-33?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">✅</div>
+                    <div class="why-title">Verified Staff</div>
+                    <div class="why-desc">Background checked</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🌿</div>
+                    <div class="why-title">Eco-Friendly</div>
+                    <div class="why-desc">Safe products</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <div class="why-title">Fair Price</div>
+                    <div class="why-desc">No hidden cost</div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🔄</div>
+                    <div class="why-title">Re-Clean</div>
+                    <div class="why-desc">Free if not happy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="reviews-section">
+            <div class="review-header">
+                <h2 class="section-title">Customer Reviews</h2>
+                <div class="review-rating">
+                    <div class="rating-badge">⭐ 4.9</div>
+                    <span class="rating-count">5000+ reviews</span>
+                </div>
+            </div>
+            <div class="reviews-scroll">
+                <div class="review-card">
+                    <div class="review-user">
+                        <div class="review-avatar">SK</div>
+                        <div>
+                            <div class="review-name">Suresh Kumar</div>
+                            <div class="review-date">2 days ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">Excellent service! My home looks brand new after their deep cleaning. Highly recommend Stain-33!</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-user">
+                        <div class="review-avatar">PM</div>
+                        <div>
+                            <div class="review-name">Priya Menon</div>
+                            <div class="review-date">1 week ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">Very professional team. They arrived on time and did a thorough job. Will book again!</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-user">
+                        <div class="review-avatar">RN</div>
+                        <div>
+                            <div class="review-name">Rahul Naidu</div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">Best pest control service in Bangalore. No more cockroaches! Great value for money.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-section" id="contact">
+            <div class="contact-card">
+                <h3>Book Your Service</h3>
+                <p>Fill the form and we'll call you within 30 minutes</p>
+                <form id="enquiryForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Service</option>
+                            <option>Deep Home Cleaning</option>
+                            <option>Bathroom Cleaning</option>
+                            <option>Kitchen Cleaning</option>
+                            <option>Sofa Cleaning</option>
+                            <option>Pest Control</option>
+                            <option>Office Cleaning</option>
+                            <option>Post-Construction</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Any specific requirements?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Book Now →</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-logo">Stain<span>-33</span></div>
+            <p class="footer-text">Professional cleaning services in Bangalore.<br>Trusted by thousands of happy customers.</p>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+            </div>
+            <div class="social-icons">
+                <a href="#">📘</a>
+                <a href="#">📷</a>
+                <a href="#">💬</a>
+            </div>
+            <p class="footer-copy">© 2025 Stain-33. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            Home
+        </a>
+        <a href="#home-services" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            Services
+        </a>
+        <a href="#contact" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Enquiry
+        </a>
+        <a href="tel:+919876543210" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Call
+        </a>
+    </nav>
+
+    <!-- Floating Call Button -->
+    <a href="tel:+919876543210" class="call-btn">📞</a>
+
+    <script>
+        // Form submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.submit-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.textContent = '✓ Booked!';
+                btn.style.background = '#0D8F6F';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                    this.reset();
+                }, 2000);
+            }, 1000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
