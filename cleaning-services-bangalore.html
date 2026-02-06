@@ -158,6 +158,11 @@
         .btn-book-listing:hover { background: #7C3AED; color: white; border-color: #7C3AED; }
         .save-badge { display: inline-block; padding: 3px 10px; background: #10B981; color: white; font-size: 11px; font-weight: 700; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
         .listing-divider { border: none; border-top: 1px solid #F3F4F6; margin: 0; }
+        .bhk-filter { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding: 10px 14px; background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border-radius: 10px; border: 1px solid #DDD6FE; }
+        .bhk-filter label { font-size: 13px; font-weight: 600; color: #5B21B6; white-space: nowrap; }
+        .bhk-select { flex: 1; padding: 8px 12px; border: 1.5px solid #7C3AED; border-radius: 8px; font-size: 14px; font-weight: 600; color: #7C3AED; background: white; cursor: pointer; font-family: inherit; outline: none; transition: all 0.2s; }
+        .bhk-select:hover { border-color: #5B21B6; }
+        .bhk-select:focus { border-color: #5B21B6; box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15); }
 
         /* MEGA COMBO */
         .mega-offers-section { padding: 50px 80px; background: var(--white); }
@@ -635,20 +640,28 @@
     <div class="tab-content" id="tab-apartment">
         <div class="service-packages">
             <div class="packages-grid">
-                <h3 class="tab-section-header">Apartment</h3>
+                <h3 class="tab-section-header">Apartment Deep Cleaning</h3>
                 <!-- Card 1: Furnished Apartment -->
                 <div class="listing-card">
                     <div class="listing-info">
-                        <h3 class="listing-title">Furnished apartment</h3>
+                        <h3 class="listing-title">Furnished Apartment</h3>
+                        <div class="bhk-filter">
+                            <label>Select BHK:</label>
+                            <select class="bhk-select" onchange="updatePrice(this, 'furnished-apt')">
+                                <option value="1bhk" data-price="1,999">1 BHK</option>
+                                <option value="2bhk" data-price="2,499" selected>2 BHK</option>
+                                <option value="3bhk" data-price="3,299">3 BHK</option>
+                                <option value="4bhk" data-price="3,999">4 BHK+</option>
+                            </select>
+                        </div>
                         <div class="listing-meta">
                             <span class="listing-rating">&#9733; 4.8</span>
                             <span class="listing-reviews">(2.1K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 2hr 45min</span>
+                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 3-5 hrs</span>
                         </div>
                         <div class="listing-price">
                             <span class="starts-at">Starts from</span>
-                            <span class="current">&#8377;2,200</span>
-                            <span class="unit">approx</span>
+                            <span class="current" id="price-furnished-apt">&#8377;2,499</span>
                         </div>
                         <ul class="listing-details">
                             <li>Cleaning &amp; stain removal from all rooms</li>
@@ -667,23 +680,31 @@
                             <rect x="73" y="70" width="7" height="7" rx="2" fill="#5B21B6"/>
                             <circle cx="60" cy="35" r="3" fill="#FCD34D"/><circle cx="72" cy="32" r="2" fill="#FCD34D"/>
                         </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('apartment-furnished')">Book</button>
+                        <button class="btn-book-listing" onclick="openContactPopup('apartment-furnished')">Book Now</button>
                     </div>
                 </div>
 
                 <!-- Card 2: Unfurnished Apartment -->
                 <div class="listing-card">
                     <div class="listing-info">
-                        <h3 class="listing-title">Unfurnished apartment</h3>
+                        <h3 class="listing-title">Unfurnished Apartment</h3>
+                        <div class="bhk-filter">
+                            <label>Select BHK:</label>
+                            <select class="bhk-select" onchange="updatePrice(this, 'unfurnished-apt')">
+                                <option value="1bhk" data-price="1,499">1 BHK</option>
+                                <option value="2bhk" data-price="1,999" selected>2 BHK</option>
+                                <option value="3bhk" data-price="2,699">3 BHK</option>
+                                <option value="4bhk" data-price="3,299">4 BHK+</option>
+                            </select>
+                        </div>
                         <div class="listing-meta">
                             <span class="listing-rating">&#9733; 4.7</span>
                             <span class="listing-reviews">(1.6K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 2hr 15min</span>
+                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 2-4 hrs</span>
                         </div>
                         <div class="listing-price">
                             <span class="starts-at">Starts from</span>
-                            <span class="current">&#8377;1,799</span>
-                            <span class="unit">approx</span>
+                            <span class="current" id="price-unfurnished-apt">&#8377;1,999</span>
                         </div>
                         <ul class="listing-details">
                             <li>Cleaning &amp; stain removal from all rooms</li>
@@ -702,7 +723,7 @@
                             <rect x="42" y="62" width="16" height="5" rx="2.5" fill="#059669"/>
                             <circle cx="38" cy="38" r="2.5" fill="#FCD34D"/>
                         </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('apartment-unfurnished')">Book</button>
+                        <button class="btn-book-listing" onclick="openContactPopup('apartment-unfurnished')">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -1571,6 +1592,16 @@
             document.querySelector('.tab-card[data-tab="' + tabName + '"]').classList.add('active');
             document.getElementById('tab-' + tabName).classList.add('active');
             document.querySelector('.service-tab-cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // BHK PRICE UPDATE
+        function updatePrice(selectElement, priceId) {
+            var selectedOption = selectElement.options[selectElement.selectedIndex];
+            var price = selectedOption.getAttribute('data-price');
+            var priceElement = document.getElementById('price-' + priceId);
+            if (priceElement && price) {
+                priceElement.innerHTML = '&#8377;' + price;
+            }
         }
 
         // FAQ ACCORDION
