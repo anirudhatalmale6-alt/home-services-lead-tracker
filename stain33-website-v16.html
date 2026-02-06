@@ -340,174 +340,140 @@
             background: var(--primary-purple-dark);
         }
 
-        /* ==================== HERO SECTION ==================== */
+        /* ==================== HERO SECTION (Urban Company Style) ==================== */
         .hero {
             margin-top: 70px;
-            background: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%);
-            min-height: 480px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
+            background: var(--white);
+            min-height: 500px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 50px 80px;
             align-items: center;
-            padding: 60px 80px;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            flex: 1;
+        .hero-left {
             max-width: 550px;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0,0,0,0.2);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-        }
-
-        .hero-badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: #FCD34D;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 46px;
             font-weight: 800;
-            color: var(--white);
-            line-height: 1.1;
-            margin-bottom: 20px;
+            color: var(--gray-900);
+            line-height: 1.15;
+            margin-bottom: 40px;
         }
 
-        .hero p {
-            font-size: 17px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 32px;
-            max-width: 420px;
+        .hero-services-box {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: var(--shadow-md);
         }
 
-        .btn-book {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--gray-900);
-            color: var(--white);
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-size: 15px;
+        .hero-services-title {
+            font-size: 16px;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-lg);
+            color: var(--gray-700);
+            margin-bottom: 24px;
         }
 
-        .btn-book:hover {
-            background: var(--gray-800);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
+        .hero-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
-        .btn-book svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .hero-image {
-            position: absolute;
-            right: 80px;
-            bottom: 0;
-            width: 420px;
-            height: 420px;
+        .hero-service-item {
             display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 16px 10px;
+            border-radius: 12px;
+            background: var(--gray-50);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            position: relative;
         }
 
-        .hero-person {
+        .hero-service-item:hover {
+            background: #F3E8FF;
+            transform: translateY(-3px);
+        }
+
+        .hero-service-item .badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero-service-item .badge.new { background: #10B981; color: white; }
+        .hero-service-item .badge.sale { background: #EF4444; color: white; }
+        .hero-service-item .badge.popular { background: #F59E0B; color: white; }
+
+        .hero-service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero-service-icon.cleaning { background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); }
+        .hero-service-icon.pest { background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%); }
+        .hero-service-icon.painting { background: linear-gradient(135deg, #E9D5FF 0%, #DDD6FE 100%); }
+        .hero-service-icon.facility { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+        .hero-service-icon.post { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
+        .hero-service-icon.commercial { background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%); }
+
+        .hero-service-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+            line-height: 1.3;
+        }
+
+        .hero-right {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            height: 420px;
+        }
+
+        .hero-image-card {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image-card.tall {
+            grid-row: span 2;
+        }
+
+        .hero-image-placeholder {
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450"><defs><linearGradient id="skin" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23D4A574"/><stop offset="100%25" style="stop-color:%23C4956A"/></linearGradient><linearGradient id="hair" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%231a1a1a"/><stop offset="100%25" style="stop-color:%232d2d2d"/></linearGradient></defs><ellipse cx="200" cy="120" rx="55" ry="65" fill="url(%23skin)"/><path d="M145 100 Q150 50 200 45 Q250 50 255 100 Q260 80 240 70 Q200 55 160 70 Q140 80 145 100" fill="url(%23hair)"/><ellipse cx="180" cy="110" rx="8" ry="5" fill="%231a1a1a"/><ellipse cx="220" cy="110" rx="8" ry="5" fill="%231a1a1a"/><ellipse cx="200" cy="130" rx="4" ry="6" fill="%23B8896A"/><path d="M185 150 Q200 160 215 150" stroke="%23C4956A" stroke-width="3" fill="none"/><rect x="170" y="180" width="60" height="120" rx="20" fill="%23FF6B6B"/><rect x="160" y="300" width="35" height="100" rx="10" fill="%23333"/><rect x="205" y="300" width="35" height="100" rx="10" fill="%23333"/><ellipse cx="130" cy="280" rx="15" ry="40" fill="url(%23skin)" transform="rotate(-30 130 280)"/><ellipse cx="270" cy="250" rx="15" ry="45" fill="url(%23skin)" transform="rotate(20 270 250)"/><rect x="250" y="200" width="80" height="30" rx="5" fill="%2310B981"/><rect x="260" y="180" width="60" height="25" rx="3" fill="%23059669"/><circle cx="320" cy="230" r="40" fill="%23E5E7EB" stroke="%23D1D5DB" stroke-width="3"/><path d="M300 230 L320 230 L340 230" stroke="%23059669" stroke-width="4"/><path d="M290 215 L350 245" stroke="%23059669" stroke-width="2" stroke-dasharray="5,5"/></svg>') center bottom / contain no-repeat;
-        }
-
-        .hero-nav {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-
-        .hero-nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .hero-nav-dot.active {
-            background: var(--white);
-            width: 30px;
-            border-radius: 5px;
-        }
-
-        .hero-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: var(--white);
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s;
+            font-size: 50px;
         }
 
-        .hero-arrow:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .hero-arrow.left { left: 24px; }
-        .hero-arrow.right { right: 24px; }
-
-        .hero-arrow svg {
-            width: 20px;
-            height: 20px;
-            color: var(--gray-700);
-        }
+        .hero-image-placeholder.img1 { background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%); }
+        .hero-image-placeholder.img2 { background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%); }
+        .hero-image-placeholder.img3 { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); }
+        .hero-image-placeholder.img4 { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); }
 
         /* ==================== RUNNING TICKER ==================== */
         .ticker {
@@ -1938,15 +1904,19 @@
             .logo { font-size: 24px; }
             .contact-btn { padding: 8px 16px; font-size: 12px; }
 
-            /* Mobile Hero */
-            .hero { flex-direction: column; padding: 24px 16px; min-height: auto; }
-            .hero-content { max-width: 100%; text-align: center; }
-            .hero h1 { font-size: 28px; line-height: 1.2; }
-            .hero p { font-size: 14px; }
-            .hero-badge { font-size: 10px; padding: 6px 12px; }
-            .btn-book { padding: 14px 24px; font-size: 14px; width: 100%; justify-content: center; }
-            .hero-image { position: relative; right: auto; width: 100%; height: 250px; margin-top: 20px; }
-            .hero-arrow { display: none; }
+            /* Mobile Hero (Urban Company Style) */
+            .hero { grid-template-columns: 1fr; padding: 24px 16px; min-height: auto; gap: 24px; }
+            .hero-left { max-width: 100%; }
+            .hero h1 { font-size: 28px; line-height: 1.2; margin-bottom: 24px; }
+            .hero-services-box { padding: 20px; }
+            .hero-services-title { font-size: 14px; margin-bottom: 16px; }
+            .hero-services-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .hero-service-item { padding: 12px 6px; }
+            .hero-service-icon { width: 44px; height: 44px; font-size: 22px; margin-bottom: 8px; }
+            .hero-service-name { font-size: 11px; }
+            .hero-service-item .badge { font-size: 7px; padding: 2px 5px; top: 4px; right: 4px; }
+            .hero-right { height: 200px; gap: 8px; }
+            .hero-image-placeholder { font-size: 32px; }
 
             /* Mobile Sections */
             .section { padding: 24px 16px; }
@@ -2425,36 +2395,53 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Urban Company Style) -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">Limited Offer</div>
-            <h1>Deep Home Cleaning at 20% OFF!</h1>
-            <p>Get your entire home professionally cleaned by our expert team. Valid for first-time customers.</p>
-            <a href="cleaning-services-bangalore.html" class="btn-book">
-                Book Now
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
+        <div class="hero-left">
+            <h1>Home services at your doorstep</h1>
+            <div class="hero-services-box">
+                <div class="hero-services-title">What are you looking for?</div>
+                <div class="hero-services-grid">
+                    <a href="cleaning-services-bangalore.html" class="hero-service-item">
+                        <span class="badge popular">Popular</span>
+                        <div class="hero-service-icon cleaning">🧹</div>
+                        <span class="hero-service-name">Home Cleaning</span>
+                    </a>
+                    <a href="pest-control-services-bangalore.html" class="hero-service-item">
+                        <span class="badge sale">Sale</span>
+                        <div class="hero-service-icon pest">🐜</div>
+                        <span class="hero-service-name">Pest Control</span>
+                    </a>
+                    <a href="rental-painting-services-bangalore.html" class="hero-service-item">
+                        <div class="hero-service-icon painting">🎨</div>
+                        <span class="hero-service-name">Painting</span>
+                    </a>
+                    <a href="facility-management-bangalore.html" class="hero-service-item">
+                        <span class="badge new">New</span>
+                        <div class="hero-service-icon facility">🏢</div>
+                        <span class="hero-service-name">Facility Management</span>
+                    </a>
+                    <a href="post-construction-cleaning-bangalore.html" class="hero-service-item">
+                        <div class="hero-service-icon post">🏗️</div>
+                        <span class="hero-service-name">Post Construction</span>
+                    </a>
+                    <a href="post-construction-cleaning-bangalore.html" class="hero-service-item">
+                        <div class="hero-service-icon commercial">🏬</div>
+                        <span class="hero-service-name">Commercial Cleaning</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="hero-image">
-            <div class="hero-person"></div>
-        </div>
-        <div class="hero-arrow left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 19l-7-7 7-7"/>
-            </svg>
-        </div>
-        <div class="hero-arrow right">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 5l7 7-7 7"/>
-            </svg>
-        </div>
-        <div class="hero-nav">
-            <div class="hero-nav-dot active"></div>
-            <div class="hero-nav-dot"></div>
-            <div class="hero-nav-dot"></div>
+        <div class="hero-right">
+            <div class="hero-image-card tall">
+                <div class="hero-image-placeholder img1">👩‍🔧</div>
+            </div>
+            <div class="hero-image-card">
+                <div class="hero-image-placeholder img2">🧽</div>
+            </div>
+            <div class="hero-image-card">
+                <div class="hero-image-placeholder img3">✨</div>
+            </div>
         </div>
     </section>
 
