@@ -469,8 +469,6 @@
                 <input type="email" name="email" placeholder="Email Address">
                 <select name="service" id="popupServiceSelect">
                     <option value="">Select Service</option>
-                    <option value="maintenance-furnished">Maintenance Pack - Furnished</option>
-                    <option value="maintenance-unfurnished">Maintenance Pack - Unfurnished</option>
                     <option value="apartment-furnished">Apartment - Furnished</option>
                     <option value="apartment-unfurnished">Apartment - Unfurnished</option>
                     <option value="bungalow-furnished">Bungalow/Duplex - Furnished</option>
@@ -523,13 +521,7 @@
     <div class="tab-sticky-wrapper">
     <span class="tab-label">Select a service</span>
     <div class="service-tab-cards">
-        <div class="tab-card active" data-tab="maintenance" onclick="switchTab('maintenance')">
-            <div class="tab-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <span>Maintenance pack</span>
-        </div>
-        <div class="tab-card" data-tab="apartment" onclick="switchTab('apartment')">
+        <div class="tab-card active" data-tab="apartment" onclick="switchTab('apartment')">
             <div class="tab-card-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10"/><path d="M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01"/></svg>
             </div>
@@ -562,83 +554,8 @@
     </div>
     </div>
 
-    <!-- ==================== MAINTENANCE PACK TAB ==================== -->
-    <div class="tab-content active" id="tab-maintenance">
-        <div class="service-packages">
-            <div class="packages-grid">
-                <!-- Card 1: Furnished Bundle -->
-                <div class="listing-card">
-                    <div class="listing-info">
-                        <span class="save-badge">SAVE</span>
-                        <h3 class="listing-title">2-visits furnished apartment bundle</h3>
-                        <div class="listing-meta">
-                            <span class="listing-rating">&#9733; 4.8</span>
-                            <span class="listing-reviews">(2.3K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 3hr 45min</span>
-                        </div>
-                        <div class="listing-price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="original">&#8377;3,400</span>
-                            <span class="current">&#8377;2,799</span>
-                            
-                        </div>
-                        <ul class="listing-details">
-                            <li>Cleaning &amp; stain removal from rooms, kitchen, bathroom &amp; balcony</li>
-                            <li>Mopping, Dusting</li>
-                            <li>Cobweb Removal</li>
-                        </ul>
-                    </div>
-                    <div class="listing-image purple-bg">
-                        <svg class="card-illustration" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="42" fill="#EDE9FE"/>
-                            <rect x="45" y="18" width="6" height="50" rx="3" fill="#7C3AED"/>
-                            <path d="M35 68 C35 60 42 56 48 56L52 56C58 56 65 60 65 68L65 74C65 76 63 78 61 78L39 78C37 78 35 76 35 74Z" fill="#9333EA"/>
-                            <circle cx="30" cy="28" r="3" fill="#FCD34D"/><circle cx="70" cy="24" r="2.5" fill="#FCD34D"/><circle cx="66" cy="36" r="2" fill="#FCD34D"/>
-                            <path d="M27 24L30 28L33 24" stroke="#FCD34D" stroke-width="1.5" fill="none"/>
-                        </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('maintenance-furnished')">Book</button>
-                    </div>
-                </div>
-
-                <!-- Card 2: Unfurnished Bundle -->
-                <div class="listing-card">
-                    <div class="listing-info">
-                        <h3 class="listing-title">2-visits unfurnished apartment bundle</h3>
-                        <div class="listing-meta">
-                            <span class="listing-rating">&#9733; 4.7</span>
-                            <span class="listing-reviews">(1.8K reviews)</span>
-                            <span class="listing-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 3hr 30min</span>
-                        </div>
-                        <div class="listing-price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="original">&#8377;3,100</span>
-                            <span class="current">&#8377;2,559</span>
-                            
-                        </div>
-                        <ul class="listing-details">
-                            <li>Cleaning &amp; stain removal from rooms, kitchen, bathroom &amp; balcony</li>
-                            <li>Mopping, Dusting</li>
-                            <li>Cobweb Removal</li>
-                        </ul>
-                    </div>
-                    <div class="listing-image green-bg">
-                        <svg class="card-illustration" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="42" fill="#D1FAE5"/>
-                            <path d="M34 38C34 34 37 30 42 30L58 30C63 30 66 34 66 38L66 68C66 70 64 72 62 72L38 72C36 72 34 70 34 68Z" fill="#10B981"/>
-                            <ellipse cx="50" cy="30" rx="18" ry="4" fill="#059669"/>
-                            <rect x="46" y="20" width="8" height="12" rx="4" fill="#059669"/>
-                            <rect x="42" y="42" width="4" height="16" rx="2" fill="#ECFDF5" transform="rotate(-15 42 42)"/>
-                            <rect x="54" y="40" width="4" height="18" rx="2" fill="#ECFDF5" transform="rotate(10 54 40)"/>
-                        </svg>
-                        <button class="btn-book-listing" onclick="openContactPopup('maintenance-unfurnished')">Book</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- ==================== APARTMENT TAB ==================== -->
-    <div class="tab-content" id="tab-apartment">
+    <div class="tab-content active" id="tab-apartment">
         <div class="service-packages">
             <div class="packages-grid">
                 <h3 class="tab-section-header">Apartment Deep Cleaning</h3>
