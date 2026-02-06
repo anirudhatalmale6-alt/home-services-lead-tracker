@@ -2111,7 +2111,18 @@
 
             /* Mobile Why Choose Us */
             .why-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .why-card { padding: 16px; border-radius: 12px; }
+            .why-card {
+                padding: 16px;
+                border-radius: 12px;
+                border: 2px solid var(--gray-100);
+                transition: all 0.25s ease;
+            }
+            .why-card:active {
+                border-color: var(--primary-purple) !important;
+                background: #F5F3FF;
+                transform: scale(0.98);
+                box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+            }
             .why-card h4 { font-size: 13px; }
             .why-card p { font-size: 11px; }
             .why-icon { width: 44px; height: 44px; border-radius: 10px; }
