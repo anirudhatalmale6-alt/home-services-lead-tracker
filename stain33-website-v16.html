@@ -2384,25 +2384,27 @@
         }
 
         .mobile-menu-contact {
-            width: calc(100% - 40px);
-            padding: 16px;
+            width: auto;
+            padding: 14px 40px;
             background: var(--primary-purple);
             color: var(--white);
             border: none;
-            border-radius: 12px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             position: absolute;
             bottom: 20px;
-            left: 20px;
-            max-width: 280px;
+            left: 50%;
+            transform: translateX(-50%);
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
             display: none;
+            text-decoration: none;
+            text-align: center;
         }
 
         .mobile-menu.active .mobile-menu-contact {
-            display: block;
+            display: inline-block;
         }
 
         .mobile-menu-overlay {
